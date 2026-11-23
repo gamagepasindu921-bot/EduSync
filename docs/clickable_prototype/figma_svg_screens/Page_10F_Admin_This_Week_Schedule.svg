@@ -1,0 +1,247 @@
+<svg width="1440" height="1100" viewBox="0 0 1440 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="schedule-hero-grad" x1="260" y1="94" x2="1410" y2="244" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="55%" stop-color="#312E81"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Global Canvas Background -->
+  <rect width="1440" height="1100" fill="#F4F7FE"/>
+
+    <!-- ================= 1. BEHANCE MINIMAL LEFT SIDEBAR (230px) ================= -->
+  <rect width="230" height="1100" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- EduSync Logo (Original Sapphire Blue Box with NFC Waves) -->
+  <rect x="24" y="24" width="38" height="38" rx="12" fill="#2563EB"/>
+  <path d="M43 36C41 38 40 41 41 44C42 47 45 48 48 47" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 34C37 37 36 42 38 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <text x="72" y="44" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.5">Edu<tspan fill="#2563EB">Sync</tspan></text>
+  <text x="72" y="56" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">ADMIN PORTAL</text>
+
+  <!-- Admin Identity Capsule -->
+  <rect x="16" y="78" width="198" height="66" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="94" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.5">MASTER AUTHORITY</text>
+  <circle cx="196" cy="91" r="3.5" fill="#10B981"/>
+  <circle cx="42" cy="122" r="14" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="35" y="126" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="900">AW</text>
+  <text x="64" y="118" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Dr. A. Wickramasinghe</text>
+  <text x="64" y="132" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">ADM-001 • Registrar</text>
+
+  <!-- Sidebar Menu Header -->
+  <text x="28" y="166" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" letter-spacing="1">MASTER ADMINISTRATION</text>
+
+  <!-- 1. Admin Overview  -->
+  <rect x="16" y="178" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="31" y="188" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="39.5" y="188" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="31" y="196.5" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="39.5" y="196.5" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <text x="54" y="202" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Admin Overview</text>
+
+  <!-- 2. This Week Schedule (ACTIVE) -->
+  <rect x="16" y="220" width="198" height="38" rx="12" fill="#0F172A"/>
+  <rect x="32" y="232" width="15" height="14" rx="3" stroke="#FFFFFF" stroke-width="1.6"/>
+  <path d="M32 237H47M36 230V234M43 230V234" stroke="#FFFFFF" stroke-width="1.6"/>
+  <text x="54" y="244" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="700">This Week Schedule</text>
+
+  <!-- 3. Student Management  -->
+  <rect x="16" y="262" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M40 273L31 278L40 283L49 278L40 273Z" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M35 280.5V286C35 288 37 289.5 40 289.5C43 289.5 45 288 45 286V280.5" stroke="#64748B" stroke-width="1.5"/>
+  <text x="54" y="286" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Student Management</text>
+
+  <!-- 4. Teacher &amp; Commissions  -->
+  <rect x="16" y="304" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="32" y="316" width="16" height="12" rx="2" stroke="#64748B" stroke-width="1.6"/>
+  <path d="M37 316V313H43V316" stroke="#64748B" stroke-width="1.5"/>
+  <text x="54" y="328" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Teacher &amp; Commissions</text>
+
+  <!-- 5. Parent &amp; SMS Hub  -->
+  <rect x="16" y="346" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M33 370C33 366 36 365 40 365C44 365 47 366 47 370" stroke="#64748B" stroke-width="1.6"/>
+  <circle cx="40" cy="361" r="3" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="370" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Parent &amp; SMS Hub</text>
+
+  <!-- 6. Operations &amp; Logistics  -->
+  <rect x="16" y="388" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M33 402L39 399L45 402L39 405L33 402Z" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M33 402V408L39 411V405M45 402V408L39 411" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="412" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Operations &amp; Logistics</text>
+
+  <!-- Security Badge -->
+  <rect x="16" y="1006" width="198" height="74" rx="14" fill="#0F172A"/>
+  <text x="28" y="1028" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.5">SECURITY ENCLAVE</text>
+  <circle cx="196" cy="1025" r="3.5" fill="#10B981"/>
+  <text x="28" y="1048" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">System: Operational</text>
+  <text x="28" y="1066" fill="#10B981" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">AES-256 • Hardware MAC Verified</text>
+
+
+  <!-- ================= 2. UNIFIED UNIVERSAL HEADER ================= -->
+  <rect x="230" y="0" width="1210" height="70" fill="#FFFFFF" fill-opacity="0.95" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="260" y="28" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">Admin Portal / <tspan fill="#0F172A" font-weight="700">This Week&#39;s Institute Lecture Schedule &amp; Hall Matrix</tspan></text>
+  <text x="260" y="52" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="19" font-weight="900" letter-spacing="-0.5">Faculty Timetables &amp; Multi-Class Allocator</text>
+
+  <rect x="710" y="16" width="300" height="38" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="728" cy="35" r="5" stroke="#94A3B8" stroke-width="1.8"/>
+  <line x1="732" y1="39" x2="736" y2="43" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="746" y="39" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Search faculty, students, UIDs, gates...</text>
+  <rect x="970" y="24" width="28" height="22" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="974" y="39" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">⌘K</text>
+
+  <rect x="1030" y="18" width="215" height="34" rx="17" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="1046" cy="35" r="4" fill="#10B981"/>
+  <text x="1058" y="39" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Institute Live: <tspan font-family="JetBrains Mono, monospace" font-weight="800">1,420 / 1,600</tspan> <tspan fill="#047857" font-size="10">(88.7%)</tspan></text>
+
+  <circle cx="1275" cy="35" r="16" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="1267" y="40" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="11" font-weight="900">AW</text>
+
+<!-- ================= 3. HERO BANNER ================= -->
+  <rect x="260" y="94" width="1150" height="146" rx="24" fill="url(#schedule-hero-grad)"/>
+  <rect x="290" y="114" width="490" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="304" cy="126" r="4" fill="#A5B4FC"/>
+  <text x="316" y="130" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">MEMBER 2 CARD 4 • 7-DAY ALLOCATION &amp; SAME-DAY MULTI-SESSION ENGINE</text>
+
+  <text x="290" y="166" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="22" font-weight="900">This Week's Institute Lecture Schedule &amp; Hall Matrix</text>
+  <text x="290" y="188" fill="#E0E7FF" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Master timetable of all faculty lectures across Halls 01 - 04, highlighting same-day multiple classes, live registered student headcounts, and conflict-free room allocations.</text>
+
+  <rect x="290" y="198" width="170" height="28" rx="8" fill="#FFFFFF"/>
+  <text x="306" y="216" fill="#1E1B4B" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">+ Add Faculty Slot</text>
+
+  <!-- ================= 4. FILTER TABS ROW ================= -->
+  <rect x="260" y="254" width="1150" height="46" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="270" y="262" width="175" height="30" rx="10" fill="#0F172A"/>
+  <text x="282" y="281" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">This Week (All 18 Classes)</text>
+
+  <rect x="455" y="262" width="185" height="30" rx="10" fill="#EFF6FF"/>
+  <circle cx="470" cy="277" r="3.5" fill="#2563EB"/>
+  <text x="480" y="281" fill="#1D4ED8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">Monday (Today - 7 Classes)</text>
+
+  <rect x="650" y="262" width="150" height="30" rx="10" fill="#F8FAFC"/>
+  <text x="668" y="281" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Wednesday (4 Classes)</text>
+
+  <rect x="810" y="262" width="130" height="30" rx="10" fill="#F8FAFC"/>
+  <text x="826" y="281" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Friday (4 Classes)</text>
+
+  <rect x="950" y="262" width="180" height="30" rx="10" fill="#ECFDF5"/>
+  <circle cx="965" cy="277" r="3.5" fill="#10B981"/>
+  <text x="976" y="281" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">Saturday (Peak - 8 Classes)</text>
+
+  <!-- ================= 5. MASTER CARDS GRID (6 Cards Showcase) ================= -->
+  <!-- Card 1: Eng. Saman Perera (Mon Morning) -->
+  <rect x="260" y="316" width="365" height="195" rx="18" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="286" cy="344" r="14" fill="#0F172A"/>
+  <text x="279" y="348" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">SP</text>
+  <text x="310" y="340" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Eng. Saman Perera</text>
+  <text x="310" y="354" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Combined Mathematics</text>
+  <rect x="540" y="334" width="70" height="20" rx="6" fill="#EFF6FF"/>
+  <text x="548" y="348" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="800">IN SESSION</text>
+
+  <rect x="276" y="372" width="333" height="74" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="290" y="394" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Combined Maths Theory</text>
+  <text x="590" y="394" text-anchor="end" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Mon (Session 1)</text>
+  <text x="290" y="412" fill="#1E40AF" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">08:00 AM - 01:00 PM</text>
+  <text x="290" y="430" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 04 (300 Capacity)</text>
+
+  <line x1="276" y1="460" x2="609" y2="460" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="286" y="488" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Enrolled Students: <tspan fill="#059669" font-family="JetBrains Mono, monospace" font-weight="800">248 Students Registered</tspan></text>
+
+  <!-- Card 2: Eng. Saman Perera (Mon Afternoon - Same Day!) -->
+  <rect x="645" y="316" width="365" height="195" rx="18" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="671" cy="344" r="14" fill="#0F172A"/>
+  <text x="664" y="348" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">SP</text>
+  <text x="695" y="340" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Eng. Saman Perera</text>
+  <text x="695" y="354" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Combined Mathematics</text>
+  <rect x="860" y="334" width="135" height="20" rx="6" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+  <text x="868" y="348" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="8" font-weight="800">⚡ SAME-DAY AFTERNOON</text>
+
+  <rect x="661" y="372" width="333" height="74" rx="12" fill="#FEF3C7" fill-opacity="0.6" stroke="#FCD34D" stroke-width="1"/>
+  <text x="675" y="394" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Pure Maths Paper Class</text>
+  <text x="975" y="394" text-anchor="end" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Mon (Session 2)</text>
+  <text x="675" y="412" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">02:00 PM - 05:00 PM</text>
+  <text x="675" y="430" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 01 (200 Capacity)</text>
+
+  <line x1="661" y1="460" x2="994" y2="460" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="671" y="488" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Enrolled Students: <tspan fill="#059669" font-family="JetBrains Mono, monospace" font-weight="800">180 Students Registered</tspan></text>
+
+  <!-- Card 3: Dr. K. Silva (Mon Morning) -->
+  <rect x="1030" y="316" width="380" height="195" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="1056" cy="344" r="14" fill="#0F172A"/>
+  <text x="1049" y="348" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">KS</text>
+  <text x="1080" y="340" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Dr. K. Silva</text>
+  <text x="1080" y="354" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Chemistry Revision</text>
+  <rect x="1310" y="334" width="85" height="20" rx="6" fill="#ECFDF5"/>
+  <text x="1318" y="348" fill="#047857" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="800">IN SESSION</text>
+
+  <rect x="1046" y="372" width="348" height="74" rx="12" fill="#ECFDF5" fill-opacity="0.6" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="1060" y="394" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Chemistry Revision &amp; Papers</text>
+  <text x="1375" y="394" text-anchor="end" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Mon (Session 1)</text>
+  <text x="1060" y="412" fill="#047857" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">08:30 AM - 12:30 PM</text>
+  <text x="1060" y="430" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 01 (200 Capacity)</text>
+
+  <line x1="1046" y1="460" x2="1394" y2="460" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="1056" y="488" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Enrolled Students: <tspan fill="#059669" font-family="JetBrains Mono, monospace" font-weight="800">188 Students Registered</tspan></text>
+
+  <!-- Row 2 of Cards -->
+  <!-- Card 4: Dr. K. Silva (Mon Afternoon - Same Day!) -->
+  <rect x="260" y="526" width="365" height="195" rx="18" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="286" cy="554" r="14" fill="#0F172A"/>
+  <text x="279" y="558" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">KS</text>
+  <text x="310" y="550" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Dr. K. Silva</text>
+  <text x="310" y="564" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Chemistry Revision</text>
+  <rect x="475" y="544" width="135" height="20" rx="6" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+  <text x="483" y="558" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="8" font-weight="800">⚡ SAME-DAY AFTERNOON</text>
+
+  <rect x="276" y="582" width="333" height="74" rx="12" fill="#FEF3C7" fill-opacity="0.6" stroke="#FCD34D" stroke-width="1"/>
+  <text x="290" y="604" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Organic Paper Workshop</text>
+  <text x="590" y="604" text-anchor="end" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Mon (Session 2)</text>
+  <text x="290" y="622" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">01:30 PM - 04:30 PM</text>
+  <text x="290" y="640" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 01 (200 Capacity)</text>
+
+  <line x1="276" y1="670" x2="609" y2="670" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="286" y="698" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Enrolled Students: <tspan fill="#059669" font-family="JetBrains Mono, monospace" font-weight="800">150 Students Registered</tspan></text>
+
+  <!-- Card 5: Prof. R. Jayawardena (Mon Morning) -->
+  <rect x="645" y="526" width="365" height="195" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="671" cy="554" r="14" fill="#0F172A"/>
+  <text x="664" y="558" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">RJ</text>
+  <text x="695" y="550" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Prof. R. Jayawardena</text>
+  <text x="695" y="564" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Physics</text>
+  <rect x="910" y="544" width="85" height="20" rx="6" fill="#EEF2FF"/>
+  <text x="918" y="558" fill="#4338CA" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="800">IN SESSION</text>
+
+  <rect x="661" y="582" width="333" height="74" rx="12" fill="#EEF2FF" fill-opacity="0.6" stroke="#C7D2FE" stroke-width="1"/>
+  <text x="675" y="604" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Physics Mechanics &amp; Waves</text>
+  <text x="975" y="604" text-anchor="end" fill="#4338CA" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Monday</text>
+  <text x="675" y="622" fill="#4338CA" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">08:00 AM - 01:00 PM</text>
+  <text x="675" y="640" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 02 (350 Capacity)</text>
+
+  <line x1="661" y1="670" x2="994" y2="670" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="671" y="698" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Enrolled Students: <tspan fill="#059669" font-family="JetBrains Mono, monospace" font-weight="800">275 Students Registered</tspan></text>
+
+  <!-- Card 6: Eng. Saman Perera (Sat Peak) -->
+  <rect x="1030" y="526" width="380" height="195" rx="18" fill="#FFFFFF" stroke="#10B981" stroke-width="1.8"/>
+  <circle cx="1056" cy="554" r="14" fill="#0F172A"/>
+  <text x="1049" y="558" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">SP</text>
+  <text x="1080" y="550" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Eng. Saman Perera</text>
+  <text x="1080" y="564" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Combined Mathematics</text>
+  <rect x="1290" y="544" width="105" height="20" rx="6" fill="#ECFDF5"/>
+  <text x="1298" y="558" fill="#047857" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="800">SATURDAY PEAK</text>
+
+  <rect x="1046" y="582" width="348" height="74" rx="12" fill="#ECFDF5" fill-opacity="0.6" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="1060" y="604" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">2027 Theory Foundation</text>
+  <text x="1375" y="604" text-anchor="end" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Saturday</text>
+  <text x="1060" y="622" fill="#047857" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">07:30 AM - 01:30 PM</text>
+  <text x="1060" y="640" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 04 (300 Capacity)</text>
+
+  <line x1="1046" y1="670" x2="1394" y2="670" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="1056" y="698" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Enrolled Students: <tspan fill="#059669" font-family="JetBrains Mono, monospace" font-weight="800">290 Students Registered</tspan></text>
+
+  <!-- ================= 6. GROUNDED FOOTER ================= -->
+  <rect x="0" y="1030" width="1440" height="70" fill="#0F172A"/>
+  <circle cx="48" cy="1065" r="3.5" fill="#10B981"/>
+  <text x="62" y="1069" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">EduSync Unified Tuition Management &amp; Multi-Class Scheduling Engine • Member 2 (SDGP CS76 - 2026)</text>
+  <text x="1400" y="1069" text-anchor="end" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10.5">Helpline: <tspan fill="#FFFFFF" font-weight="700">077 129 6697</tspan> • Admin Overview • Teachers</text>
+</svg>

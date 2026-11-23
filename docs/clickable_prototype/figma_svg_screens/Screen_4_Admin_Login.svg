@@ -1,0 +1,54 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Base Background (Same as Login Screen) -->
+  <rect width="1440" height="900" fill="#F8FAFC"/>
+  <circle cx="200" cy="150" r="350" fill="#DBEAFE" fill-opacity="0.35"/>
+  <circle cx="1250" cy="750" r="350" fill="#D1FAE5" fill-opacity="0.25"/>
+
+  <!-- Top Navigation Header (Dimmed) -->
+  <rect width="1440" height="72" fill="#FFFFFF" fill-opacity="0.85" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="64" y="16" width="40" height="40" rx="12" fill="#2563EB"/>
+  <text x="76" y="42" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="bold">E</text>
+  <text x="116" y="38" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="900">Edu<tspan fill="#2563EB">Sync</tspan></text>
+
+  <!-- Background Base Card (Behind Dimmed Overlay) -->
+  <rect x="480" y="105" width="480" height="680" rx="28" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ================= DIMMED BACKDROP OVERLAY ================= -->
+  <rect width="1440" height="900" fill="#0F172A" fill-opacity="0.6"/>
+
+  <!-- ================= CENTERED ADMIN LOGIN MODAL ================= -->
+  <rect x="500" y="240" width="440" height="420" rx="24" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="drop-shadow(0px 25px 50px rgba(15, 23, 42, 0.35))"/>
+
+  <!-- Modal Header & Icon -->
+  <rect x="528" y="268" width="40" height="40" rx="10" fill="#0F172A"/>
+  <text x="541" y="294" fill="#F59E0B" font-family="Plus Jakarta Sans, sans-serif" font-size="16">🛡️</text>
+
+  <text x="580" y="287" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="900">Institute Admin Access</text>
+  <text x="580" y="304" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Restricted to Tuition Institute Command Staff</text>
+
+  <!-- Close Button (x) -->
+  <rect x="896" y="268" width="28" height="28" rx="8" fill="#F1F5F9"/>
+  <text x="905" y="287" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="bold">✕</text>
+
+  <!-- Field 1: Staff Key -->
+  <text x="528" y="345" fill="#334155" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="bold">Staff / Admin Key</text>
+  <rect x="528" y="356" width="384" height="44" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="546" y="383" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="13" font-weight="bold">ADM-001</text>
+
+  <!-- Field 2: Master Passphrase -->
+  <text x="528" y="426" fill="#334155" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="bold">Master Passphrase</text>
+  <rect x="528" y="437" width="384" height="44" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="546" y="468" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="18">••••••••••••</text>
+  <text x="880" y="464" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="14">👁</text>
+
+  <!-- Security Note -->
+  <rect x="528" y="498" width="384" height="30" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="542" y="517" fill="#065F46" font-family="JetBrains Mono, monospace" font-size="10" font-weight="bold">● AES-256 ENCRYPTED • HARDWARE MAC VERIFIED</text>
+
+  <!-- Primary Submit Button -->
+  <rect x="528" y="546" width="384" height="50" rx="12" fill="#0F172A" filter="drop-shadow(0px 8px 16px rgba(15, 23, 42, 0.2))"/>
+  <text x="585" y="576" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="bold">Authenticate &amp; Open Command Center →</text>
+
+  <!-- Helper Text -->
+  <text x="575" y="622" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Clicking (✕) closes modal and returns to Student Login</text>
+</svg>

@@ -1,0 +1,264 @@
+<svg width="1440" height="1060" viewBox="0 0 1440 1060" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft Canvas Background -->
+  <rect width="1440" height="1060" fill="#F4F7FE"/>
+
+  <!-- ================= 1. BEHANCE MINIMAL LEFT SIDEBAR (230px) ================= -->
+  <rect width="230" height="1060" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- Logo -->
+  <rect x="24" y="24" width="38" height="38" rx="12" fill="#2563EB"/>
+  <path d="M43 36C41 38 40 41 41 44C42 47 45 48 48 47" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 34C37 37 36 42 38 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <text x="72" y="44" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.5">Edu<tspan fill="#2563EB">Sync</tspan></text>
+  <text x="72" y="56" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">STUDENT PORTAL</text>
+
+  <text x="28" y="100" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" letter-spacing="1">MAIN MENU</text>
+
+  <!-- Navigation Items -->
+  <!-- 1. Dashboard (Active Blue Pill) -->
+  <rect x="16" y="112" width="198" height="44" rx="12" fill="#2563EB"/>
+  <rect x="32" y="126" width="16" height="16" rx="4" fill="#FFFFFF" fill-opacity="0.2"/>
+  <text x="58" y="140" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="700">Dashboard</text>
+
+  <!-- 2. My Classes -->
+  <rect x="16" y="162" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="188" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">My Classes</text>
+
+  <!-- 3. LMS Video Player -->
+  <rect x="16" y="210" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="236" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">LMS Video Player</text>
+
+  <!-- 4. Tute Center -->
+  <rect x="16" y="258" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="284" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">Tute Center</text>
+
+  <!-- 5. Quizzes & Ranks -->
+  <rect x="16" y="306" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="332" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">Quizzes &amp; Ranks</text>
+
+  <!-- 6. Smart Pass & ID (Drawer Trigger) -->
+  <rect x="16" y="354" width="198" height="42" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="58" y="380" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Smart Pass &amp; ID</text>
+
+  <!-- Bottom Cohort Badge -->
+  <rect x="16" y="960" width="198" height="58" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="980" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700">CURRENT BATCH</text>
+  <circle cx="196" cy="977" r="3.5" fill="#10B981"/>
+  <text x="28" y="996" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700">2027 A/L Physical Science</text>
+  <text x="28" y="1008" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="600">Combined Maths Theory</text>
+
+  <!-- ================= 2. UNIFIED UNIVERSAL HEADER (NO QR BUTTON) ================= -->
+  <rect x="230" y="0" width="1210" height="80" fill="#FFFFFF" fill-opacity="0.95" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Left: Breadcrumb & Title -->
+  <text x="260" y="32" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600">Student Portal / <tspan fill="#2563EB" font-weight="700">Overview</tspan></text>
+  <text x="260" y="58" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="20" font-weight="900" letter-spacing="-0.5">Dashboard</text>
+
+  <!-- Center: Search Command Bar -->
+  <rect x="490" y="20" width="400" height="40" rx="20" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="514" cy="40" r="5" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="518" y1="44" x2="524" y2="50" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="536" y="44" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Search classes, tutes, formulas, records...</text>
+  <rect x="850" y="28" width="28" height="24" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="856" y="44" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">⌘K</text>
+
+  <!-- Right: Attendance Capsule + Notification Bell with Red Dot + Profile Capsule -->
+  <rect x="910" y="22" width="190" height="36" rx="18" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="926" cy="40" r="4" fill="#10B981"/>
+  <text x="936" y="44" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Hall 04 Checked-In</text>
+  <text x="1040" y="44" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="11">• 08:02</text>
+
+  <!-- Bell with active indicator -->
+  <circle cx="1126" cy="40" r="18" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="1134" cy="32" r="4" fill="#2563EB"/>
+
+  <!-- Profile Capsule -->
+  <rect x="1160" y="16" width="230" height="48" rx="24" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="1184" cy="40" r="16" fill="#E2E8F0"/>
+  <circle cx="1194" cy="48" r="4" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="1208" y="36" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Pasindu Nethsara</text>
+  <text x="1208" y="48" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">STU-9402 • 2027 A/L</text>
+
+  <!-- ================= 3. CINEMATIC ACADEMIC HERO BANNER (PG TRAVELERS & BIG PLATE INSPIRED) ================= -->
+  <rect x="260" y="104" width="730" height="130" rx="22" fill="#0F172A"/>
+  
+  <text x="286" y="132" fill="#93C5FD" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" letter-spacing="1">BATCH 2027 A/L • PHYSICAL SCIENCE</text>
+  <text x="286" y="160" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="22" font-weight="900" letter-spacing="-0.5">Hello, Pasindu! 👋</text>
+  <text x="286" y="180" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Combined Maths (Theory) with Eng. Saman Perera is live in Hall 04.</text>
+
+  <!-- Action Buttons -->
+  <rect x="286" y="196" width="160" height="30" rx="9" fill="#2563EB"/>
+  <text x="306" y="215" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">▶ Resume Lesson</text>
+
+  <rect x="456" y="196" width="160" height="30" rx="9" fill="#FFFFFF" fill-opacity="0.15" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="476" y="215" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">💳 Smart Pass &amp; ID</text>
+
+  <!-- ================= 4. ENROLLED CLASSES (BIG PLATE HOVER ZOOM CARDS) ================= -->
+  
+  <!-- Course Card 1: Combined Maths -->
+  <rect x="260" y="254" width="350" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="260" y="254" width="350" height="120" rx="20" fill="#1E293B"/>
+  <rect x="274" y="268" width="130" height="22" rx="11" fill="#2563EB"/>
+  <text x="284" y="283" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="800">IN SESSION • HALL 04</text>
+  
+  <text x="280" y="396" fill="#2563EB" font-family="Montserrat, sans-serif" font-size="10" font-weight="800">COMBINED MATHEMATICS</text>
+  <text x="280" y="416" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="14" font-weight="800">Calculus &amp; Complex Analysis</text>
+  <text x="280" y="434" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Eng. Saman Perera • Sunday 08:00 AM</text>
+  
+  <!-- Progress Bar -->
+  <rect x="280" y="452" width="310" height="6" rx="3" fill="#E2E8F0"/>
+  <rect x="280" y="452" width="242" height="6" rx="3" fill="#2563EB"/>
+  <text x="280" y="474" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="10">80% Rule: <tspan fill="#2563EB" font-weight="700">78% Watched</tspan></text>
+  
+  <rect x="280" y="492" width="145" height="32" rx="10" fill="#2563EB"/>
+  <text x="316" y="512" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Watch Live</text>
+  <rect x="435" y="492" width="155" height="32" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="468" y="512" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Tute 04 Pass</text>
+
+  <!-- Course Card 2: Chemistry -->
+  <rect x="635" y="254" width="355" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="635" y="254" width="355" height="120" rx="20" fill="#334155"/>
+  <rect x="650" y="268" width="140" height="22" rx="11" fill="#0F172A" fill-opacity="0.8"/>
+  <text x="660" y="283" fill="#FBBF24" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="800">UPCOMING • 01:00 PM</text>
+  
+  <text x="655" y="396" fill="#D97706" font-family="Montserrat, sans-serif" font-size="10" font-weight="800">CHEMISTRY REVISION</text>
+  <text x="655" y="416" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="14" font-weight="800">Organic Reaction Mechanisms</text>
+  <text x="655" y="434" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Dr. K. Silva • Hall 01 (Balcony)</text>
+
+  <rect x="655" y="452" width="315" height="6" rx="3" fill="#E2E8F0"/>
+  <rect x="655" y="452" width="189" height="6" rx="3" fill="#D97706"/>
+  <text x="655" y="474" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="10">80% Rule: <tspan fill="#D97706" font-weight="700">60% Complete</tspan></text>
+
+  <rect x="655" y="492" width="145" height="32" rx="10" fill="#0F172A"/>
+  <text x="690" y="512" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">View VOD</text>
+  <rect x="810" y="492" width="160" height="32" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="840" y="512" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Model Paper</text>
+
+  <!-- ================= 5. STUDY ACTIVITY & XP GAUGE ================= -->
+  <rect x="260" y="574" width="730" height="150" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="285" y="604" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="14" font-weight="800">Study Activity &amp; Standing</text>
+  
+  <!-- XP Circle Gauge -->
+  <circle cx="340" cy="660" r="34" stroke="#EFF6FF" stroke-width="8" fill="none"/>
+  <circle cx="340" cy="660" r="34" stroke="#2563EB" stroke-width="8" stroke-dasharray="213" stroke-dashoffset="40" stroke-linecap="round" fill="none"/>
+  <text x="340" y="658" text-anchor="middle" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="13" font-weight="900">3,450</text>
+  <text x="340" y="672" text-anchor="middle" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700">XP PTS</text>
+
+  <text x="400" y="644" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">National Batch Rank: <tspan fill="#D97706" font-weight="900">Rank #2 🥈</tspan></text>
+  <text x="400" y="662" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Turnstile attendance rate: <tspan fill="#10B981" font-weight="700">96.4% (Atomic Synced)</tspan></text>
+  <text x="400" y="680" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Attendance Streak: <tspan fill="#D97706" font-weight="700">🔥 10-Day Streak (+50 XP)</tspan></text>
+
+  <!-- ================= 6. RIGHT COLUMN: CALENDAR & TODAY'S CLASSES ================= -->
+  <!-- Mini Calendar -->
+  <rect x="1010" y="104" width="400" height="106" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1030" y="132" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="11" font-weight="800">November 2026</text>
+  <text x="1360" y="132" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Today</text>
+
+  <!-- 7 Day Strip -->
+  <text x="1038" y="160" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10">M</text>
+  <text x="1086" y="160" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10">T</text>
+  <text x="1134" y="160" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10">W</text>
+  <text x="1182" y="160" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10">T</text>
+  <text x="1230" y="160" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10">F</text>
+  <text x="1278" y="160" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">S</text>
+  <text x="1326" y="160" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10">S</text>
+
+  <rect x="1270" y="168" width="28" height="26" rx="8" fill="#2563EB"/>
+  <text x="1278" y="185" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">22</text>
+  <text x="1326" y="185" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">23</text>
+
+  <!-- ================= TODAY'S SCHEDULED CLASSES WIDGET (UNDER CALENDAR) ================= -->
+  <rect x="1010" y="226" width="400" height="225" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1030" y="254" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="12" font-weight="800">Today's Classes</text>
+  <rect x="1315" y="240" width="80" height="18" rx="6" fill="#EFF6FF"/>
+  <text x="1325" y="253" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">SUN 22 NOV</text>
+  <line x1="1030" y1="268" x2="1390" y2="268" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Class 1: Combined Maths (Attended ✓) -->
+  <rect x="1025" y="280" width="370" height="66" rx="14" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="1040" y="300" fill="#065F46" font-family="Montserrat, sans-serif" font-size="12" font-weight="800">Combined Maths (Theory)</text>
+  <text x="1040" y="316" fill="#047857" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Eng. Saman Perera • Hall 04</text>
+  <text x="1040" y="332" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9">08:00 AM - 01:00 PM • Tap: 08:02 AM</text>
+  
+  <rect x="1295" y="290" width="90" height="22" rx="11" fill="#10B981"/>
+  <text x="1308" y="305" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">ATTENDED ✓</text>
+
+  <!-- Class 2: Chemistry (Upcoming) -->
+  <rect x="1025" y="354" width="370" height="66" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1040" y="374" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="12" font-weight="800">Chemistry (Revision &amp; Paper)</text>
+  <text x="1040" y="390" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Dr. K. Silva • Hall 01 (Balcony)</text>
+  <text x="1040" y="406" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9">01:00 PM - 05:30 PM • Gate opens 12:45</text>
+  
+  <rect x="1305" y="364" width="80" height="22" rx="11" fill="#E2E8F0"/>
+  <text x="1318" y="379" fill="#475569" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">UPCOMING</text>
+
+  <!-- Printed Tute Desk -->
+  <rect x="1010" y="465" width="400" height="150" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1030" y="492" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="12" font-weight="800">Printed Tute Desk</text>
+  <rect x="1330" y="478" width="65" height="18" rx="6" fill="#ECFDF5"/>
+  <text x="1340" y="491" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="800">HALL 04</text>
+
+  <rect x="1025" y="508" width="370" height="42" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1040" y="530" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Tute 04: Calculus</text>
+  <rect x="1335" y="516" width="50" height="24" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="1348" y="532" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700">PDF</text>
+
+  <rect x="1025" y="558" width="370" height="42" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+  <text x="1040" y="580" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Model Paper 02 Pack</text>
+  <rect x="1320" y="566" width="65" height="24" rx="6" fill="#FEF3C7"/>
+  <text x="1328" y="582" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">PENDING</text>
+
+  <!-- ================= 7. LIVE TOAST MESSAGE POPUP (ON BUTTON CLICK STATE) ================= -->
+  <!-- Pop-up Toast Message Box -->
+  <rect x="1010" y="635" width="400" height="140" rx="18" fill="#0F172A" stroke="#10B981" stroke-width="2" filter="drop-shadow(0 15px 30px rgba(0,0,0,0.3))"/>
+  
+  <circle cx="1032" cy="658" r="4" fill="#10B981"/>
+  <text x="1044" y="662" fill="#10B981" font-family="JetBrains Mono, monospace" font-size="10" font-weight="800">NFC HARDWARE VALIDATED ✓</text>
+  <text x="1328" y="662" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">08:02:14 AM</text>
+  
+  <line x1="1025" y1="674" x2="1395" y2="674" stroke="#1E293B" stroke-width="1"/>
+  
+  <text x="1030" y="694" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Student: <tspan fill="#FFFFFF" font-weight="700">Pasindu Nethsara (STU-9402)</tspan></text>
+  <text x="1030" y="710" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Turnstile: <tspan fill="#7DD3FC" font-weight="700" font-family="JetBrains Mono, monospace">Hall 04 Entrance Gate A2</tspan></text>
+  
+  <text x="1030" y="728" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">Fee: -LKR 4,000 Deducted</text>
+  <text x="1275" y="728" fill="#E2E8F0" font-family="JetBrains Mono, monospace" font-size="10">New Bal: LKR 8,400</text>
+  
+  <rect x="1025" y="736" width="370" height="26" rx="8" fill="#172554" stroke="#1D4ED8" stroke-width="1"/>
+  <text x="1038" y="753" fill="#60A5FA" font-family="Plus Jakarta Sans, sans-serif" font-size="10">✔ Automated SMS Dispatched to <tspan fill="#FFFFFF" font-weight="700" font-family="JetBrains Mono, monospace">+94 77 129 6697</tspan></text>
+
+  <!-- Floating Simulator Trigger Button -->
+  <rect x="1185" y="790" width="225" height="42" rx="21" fill="#2563EB" filter="drop-shadow(0 8px 16px rgba(37,99,235,0.4))"/>
+  <circle cx="1208" cy="811" r="4" fill="#10B981"/>
+  <text x="1222" y="816" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">Simulate NFC Gate Tap</text>
+
+  <!-- ================= 8. FULL-WIDTH UNIVERSAL FOOTER (EDGE-TO-EDGE, NO ROUNDED CORNERS ISLAND) ================= -->
+  <rect x="230" y="855" width="1210" height="150" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Row 1: Brand & Helpline -->
+  <rect x="260" y="878" width="34" height="34" rx="10" fill="#2563EB"/>
+  <text x="270" y="900" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="900">E</text>
+  <text x="306" y="894" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="14" font-weight="900">EduSync Platform</text>
+  <text x="306" y="908" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Unified Tuition Management &amp; NFC Ecosystem (SDGP CS76 - 2026)</text>
+
+  <circle cx="1140" cy="894" r="4" fill="#10B981"/>
+  <text x="1152" y="898" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Helpline: <tspan fill="#FFFFFF" font-weight="700" font-family="JetBrains Mono, monospace">077 129 6697</tspan> (WhatsApp Active)</text>
+
+  <line x1="260" y1="926" x2="1390" y2="926" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Row 2: Status & Legal Links -->
+  <rect x="260" y="944" width="220" height="26" rx="6" fill="#1E293B"/>
+  <circle cx="274" cy="957" r="3.5" fill="#10B981"/>
+  <text x="286" y="961" fill="#34D399" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">RFID Turnstiles: Online (418ms)</text>
+
+  <rect x="490" y="944" width="180" height="26" rx="6" fill="#1E293B"/>
+  <text x="502" y="961" fill="#60A5FA" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">SMS Gateway: Connected & Active</text>
+
+  <text x="960" y="961" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Smart Card Pass</text>
+  <text x="1070" y="961" fill="#475569">•</text>
+  <text x="1085" y="961" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">80% Rule Policy</text>
+  <text x="1190" y="961" fill="#475569">•</text>
+  <text x="1205" y="961" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">© 2026 EduSync Team</text>
+
+</svg>

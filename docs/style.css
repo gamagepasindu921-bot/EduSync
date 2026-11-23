@@ -1,0 +1,192 @@
+/* Clean Blue & White Premium Design System for EduSync */
+
+:root {
+  --brand-blue: #1d4ed8;
+  --brand-blue-hover: #1e40af;
+  --brand-cyan: #0284c7;
+  --brand-navy: #0f172a;
+  --brand-slate: #475569;
+  --bg-page: #f8fafc;
+  --card-bg: #ffffff;
+  --border-light: #e2e8f0;
+  --pale-blue: #eff6ff;
+  --wa-green: #25D366;
+  --wa-green-dark: #128C7E;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Background Gradients & Clean Modern Grid */
+.blue-white-bg {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(2, 132, 199, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    linear-gradient(#f1f5f9 1px, transparent 1px),
+    linear-gradient(90deg, #f1f5f9 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Premium White Card & Soft Glass */
+.white-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.white-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: #93c5fd;
+  box-shadow: 0 20px 30px -10px rgba(29, 78, 216, 0.12), 0 8px 10px -6px rgba(29, 78, 216, 0.05);
+}
+
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Blue Text Gradients */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-navy {
+  background: linear-gradient(135deg, #0f172a 30%, #1e3a8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn-primary-blue {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
+  transition: all 0.25s ease;
+}
+.btn-primary-blue:hover {
+  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+  box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-secondary-white {
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+.btn-secondary-white:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* Ripple & NFC Pulsing Animations */
+@keyframes nfcPulseBlue {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+.nfc-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #3b82f6;
+  animation: nfcPulseBlue 2.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Scroll reveal items */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================================
+   WHATSAPP BOT WIDGET STYLING
+   ======================================================== */
+.wa-widget-btn {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.wa-widget-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(37, 211, 102, 0.6);
+}
+
+.wa-chat-window {
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(226, 232, 240, 0.8);
+}
+
+.wa-bubble-bot {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-radius: 18px 18px 18px 4px;
+}
+
+.wa-bubble-user {
+  background: #dcf8c6;
+  color: #0f172a;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.wa-chip-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  transition: all 0.2s ease;
+}
+.wa-chip-btn:hover {
+  background: #f0fdf4;
+  border-color: #22c55e;
+  color: #15803d;
+  transform: translateY(-1px);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.5;
+  }
+}
+.wa-pulse-dot {
+  animation: pulseGlow 2s infinite ease-in-out;
+}

@@ -1,0 +1,51 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="900" fill="#F8FAFC"/>
+  <!-- Header -->
+  <rect width="1440" height="72" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="84" y="42" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="900">Edu<tspan fill="#1D4ED8">Sync</tspan></text>
+  <text x="200" y="42" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="12" font-weight="bold">MEMBER 1: VIRTUAL WALLET &amp; REVENUE SPLITS</text>
+
+  <!-- 3D Card (Left) -->
+  <rect x="64" y="120" width="420" height="260" rx="24" fill="#0A1A3A" stroke="#1D4ED8" stroke-width="2"/>
+  <text x="96" y="160" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="900">EduSync Smart Pass</text>
+  <text x="96" y="182" fill="#93C5FD" font-family="JetBrains Mono, monospace" font-size="11">NTAG213 CONTACTLESS NFC</text>
+  <rect x="96" y="200" width="50" height="36" rx="6" fill="#FBBF24" stroke="#D97706" stroke-width="2"/>
+  <text x="96" y="270" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="11">CURRENT BALANCE</text>
+  <text x="96" y="310" fill="#10B981" font-family="JetBrains Mono, monospace" font-size="32" font-weight="bold">LKR 12,500.00</text>
+  <text x="96" y="350" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="bold">PASINDU NETHSARA</text>
+  <text x="320" y="350" fill="#38BDF8" font-family="JetBrains Mono, monospace" font-size="12">STU-9402</text>
+
+  <!-- Revenue Split Card (Middle) -->
+  <rect x="520" y="120" width="420" height="260" rx="24" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="548" y="160" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="bold">Automated Revenue Split</text>
+  <text x="548" y="185" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Atomic fee deduction split upon NFC card entrance tap</text>
+  <text x="548" y="230" fill="#1D4ED8" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="bold">Tutor Share (80%): LKR 2,000</text>
+  <rect x="548" y="240" width="360" height="12" rx="6" fill="#EFF6FF"/>
+  <rect x="548" y="240" width="288" height="12" rx="6" fill="#1D4ED8"/>
+  <text x="548" y="290" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="bold">Institute Hall (20%): LKR 500</text>
+  <rect x="548" y="300" width="360" height="12" rx="6" fill="#F1F5F9"/>
+  <rect x="548" y="300" width="72" height="12" rx="6" fill="#94A3B8"/>
+
+  <!-- Top Up Action (Right) -->
+  <rect x="976" y="120" width="400" height="260" rx="24" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1004" y="160" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="bold">Parent Reload Gateway</text>
+  <text x="1004" y="185" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Reload virtual card via PayHere / Visa / Master</text>
+  <rect x="1004" y="215" width="344" height="46" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="1024" y="244" fill="#1D4ED8" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="bold">Top-up LKR 2,500</text>
+  <rect x="1004" y="275" width="344" height="46" rx="12" fill="#1D4ED8"/>
+  <text x="1110" y="304" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="bold">Top-up LKR 5,000</text>
+
+  <!-- Ledger Table Bottom -->
+  <rect x="64" y="410" width="1312" height="440" rx="24" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="96" y="450" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="bold">Real-Time Financial Audit Ledger</text>
+  <!-- Row 1 -->
+  <rect x="96" y="480" width="1248" height="60" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="120" y="516" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="bold">Entrance Tap: Pure Mathematics (Prof. Gamage)</text>
+  <text x="120" y="530" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Split: LKR 2,000 (Tutor) • LKR 500 (Institute)</text>
+  <text x="1160" y="516" fill="#EF4444" font-family="JetBrains Mono, monospace" font-size="14" font-weight="bold">- LKR 2,500.00</text>
+  <!-- Row 2 -->
+  <rect x="96" y="555" width="1248" height="60" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="120" y="591" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="bold">Parent Online Reload (Visa / PayHere Gateway)</text>
+  <text x="120" y="605" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Transaction ID: TXN-9402 • Solvency Credited</text>
+  <text x="1150" y="591" fill="#10B981" font-family="JetBrains Mono, monospace" font-size="14" font-weight="bold">+ LKR 10,000.00</text>
+</svg>

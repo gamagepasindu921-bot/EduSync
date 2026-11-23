@@ -1,0 +1,312 @@
+<svg width="1440" height="1560" viewBox="0 0 1440 1560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hero-grad-10b" x1="260" y1="94" x2="1410" y2="264" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="1560" fill="#F4F7FE"/>
+
+    <!-- ================= 1. BEHANCE MINIMAL LEFT SIDEBAR (230px) ================= -->
+  <rect width="230" height="1560" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- EduSync Logo (Original Sapphire Blue Box with NFC Waves) -->
+  <rect x="24" y="24" width="38" height="38" rx="12" fill="#2563EB"/>
+  <path d="M43 36C41 38 40 41 41 44C42 47 45 48 48 47" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 34C37 37 36 42 38 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <text x="72" y="44" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.5">Edu<tspan fill="#2563EB">Sync</tspan></text>
+  <text x="72" y="56" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">ADMIN PORTAL</text>
+
+  <!-- Admin Identity Capsule -->
+  <rect x="16" y="78" width="198" height="66" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="94" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.5">MASTER AUTHORITY</text>
+  <circle cx="196" cy="91" r="3.5" fill="#10B981"/>
+  <circle cx="42" cy="122" r="14" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="35" y="126" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="900">AW</text>
+  <text x="64" y="118" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Dr. A. Wickramasinghe</text>
+  <text x="64" y="132" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">ADM-001 • Registrar</text>
+
+  <!-- Sidebar Menu Header -->
+  <text x="28" y="166" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" letter-spacing="1">MASTER ADMINISTRATION</text>
+
+  <!-- 1. Admin Overview  -->
+  <rect x="16" y="178" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="31" y="188" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="39.5" y="188" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="31" y="196.5" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="39.5" y="196.5" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <text x="54" y="202" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Admin Overview</text>
+
+  <!-- 2. This Week Schedule  -->
+  <rect x="16" y="220" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="32" y="232" width="15" height="14" rx="3" stroke="#64748B" stroke-width="1.6"/>
+  <path d="M32 237H47M36 230V234M43 230V234" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="244" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">This Week Schedule</text>
+
+  <!-- 3. Student Management (ACTIVE) -->
+  <rect x="16" y="262" width="198" height="38" rx="12" fill="#0F172A"/>
+  <path d="M40 273L31 278L40 283L49 278L40 273Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M35 280.5V286C35 288 37 289.5 40 289.5C43 289.5 45 288 45 286V280.5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="54" y="286" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="700">Student Management</text>
+
+  <!-- 4. Teacher &amp; Commissions  -->
+  <rect x="16" y="304" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="32" y="316" width="16" height="12" rx="2" stroke="#64748B" stroke-width="1.6"/>
+  <path d="M37 316V313H43V316" stroke="#64748B" stroke-width="1.5"/>
+  <text x="54" y="328" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Teacher &amp; Commissions</text>
+
+  <!-- 5. Parent &amp; SMS Hub  -->
+  <rect x="16" y="346" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M33 370C33 366 36 365 40 365C44 365 47 366 47 370" stroke="#64748B" stroke-width="1.6"/>
+  <circle cx="40" cy="361" r="3" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="370" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Parent &amp; SMS Hub</text>
+
+  <!-- 6. Operations &amp; Logistics  -->
+  <rect x="16" y="388" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M33 402L39 399L45 402L39 405L33 402Z" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M33 402V408L39 411V405M45 402V408L39 411" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="412" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Operations &amp; Logistics</text>
+
+  <!-- Security Badge -->
+  <rect x="16" y="1466" width="198" height="74" rx="14" fill="#0F172A"/>
+  <text x="28" y="1488" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.5">SECURITY ENCLAVE</text>
+  <circle cx="196" cy="1485" r="3.5" fill="#10B981"/>
+  <text x="28" y="1508" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">System: Operational</text>
+  <text x="28" y="1526" fill="#10B981" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">AES-256 • Hardware MAC Verified</text>
+
+
+  <!-- ================= 2. UNIFIED UNIVERSAL HEADER ================= -->
+  <rect x="230" y="0" width="1210" height="70" fill="#FFFFFF" fill-opacity="0.95" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="260" y="28" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">Admin Portal / <tspan fill="#0F172A" font-weight="700">Student Directory &amp; NFC Passes</tspan></text>
+  <text x="260" y="52" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="19" font-weight="900" letter-spacing="-0.5">Student Enrollment &amp; Wallet Management</text>
+
+  <rect x="710" y="16" width="300" height="38" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="728" cy="35" r="5" stroke="#94A3B8" stroke-width="1.8"/>
+  <line x1="732" y1="39" x2="736" y2="43" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="746" y="39" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Search faculty, students, UIDs, gates...</text>
+  <rect x="970" y="24" width="28" height="22" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="974" y="39" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">⌘K</text>
+
+  <rect x="1030" y="18" width="215" height="34" rx="17" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="1046" cy="35" r="4" fill="#10B981"/>
+  <text x="1058" y="39" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Institute Live: <tspan font-family="JetBrains Mono, monospace" font-weight="800">1,420 / 1,600</tspan> <tspan fill="#047857" font-size="10">(88.7%)</tspan></text>
+
+  <circle cx="1275" cy="35" r="16" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="1267" y="40" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="11" font-weight="900">AW</text>
+
+<!-- ================= 3. CINEMATIC HERO BANNER ================= -->
+  <rect x="256" y="94" width="1154" height="170" rx="22" fill="url(#hero-grad-10b)"/>
+  <rect x="286" y="116" width="460" height="26" rx="13" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1"/>
+  <circle cx="300" cy="129" r="4" fill="#34D399"/>
+  <text x="312" y="133" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="10" font-weight="800">MEMBER 1 &amp; MEMBER 3 • VIRTUAL WALLET &amp; ANTI-PIRACY ENCLAVE</text>
+  <text x="286" y="172" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="24" font-weight="900" letter-spacing="-0.5">Student Management &amp; NFC Virtual Wallet Desk</text>
+  <text x="286" y="194" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500">Centralized registry for 1,420 students. Mint new NFC Smart Passes, manage over-the-counter cashier cash reloads, monitor virtual wallet float balances, and reset anti-piracy device bindings.</text>
+
+  <rect x="286" y="210" width="180" height="38" rx="11" fill="#FFFFFF"/>
+  <text x="306" y="234" fill="#1E3A8A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">+ Enroll New Student</text>
+
+  <rect x="478" y="210" width="170" height="38" rx="11" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="496" y="234" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Pair Blank NFC Card</text>
+
+  <rect x="660" y="210" width="140" height="38" rx="11" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="682" y="234" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Export CSV</text>
+
+  <!-- ================= 4. 4 METRICS CARDS ROW ================= -->
+  <rect x="256" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="274" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">TOTAL ENROLLED</text>
+  <text x="274" y="342" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">1,420</text>
+  <text x="356" y="342" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="12">Students</text>
+  <text x="274" y="380" fill="#059669" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">100% Identity Verified ✓</text>
+
+  <rect x="550" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="568" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">NFC PASSES BOUND</text>
+  <text x="568" y="342" fill="#059669" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">1,406</text>
+  <text x="646" y="342" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="12">/ 1,420 (99%)</text>
+  <text x="568" y="380" fill="#D97706" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">14 Unpaired Blank Passes</text>
+
+  <rect x="844" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="862" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">FROZEN CARDS</text>
+  <text x="862" y="342" fill="#E11D48" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">14 Cards</text>
+  <text x="862" y="380" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10.5">Turnstile access blocked ❄️</text>
+
+  <rect x="1138" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1156" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">TOTAL WALLET POOL</text>
+  <text x="1156" y="342" fill="#7E22CE" font-family="JetBrains Mono, monospace" font-size="22" font-weight="900">LKR 11.92M</text>
+  <text x="1156" y="380" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Virtual Floating Float Balance</text>
+
+  <!-- ================= 5. COMPLETE STUDENT REGISTRY DIRECTORY ================= -->
+  <rect x="256" y="420" width="1154" height="470" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="286" y="454" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="16" font-weight="800">Enrolled Students Master Registry</text>
+  <text x="286" y="470" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Filter students, view NFC Smart Pass status, virtual wallet balances, and anti-piracy device locks</text>
+
+  <!-- Search & Filter Controls -->
+  <rect x="886" y="440" width="220" height="34" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="900" y="461" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Search name, STU-ID, or UID...</text>
+
+  <rect x="1116" y="440" width="140" height="34" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="1128" y="461" fill="#334155" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="600">All Streams ▼</text>
+
+  <rect x="1266" y="440" width="124" height="34" rx="10" fill="#2563EB"/>
+  <text x="1280" y="461" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">+ Enroll Student</text>
+
+  <!-- Table Header -->
+  <rect x="286" y="492" width="1094" height="28" rx="6" fill="#F8FAFC"/>
+  <text x="298" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">STUDENT &amp; ID</text>
+  <text x="490" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">STREAM</text>
+  <text x="610" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">LINKED PARENT</text>
+  <text x="760" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">NFC SMART PASS</text>
+  <text x="920" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">WALLET</text>
+  <text x="1030" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">DEVICE BINDING</text>
+  <text x="1280" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">ACTIONS</text>
+
+  <!-- Row 1: Pasindu Nethsara -->
+  <circle cx="310" cy="546" r="13" fill="#DBEAFE"/>
+  <text x="303" y="550" fill="#1D4ED8" font-family="Montserrat, sans-serif" font-size="10" font-weight="900">PN</text>
+  <text x="332" y="542" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Pasindu Nethsara</text>
+  <text x="332" y="556" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">STU-9402</text>
+  <text x="490" y="548" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11">2026 A/L Maths</text>
+  <text x="610" y="542" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">C. Nethsara</text>
+  <text x="610" y="556" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">077 129 6697</text>
+  <rect x="760" y="538" width="125" height="20" rx="6" fill="#ECFDF5"/>
+  <text x="768" y="552" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">04:7A:B2 (Active)</text>
+  <text x="920" y="548" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 8,400.00</text>
+  <rect x="1030" y="538" width="115" height="20" rx="6" fill="#F1F5F9"/>
+  <text x="1038" y="552" fill="#475569" font-family="JetBrains Mono, monospace" font-size="9">iPhone 14 (Bound)</text>
+  <rect x="1200" y="538" width="55" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1210" y="553" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">+ Cash</text>
+  <rect x="1262" y="538" width="50" height="22" rx="6" fill="#F1F5F9"/>
+  <text x="1270" y="553" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Freeze</text>
+  <rect x="1318" y="538" width="62" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1324" y="553" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="800">Reset Dev</text>
+  <line x1="286" y1="572" x2="1380" y2="572" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Row 2: Tharushi Nethsara (Sibling) -->
+  <circle cx="310" cy="600" r="13" fill="#F3E8FF"/>
+  <text x="303" y="604" fill="#7E22CE" font-family="Montserrat, sans-serif" font-size="10" font-weight="900">TN</text>
+  <text x="332" y="596" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Tharushi Nethsara</text>
+  <text x="332" y="610" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">STU-7814</text>
+  <text x="490" y="602" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11">2026 A/L Bio</text>
+  <text x="610" y="596" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">C. Nethsara <tspan fill="#7E22CE" font-size="9">[Sibling]</tspan></text>
+  <text x="610" y="610" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">077 129 6697</text>
+  <rect x="760" y="592" width="125" height="20" rx="6" fill="#ECFDF5"/>
+  <text x="768" y="606" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">04:88:21 (Active)</text>
+  <text x="920" y="602" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 3,200.00</text>
+  <rect x="1030" y="592" width="115" height="20" rx="6" fill="#F1F5F9"/>
+  <text x="1038" y="606" fill="#475569" font-family="JetBrains Mono, monospace" font-size="9">MacBook (Bound)</text>
+  <rect x="1200" y="592" width="55" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1210" y="607" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">+ Cash</text>
+  <rect x="1262" y="592" width="50" height="22" rx="6" fill="#F1F5F9"/>
+  <text x="1270" y="607" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Freeze</text>
+  <rect x="1318" y="592" width="62" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1324" y="607" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="800">Reset Dev</text>
+  <line x1="286" y1="626" x2="1380" y2="626" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Row 3: Kaveen Senanayake -->
+  <circle cx="310" cy="654" r="13" fill="#FEF3C7"/>
+  <text x="303" y="658" fill="#B45309" font-family="Montserrat, sans-serif" font-size="10" font-weight="900">KS</text>
+  <text x="332" y="650" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Kaveen Senanayake</text>
+  <text x="332" y="664" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">STU-8821</text>
+  <text x="490" y="656" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11">2026 A/L Maths</text>
+  <text x="610" y="650" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">K. Senanayake</text>
+  <text x="610" y="664" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">071 884 1920</text>
+  <rect x="760" y="646" width="125" height="20" rx="6" fill="#FFE4E6"/>
+  <text x="768" y="660" fill="#E11D48" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">04:91:CC (Frozen)</text>
+  <text x="920" y="656" fill="#E11D48" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 400 (Low)</text>
+  <rect x="1030" y="646" width="115" height="20" rx="6" fill="#F1F5F9"/>
+  <text x="1038" y="660" fill="#475569" font-family="JetBrains Mono, monospace" font-size="9">Samsung (Bound)</text>
+  <rect x="1200" y="646" width="55" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1210" y="661" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">+ Cash</text>
+  <rect x="1262" y="646" width="50" height="22" rx="6" fill="#FFE4E6"/>
+  <text x="1266" y="661" fill="#E11D48" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="800">Unfreeze</text>
+  <rect x="1318" y="646" width="62" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1324" y="661" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="800">Reset Dev</text>
+  <line x1="286" y1="680" x2="1380" y2="680" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Row 4: Sachini Wickramasinghe -->
+  <circle cx="310" cy="708" r="13" fill="#D1FAE5"/>
+  <text x="303" y="712" fill="#047857" font-family="Montserrat, sans-serif" font-size="10" font-weight="900">SW</text>
+  <text x="332" y="704" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Sachini Wickramasinghe</text>
+  <text x="332" y="718" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">STU-6520</text>
+  <text x="490" y="710" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11">2026 A/L Tech</text>
+  <text x="610" y="704" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">D. Wickrama</text>
+  <text x="610" y="718" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">076 552 1109</text>
+  <rect x="760" y="700" width="125" height="20" rx="6" fill="#FEF3C7"/>
+  <text x="768" y="714" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Unpaired Card ⚠️</text>
+  <text x="920" y="710" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 12,500.00</text>
+  <rect x="1030" y="700" width="115" height="20" rx="6" fill="#F1F5F9"/>
+  <text x="1038" y="714" fill="#475569" font-family="JetBrains Mono, monospace" font-size="9">iPad Pro (Bound)</text>
+  <rect x="1200" y="700" width="55" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1210" y="715" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">+ Cash</text>
+  <rect x="1262" y="700" width="50" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1272" y="715" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="800">Pair</text>
+  <rect x="1318" y="700" width="62" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1324" y="715" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="800">Reset Dev</text>
+
+  <!-- Anti-Piracy Enclave Notice -->
+  <rect x="286" y="750" width="1094" height="42" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="306" y="776" fill="#1E3A8A" font-family="Plus Jakarta Sans, sans-serif" font-size="11"><tspan font-weight="800">Device Binding Enclave (Member 3 Security):</tspan> Each student account is locked to registered mobile/desktop hardware with floating dynamic UID watermarking during video playback. Administrators can reset bindings if student upgrades hardware.</text>
+
+  <!-- ================= 6. 2 LOWER SECTIONS: CASHIER TOP-UP & HARDWARE PAIRING ================= -->
+  <!-- Left Box: Cashier Desk -->
+  <rect x="256" y="910" width="560" height="380" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="286" y="944" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="15" font-weight="800">Over-The-Counter Cashier Desk</text>
+  <text x="286" y="960" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Cash reloads for students with instant physical receipt &amp; SMS notification</text>
+
+  <rect x="286" y="990" width="500" height="42" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="300" y="1016" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Pasindu Nethsara (STU-9402) - Balance: LKR 8,400.00</text>
+
+  <rect x="286" y="1046" width="240" height="42" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="300" y="1072" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="13" font-weight="800">LKR 4,000.00</text>
+
+  <rect x="546" y="1046" width="240" height="42" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="560" y="1072" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Physical Cash (Over Counter)</text>
+
+  <rect x="286" y="1102" width="70" height="28" rx="8" fill="#F1F5F9"/>
+  <text x="300" y="1120" fill="#334155" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">+1,000</text>
+  <rect x="366" y="1102" width="70" height="28" rx="8" fill="#F1F5F9"/>
+  <text x="380" y="1120" fill="#334155" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">+2,500</text>
+  <rect x="446" y="1102" width="70" height="28" rx="8" fill="#F1F5F9"/>
+  <text x="460" y="1120" fill="#334155" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">+4,000</text>
+  <rect x="526" y="1102" width="70" height="28" rx="8" fill="#F1F5F9"/>
+  <text x="540" y="1120" fill="#334155" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">+8,000</text>
+
+  <rect x="286" y="1146" width="500" height="44" rx="12" fill="#059669"/>
+  <text x="410" y="1173" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Accept Cash &amp; Print Institute Slip</text>
+
+  <!-- Right Box: NFC Hardware Pairing -->
+  <rect x="850" y="910" width="560" height="380" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="880" y="944" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="15" font-weight="800">USB NFC Hardware Pairing Terminal</text>
+  <text x="880" y="960" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Atomic binding of physical 13.56 MHz RFID card UID to student profile</text>
+
+  <rect x="880" y="990" width="240" height="42" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="894" y="1016" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="13" font-weight="800">04:7A:B2:9C:11</text>
+
+  <rect x="1130" y="990" width="250" height="42" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="1144" y="1016" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="13" font-weight="800">LKR 8,400.00</text>
+
+  <rect x="880" y="1046" width="500" height="42" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="894" y="1072" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Pasindu Nethsara (STU-9402)</text>
+
+  <rect x="880" y="1102" width="500" height="40" rx="10" fill="#F8FAFC"/>
+  <text x="894" y="1126" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10.5">Chip: Mifare Classic 1K • 13.56 MHz • Crypto-1 Secured ✓</text>
+
+  <rect x="880" y="1156" width="500" height="44" rx="12" fill="#2563EB"/>
+  <text x="1015" y="1183" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Pair &amp; Atomically Bind Pass</text>
+
+  <!-- ================= 7. GROUNDED FOOTER ================= -->
+  <rect x="230" y="1400" width="1210" height="160" fill="#0F172A"/>
+  <rect x="260" y="1426" width="36" height="36" rx="10" fill="#2563EB"/>
+  <text x="272" y="1450" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="17" font-weight="900">E</text>
+  <text x="308" y="1444" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="15" font-weight="900">EduSync Platform</text>
+  <text x="308" y="1458" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Unified Tuition Management &amp; NFC Ecosystem (SDGP CS76 - 2026)</text>
+  <circle cx="1220" cy="1444" r="3.5" fill="#34D399"/>
+  <text x="1232" y="1448" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">Helpline: <tspan fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-weight="800">077 129 6697</tspan></text>
+  <line x1="260" y1="1482" x2="1410" y2="1482" stroke="#1E293B" stroke-width="1"/>
+  <text x="260" y="1517" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">● RFID Turnstiles: Online (418ms)</text>
+  <text x="480" y="1517" fill="#60A5FA" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">● SMS Gateway: Connected</text>
+  <text x="820" y="1517" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Admin Overview • Students (Active) • Teachers • Parents • Operations</text>
+  <text x="1260" y="1517" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">© 2026 EduSync Team</text>
+</svg>

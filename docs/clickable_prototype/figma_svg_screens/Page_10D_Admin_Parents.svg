@@ -1,0 +1,246 @@
+<svg width="1440" height="1440" viewBox="0 0 1440 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hero-grad-10d" x1="260" y1="94" x2="1410" y2="264" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#065F46"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="1440" fill="#F4F7FE"/>
+
+    <!-- ================= 1. BEHANCE MINIMAL LEFT SIDEBAR (230px) ================= -->
+  <rect width="230" height="1440" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- EduSync Logo (Original Sapphire Blue Box with NFC Waves) -->
+  <rect x="24" y="24" width="38" height="38" rx="12" fill="#2563EB"/>
+  <path d="M43 36C41 38 40 41 41 44C42 47 45 48 48 47" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 34C37 37 36 42 38 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <text x="72" y="44" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.5">Edu<tspan fill="#2563EB">Sync</tspan></text>
+  <text x="72" y="56" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">ADMIN PORTAL</text>
+
+  <!-- Admin Identity Capsule -->
+  <rect x="16" y="78" width="198" height="66" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="94" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.5">MASTER AUTHORITY</text>
+  <circle cx="196" cy="91" r="3.5" fill="#10B981"/>
+  <circle cx="42" cy="122" r="14" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="35" y="126" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="900">AW</text>
+  <text x="64" y="118" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Dr. A. Wickramasinghe</text>
+  <text x="64" y="132" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">ADM-001 • Registrar</text>
+
+  <!-- Sidebar Menu Header -->
+  <text x="28" y="166" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" letter-spacing="1">MASTER ADMINISTRATION</text>
+
+  <!-- 1. Admin Overview  -->
+  <rect x="16" y="178" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="31" y="188" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="39.5" y="188" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="31" y="196.5" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="39.5" y="196.5" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <text x="54" y="202" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Admin Overview</text>
+
+  <!-- 2. This Week Schedule  -->
+  <rect x="16" y="220" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="32" y="232" width="15" height="14" rx="3" stroke="#64748B" stroke-width="1.6"/>
+  <path d="M32 237H47M36 230V234M43 230V234" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="244" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">This Week Schedule</text>
+
+  <!-- 3. Student Management  -->
+  <rect x="16" y="262" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M40 273L31 278L40 283L49 278L40 273Z" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M35 280.5V286C35 288 37 289.5 40 289.5C43 289.5 45 288 45 286V280.5" stroke="#64748B" stroke-width="1.5"/>
+  <text x="54" y="286" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Student Management</text>
+
+  <!-- 4. Teacher &amp; Commissions  -->
+  <rect x="16" y="304" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="32" y="316" width="16" height="12" rx="2" stroke="#64748B" stroke-width="1.6"/>
+  <path d="M37 316V313H43V316" stroke="#64748B" stroke-width="1.5"/>
+  <text x="54" y="328" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Teacher &amp; Commissions</text>
+
+  <!-- 5. Parent &amp; SMS Hub (ACTIVE) -->
+  <rect x="16" y="346" width="198" height="38" rx="12" fill="#0F172A"/>
+  <path d="M33 370C33 366 36 365 40 365C44 365 47 366 47 370" stroke="#FFFFFF" stroke-width="1.6"/>
+  <circle cx="40" cy="361" r="3" stroke="#FFFFFF" stroke-width="1.6"/>
+  <text x="54" y="370" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="700">Parent &amp; SMS Hub</text>
+
+  <!-- 6. Operations &amp; Logistics  -->
+  <rect x="16" y="388" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M33 402L39 399L45 402L39 405L33 402Z" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M33 402V408L39 411V405M45 402V408L39 411" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="412" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Operations &amp; Logistics</text>
+
+  <!-- Security Badge -->
+  <rect x="16" y="1346" width="198" height="74" rx="14" fill="#0F172A"/>
+  <text x="28" y="1368" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.5">SECURITY ENCLAVE</text>
+  <circle cx="196" cy="1365" r="3.5" fill="#10B981"/>
+  <text x="28" y="1388" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">System: Operational</text>
+  <text x="28" y="1406" fill="#10B981" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">AES-256 • Hardware MAC Verified</text>
+
+
+  <!-- ================= 2. UNIFIED UNIVERSAL HEADER ================= -->
+  <rect x="230" y="0" width="1210" height="70" fill="#FFFFFF" fill-opacity="0.95" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="260" y="28" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">Admin Portal / <tspan fill="#0F172A" font-weight="700">Parent Directory &amp; SMS Gateway</tspan></text>
+  <text x="260" y="52" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="19" font-weight="900" letter-spacing="-0.5">Parental Telemetry &amp; Automated SMS Alerts</text>
+
+  <rect x="710" y="16" width="300" height="38" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="728" cy="35" r="5" stroke="#94A3B8" stroke-width="1.8"/>
+  <line x1="732" y1="39" x2="736" y2="43" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="746" y="39" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Search faculty, students, UIDs, gates...</text>
+  <rect x="970" y="24" width="28" height="22" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="974" y="39" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">⌘K</text>
+
+  <rect x="1030" y="18" width="215" height="34" rx="17" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="1046" cy="35" r="4" fill="#10B981"/>
+  <text x="1058" y="39" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Institute Live: <tspan font-family="JetBrains Mono, monospace" font-weight="800">1,420 / 1,600</tspan> <tspan fill="#047857" font-size="10">(88.7%)</tspan></text>
+
+  <circle cx="1275" cy="35" r="16" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="1267" y="40" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="11" font-weight="900">AW</text>
+
+<!-- ================= 3. HERO BANNER ================= -->
+  <rect x="256" y="94" width="1154" height="170" rx="22" fill="url(#hero-grad-10d)"/>
+  <rect x="286" y="116" width="460" height="26" rx="13" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1"/>
+  <circle cx="300" cy="129" r="4" fill="#34D399"/>
+  <text x="312" y="133" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="10" font-weight="800">MEMBER 5 &amp; MEMBER 2 • MULTI-CHILD PORTALS &amp; PROACTIVE SMS ALERTS</text>
+  <text x="286" y="172" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="24" font-weight="900" letter-spacing="-0.5">Parent Directory &amp; Automated SMS Gateway</text>
+  <text x="286" y="194" fill="#D1FAE5" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500">Manage 1,180 registered families. Configure multi-child sibling linkages under unified accounts, monitor automated 15-minute absentee alerts, and broadcast emergency announcements institute-wide.</text>
+
+  <rect x="286" y="210" width="165" height="38" rx="11" fill="#FFFFFF"/>
+  <text x="306" y="234" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">+ Link Sibling Child</text>
+
+  <rect x="463" y="210" width="225" height="38" rx="11" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="481" y="234" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Broadcast SMS to 1,420 Parents</text>
+
+  <rect x="700" y="210" width="155" height="38" rx="11" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="718" y="234" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Test Gateway Ping</text>
+
+  <!-- ================= 4. METRICS ROW ================= -->
+  <rect x="256" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="274" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">REGISTERED PARENTS</text>
+  <text x="274" y="342" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">1,180</text>
+  <text x="340" y="342" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="12">Families</text>
+  <text x="274" y="380" fill="#059669" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">Multi-Child Enabled ✓</text>
+
+  <rect x="550" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="568" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">TODAY'S PUSH SMS</text>
+  <text x="568" y="342" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">1,418</text>
+  <text x="635" y="342" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="12">Sent</text>
+  <text x="568" y="380" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">Sender ID: EduSyncGate</text>
+
+  <rect x="844" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="862" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">DELIVERY RATE</text>
+  <text x="862" y="342" fill="#059669" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">99.8%</text>
+  <text x="862" y="380" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10.5">2 SMS Numbers Retrying</text>
+
+  <rect x="1138" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1156" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">15-MIN ABSENT ALERTS</text>
+  <text x="1156" y="342" fill="#D97706" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">14 Alerts</text>
+  <text x="1156" y="380" fill="#D97706" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">Dispatched at 08:15 AM</text>
+
+  <!-- ================= 5. PARENT REGISTRY DIRECTORY ================= -->
+  <rect x="256" y="420" width="1154" height="440" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="286" y="454" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="16" font-weight="800">Registered Parents &amp; Multi-Child Families</text>
+  <text x="286" y="470" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Verified mobile contacts, linked sibling profiles, automated alerts status, and direct communication</text>
+
+  <rect x="1246" y="440" width="144" height="34" rx="10" fill="#059669"/>
+  <text x="1260" y="461" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">+ Link Sibling Child</text>
+
+  <rect x="286" y="492" width="1094" height="28" rx="6" fill="#F8FAFC"/>
+  <text x="298" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">PARENT NAME</text>
+  <text x="500" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">VERIFIED MOBILE</text>
+  <text x="690" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">LINKED SIBLING CHILDREN</text>
+  <text x="960" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">PROACTIVE ALERTS</text>
+  <text x="1170" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">LAST DELIVERY</text>
+  <text x="1300" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">ACTIONS</text>
+
+  <!-- Row 1: Mrs. Chandrika Nethsara -->
+  <text x="298" y="542" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Mrs. Chandrika Nethsara</text>
+  <text x="298" y="556" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">PAR-8820 • Kottawa</text>
+  <text x="500" y="542" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="12" font-weight="800">+94 77 129 6697</text>
+  <text x="500" y="556" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Gateway Verified ✓</text>
+  <rect x="690" y="534" width="118" height="20" rx="6" fill="#EFF6FF"/>
+  <text x="696" y="548" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Pasindu (STU-9402)</text>
+  <rect x="814" y="534" width="118" height="20" rx="6" fill="#F3E8FF"/>
+  <text x="820" y="548" fill="#7E22CE" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Tharushi (STU-7814)</text>
+  <text x="960" y="548" fill="#059669" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">15-Min: ON • Fee Tap: ON</text>
+  <text x="1170" y="548" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10.5">08:15 AM (Present ✓)</text>
+  <rect x="1290" y="538" width="85" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1302" y="553" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Test SMS</text>
+  <line x1="286" y1="572" x2="1380" y2="572" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Row 2: Mr. Kamal Senanayake -->
+  <text x="298" y="596" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Mr. Kamal Senanayake</text>
+  <text x="298" y="610" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">PAR-5541 • Maharagama</text>
+  <text x="500" y="596" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="12" font-weight="800">+94 71 884 1920</text>
+  <text x="500" y="610" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Gateway Verified ✓</text>
+  <rect x="690" y="588" width="118" height="20" rx="6" fill="#EFF6FF"/>
+  <text x="696" y="602" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Kaveen (STU-8821)</text>
+  <text x="960" y="602" fill="#D97706" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">15-Min: ON • Low Bal: ON</text>
+  <text x="1170" y="602" fill="#E11D48" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="800">08:15 AM (Absent Sent)</text>
+  <rect x="1290" y="592" width="85" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1302" y="607" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Test SMS</text>
+  <line x1="286" y1="626" x2="1380" y2="626" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Row 3: Mrs. Dilrukshi Jayasuriya -->
+  <text x="298" y="650" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Mrs. Dilrukshi Jayasuriya</text>
+  <text x="298" y="664" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">PAR-9012 • Nugegoda</text>
+  <text x="500" y="650" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="12" font-weight="800">+94 76 552 1109</text>
+  <text x="500" y="664" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Gateway Verified ✓</text>
+  <rect x="690" y="642" width="118" height="20" rx="6" fill="#ECFDF5"/>
+  <text x="696" y="656" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">Sachini (STU-6520)</text>
+  <text x="960" y="656" fill="#059669" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">15-Min: ON • Fee Tap: ON</text>
+  <text x="1170" y="656" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10.5">08:24 AM (Present ✓)</text>
+  <rect x="1290" y="646" width="85" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1302" y="661" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Test SMS</text>
+
+  <!-- ================= 6. LOWER 2 COLUMNS: BROADCAST & PROACTIVE RULES ================= -->
+  <!-- Left Box: Broadcast Gateway -->
+  <rect x="256" y="880" width="560" height="380" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="286" y="914" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="15" font-weight="800">Institute Emergency Broadcast Gateway</text>
+  <text x="286" y="930" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Push instantaneous announcement SMS to all 1,180 registered families</text>
+
+  <rect x="286" y="960" width="500" height="42" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="300" y="986" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Target: All 1,180 Registered Families (1,420 Students)</text>
+
+  <rect x="286" y="1016" width="500" height="80" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="300" y="1042" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Type official announcement (e.g. Weather notice or special seminar schedule)...</text>
+
+  <text x="286" y="1120" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10.5">Sender ID: EduSyncGate • 160 Chars / Standard GSM-7</text>
+
+  <rect x="286" y="1140" width="500" height="44" rx="12" fill="#0F172A"/>
+  <text x="430" y="1167" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Broadcast SMS to 1,420 Parents</text>
+
+  <!-- Right Box: Proactive Safeguards -->
+  <rect x="850" y="880" width="560" height="380" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="880" y="914" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="15" font-weight="800">Proactive Safeguards (Proposal Section 7)</text>
+  <text x="880" y="930" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Automated rules triggered without human manual intervention</text>
+
+  <rect x="880" y="960" width="500" height="66" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="896" y="984" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">1. 15-Minute Absentee Safeguard</text>
+  <text x="1270" y="984" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">08:15 AM</text>
+  <text x="896" y="1006" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Triggers automatically if student has not tapped within 15 mins of class start.</text>
+
+  <rect x="880" y="1038" width="500" height="66" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="896" y="1062" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">2. Contactless Turnstile Fee Deduction SMS</text>
+  <text x="1270" y="1062" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">Instant Tap</text>
+  <text x="896" y="1084" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Every entrance tap pushes fee deduction and remaining wallet balance to parent.</text>
+
+  <rect x="880" y="1116" width="500" height="66" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="896" y="1140" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">3. End-of-Day Daily Summary Report</text>
+  <text x="1270" y="1140" fill="#7E22CE" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">06:00 PM</text>
+  <text x="896" y="1162" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Comprehensive summary detailing physical stay duration and LMS watch-time.</text>
+
+  <!-- 7. Grounded Footer -->
+  <rect x="230" y="1280" width="1210" height="160" fill="#0F172A"/>
+  <rect x="260" y="1306" width="36" height="36" rx="10" fill="#2563EB"/>
+  <text x="272" y="1330" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="17" font-weight="900">E</text>
+  <text x="308" y="1324" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="15" font-weight="900">EduSync Platform</text>
+  <text x="308" y="1338" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Unified Tuition Management &amp; NFC Ecosystem (SDGP CS76 - 2026)</text>
+  <circle cx="1220" cy="1324" r="3.5" fill="#34D399"/>
+  <text x="1232" y="1328" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">Helpline: <tspan fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-weight="800">077 129 6697</tspan></text>
+  <line x1="260" y1="1362" x2="1410" y2="1362" stroke="#1E293B" stroke-width="1"/>
+  <text x="260" y="1397" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">● RFID Turnstiles: Online (418ms)</text>
+  <text x="480" y="1397" fill="#60A5FA" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">● SMS Gateway: Connected</text>
+  <text x="820" y="1397" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Admin Overview • Students • Teachers • Parents (Active) • Operations</text>
+  <text x="1260" y="1397" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">© 2026 EduSync Team</text>
+</svg>

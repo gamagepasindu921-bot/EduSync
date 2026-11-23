@@ -1,0 +1,243 @@
+<svg width="1440" height="1440" viewBox="0 0 1440 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hero-grad-10c" x1="260" y1="94" x2="1410" y2="264" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="1440" fill="#F4F7FE"/>
+
+    <!-- ================= 1. BEHANCE MINIMAL LEFT SIDEBAR (230px) ================= -->
+  <rect width="230" height="1440" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- EduSync Logo (Original Sapphire Blue Box with NFC Waves) -->
+  <rect x="24" y="24" width="38" height="38" rx="12" fill="#2563EB"/>
+  <path d="M43 36C41 38 40 41 41 44C42 47 45 48 48 47" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 34C37 37 36 42 38 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <text x="72" y="44" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.5">Edu<tspan fill="#2563EB">Sync</tspan></text>
+  <text x="72" y="56" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">ADMIN PORTAL</text>
+
+  <!-- Admin Identity Capsule -->
+  <rect x="16" y="78" width="198" height="66" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="94" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.5">MASTER AUTHORITY</text>
+  <circle cx="196" cy="91" r="3.5" fill="#10B981"/>
+  <circle cx="42" cy="122" r="14" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="35" y="126" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="900">AW</text>
+  <text x="64" y="118" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Dr. A. Wickramasinghe</text>
+  <text x="64" y="132" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">ADM-001 • Registrar</text>
+
+  <!-- Sidebar Menu Header -->
+  <text x="28" y="166" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" letter-spacing="1">MASTER ADMINISTRATION</text>
+
+  <!-- 1. Admin Overview  -->
+  <rect x="16" y="178" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="31" y="188" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="39.5" y="188" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="31" y="196.5" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <rect x="39.5" y="196.5" width="5.5" height="5.5" rx="1.5" fill="#64748B"/>
+  <text x="54" y="202" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Admin Overview</text>
+
+  <!-- 2. This Week Schedule  -->
+  <rect x="16" y="220" width="198" height="38" rx="12" fill="transparent"/>
+  <rect x="32" y="232" width="15" height="14" rx="3" stroke="#64748B" stroke-width="1.6"/>
+  <path d="M32 237H47M36 230V234M43 230V234" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="244" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">This Week Schedule</text>
+
+  <!-- 3. Student Management  -->
+  <rect x="16" y="262" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M40 273L31 278L40 283L49 278L40 273Z" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M35 280.5V286C35 288 37 289.5 40 289.5C43 289.5 45 288 45 286V280.5" stroke="#64748B" stroke-width="1.5"/>
+  <text x="54" y="286" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Student Management</text>
+
+  <!-- 4. Teacher &amp; Commissions (ACTIVE) -->
+  <rect x="16" y="304" width="198" height="38" rx="12" fill="#0F172A"/>
+  <rect x="32" y="316" width="16" height="12" rx="2" stroke="#FFFFFF" stroke-width="1.6"/>
+  <path d="M37 316V313H43V316" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="54" y="328" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="700">Teacher &amp; Commissions</text>
+
+  <!-- 5. Parent &amp; SMS Hub  -->
+  <rect x="16" y="346" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M33 370C33 366 36 365 40 365C44 365 47 366 47 370" stroke="#64748B" stroke-width="1.6"/>
+  <circle cx="40" cy="361" r="3" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="370" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Parent &amp; SMS Hub</text>
+
+  <!-- 6. Operations &amp; Logistics  -->
+  <rect x="16" y="388" width="198" height="38" rx="12" fill="transparent"/>
+  <path d="M33 402L39 399L45 402L39 405L33 402Z" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M33 402V408L39 411V405M45 402V408L39 411" stroke="#64748B" stroke-width="1.6"/>
+  <text x="54" y="412" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Operations &amp; Logistics</text>
+
+  <!-- Security Badge -->
+  <rect x="16" y="1346" width="198" height="74" rx="14" fill="#0F172A"/>
+  <text x="28" y="1368" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.5">SECURITY ENCLAVE</text>
+  <circle cx="196" cy="1365" r="3.5" fill="#10B981"/>
+  <text x="28" y="1388" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">System: Operational</text>
+  <text x="28" y="1406" fill="#10B981" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">AES-256 • Hardware MAC Verified</text>
+
+
+  <!-- ================= 2. UNIFIED UNIVERSAL HEADER ================= -->
+  <rect x="230" y="0" width="1210" height="70" fill="#FFFFFF" fill-opacity="0.95" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="260" y="28" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">Admin Portal / <tspan fill="#0F172A" font-weight="700">Faculty Management &amp; Payouts</tspan></text>
+  <text x="260" y="52" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="19" font-weight="900" letter-spacing="-0.5">Faculty Registry &amp; Commission Revenue Hub</text>
+
+  <rect x="710" y="16" width="300" height="38" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="728" cy="35" r="5" stroke="#94A3B8" stroke-width="1.8"/>
+  <line x1="732" y1="39" x2="736" y2="43" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="746" y="39" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Search faculty, students, UIDs, gates...</text>
+  <rect x="970" y="24" width="28" height="22" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="974" y="39" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">⌘K</text>
+
+  <rect x="1030" y="18" width="215" height="34" rx="17" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="1046" cy="35" r="4" fill="#10B981"/>
+  <text x="1058" y="39" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Institute Live: <tspan font-family="JetBrains Mono, monospace" font-weight="800">1,420 / 1,600</tspan> <tspan fill="#047857" font-size="10">(88.7%)</tspan></text>
+
+  <circle cx="1275" cy="35" r="16" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="1267" y="40" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="11" font-weight="900">AW</text>
+
+<!-- ================= 3. CINEMATIC HERO BANNER ================= -->
+  <rect x="256" y="94" width="1154" height="170" rx="22" fill="url(#hero-grad-10c)"/>
+  <rect x="286" y="116" width="460" height="26" rx="13" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1"/>
+  <circle cx="300" cy="129" r="4" fill="#34D399"/>
+  <text x="312" y="133" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="10" font-weight="800">PROPOSAL SECTION 5 • ZERO MANUAL BOOKKEEPING &amp; AUTOMATED REVENUE SPLIT</text>
+  <text x="286" y="172" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="24" font-weight="900" letter-spacing="-0.5">Faculty Directory &amp; Automated Royalty Splitting</text>
+  <text x="286" y="194" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500">Eliminate end-of-month accounting overhead. The moment a student taps their NFC Smart Pass at any turnstile entrance gate, the tuition fee is atomically split into the teacher's payout ledger and the institute account.</text>
+
+  <rect x="286" y="210" width="180" height="38" rx="11" fill="#2563EB"/>
+  <text x="306" y="234" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">+ Onboard New Faculty</text>
+
+  <rect x="478" y="210" width="230" height="38" rx="11" fill="#059669"/>
+  <text x="496" y="234" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Execute Bulk Bank Payout API</text>
+
+  <rect x="720" y="210" width="190" height="38" rx="11" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="738" y="234" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Export Payroll (PDF)</text>
+
+  <!-- ================= 4. 4 METRICS CARDS ROW ================= -->
+  <rect x="256" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="274" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">ACTIVE FACULTY</text>
+  <text x="274" y="342" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">12</text>
+  <text x="316" y="342" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="12">Lecturers</text>
+  <text x="274" y="380" fill="#059669" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">Halls 01 - 04 Active</text>
+
+  <rect x="550" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="568" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">GROSS COLLECTIONS</text>
+  <text x="568" y="342" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">LKR 5.68M</text>
+  <text x="568" y="380" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">1,420 Turnstile Taps</text>
+
+  <rect x="844" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="862" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">TEACHER PAYOUT (80%)</text>
+  <text x="862" y="342" fill="#059669" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">LKR 4.54M</text>
+  <text x="862" y="380" fill="#059669" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">Commercial Bank Disbursed ✓</text>
+
+  <rect x="1138" y="284" width="272" height="116" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1156" y="308" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">INSTITUTE NET (20%)</text>
+  <text x="1156" y="342" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="24" font-weight="900">LKR 1.136M</text>
+  <text x="1156" y="380" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">Institute Operating Margin</text>
+
+  <!-- ================= 5. FACULTY COMMISSION TABLE ================= -->
+  <rect x="256" y="420" width="1154" height="480" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="286" y="454" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="16" font-weight="800">Faculty Commission Configuration &amp; Payouts Matrix</text>
+  <text x="286" y="470" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Agreed royalty rates, enrolled student counts, gross fee collections, and bank payout statuses</text>
+
+  <rect x="1246" y="440" width="144" height="34" rx="10" fill="#0F172A"/>
+  <text x="1260" y="461" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">+ Onboard Lecturer</text>
+
+  <rect x="286" y="492" width="1094" height="28" rx="6" fill="#F8FAFC"/>
+  <text x="298" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">LECTURER</text>
+  <text x="490" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">SUBJECT &amp; HALL</text>
+  <text x="700" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">RATE</text>
+  <text x="780" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">ENROLLED</text>
+  <text x="870" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">GROSS</text>
+  <text x="980" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">TEACHER PAYOUT</text>
+  <text x="1120" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">BANK STATUS</text>
+  <text x="1290" y="510" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">ACTIONS</text>
+
+  <!-- Row 1: Eng. Saman Perera -->
+  <circle cx="310" cy="546" r="13" fill="#0F172A"/>
+  <text x="303" y="550" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10" font-weight="900">SP</text>
+  <text x="332" y="542" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Eng. Saman Perera</text>
+  <text x="332" y="556" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">FAC-2018</text>
+  <text x="490" y="542" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">Combined Maths Theory</text>
+  <text x="490" y="556" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 04 (300 Seats)</text>
+  <text x="700" y="548" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="12" font-weight="900">80% / 20%</text>
+  <text x="780" y="548" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">420 Students</text>
+  <text x="870" y="548" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 1.68M</text>
+  <text x="980" y="548" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 1,344,000 ✓</text>
+  <text x="1120" y="542" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Commercial Bank</text>
+  <text x="1120" y="556" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">Auto-Split Verified ✓</text>
+  <rect x="1280" y="538" width="60" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1290" y="553" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Edit Rate</text>
+  <line x1="286" y1="572" x2="1380" y2="572" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Row 2: Dr. K. Silva -->
+  <circle cx="310" cy="600" r="13" fill="#0F172A"/>
+  <text x="303" y="604" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10" font-weight="900">KS</text>
+  <text x="332" y="596" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Dr. K. Silva</text>
+  <text x="332" y="610" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">FAC-2014</text>
+  <text x="490" y="596" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">Chemistry Revision</text>
+  <text x="490" y="610" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 01 (200 Seats)</text>
+  <text x="700" y="602" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="12" font-weight="900">80% / 20%</text>
+  <text x="780" y="602" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">310 Students</text>
+  <text x="870" y="602" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 1.24M</text>
+  <text x="980" y="602" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 992,000 ✓</text>
+  <text x="1120" y="596" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Commercial Bank</text>
+  <text x="1120" y="610" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">Auto-Split Verified ✓</text>
+  <rect x="1280" y="592" width="60" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1290" y="607" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Edit Rate</text>
+  <line x1="286" y1="626" x2="1380" y2="626" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Row 3: Prof. R. Jayawardena -->
+  <circle cx="310" cy="654" r="13" fill="#0F172A"/>
+  <text x="303" y="658" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10" font-weight="900">RJ</text>
+  <text x="332" y="650" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Prof. R. Jayawardena</text>
+  <text x="332" y="664" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">FAC-1998</text>
+  <text x="490" y="650" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">Physics Mechanics</text>
+  <text x="490" y="664" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 02 (350 Seats)</text>
+  <text x="700" y="656" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="12" font-weight="900">75% / 25%</text>
+  <text x="780" y="656" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">385 Students</text>
+  <text x="870" y="656" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 1.54M</text>
+  <text x="980" y="656" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 1,155,000 ✓</text>
+  <text x="1120" y="650" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Commercial Bank</text>
+  <text x="1120" y="664" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">Auto-Split Verified ✓</text>
+  <rect x="1280" y="646" width="60" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1290" y="661" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Edit Rate</text>
+  <line x1="286" y1="680" x2="1380" y2="680" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Row 4: Eng. M. H. De Silva -->
+  <circle cx="310" cy="708" r="13" fill="#0F172A"/>
+  <text x="303" y="712" fill="#F59E0B" font-family="Montserrat, sans-serif" font-size="10" font-weight="900">MD</text>
+  <text x="332" y="704" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Eng. M. H. De Silva</text>
+  <text x="332" y="718" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5">FAC-2021</text>
+  <text x="490" y="704" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">ICT &amp; Software Architecture</text>
+  <text x="490" y="718" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9.5">Lecture Hall 03 (150 Seats)</text>
+  <text x="700" y="710" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="12" font-weight="900">80% / 20%</text>
+  <text x="780" y="710" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">180 Students</text>
+  <text x="870" y="710" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 720,000</text>
+  <text x="980" y="710" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">LKR 576,000 ✓</text>
+  <text x="1120" y="704" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Bank of Ceylon</text>
+  <text x="1120" y="718" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">Disbursed ✓</text>
+  <rect x="1280" y="700" width="60" height="22" rx="6" fill="#EFF6FF"/>
+  <text x="1290" y="715" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Edit Rate</text>
+
+  <!-- Proposal Guarantee Banner -->
+  <rect x="286" y="750" width="1094" height="48" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="310" cy="774" r="7" fill="#059669"/>
+  <path d="M307 774L309 776L313 772" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="326" y="778" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5"><tspan font-weight="800">Proposal Policy Section 5 (Automated Revenue Splitting):</tspan> During teacher onboarding, the administrator sets the agreed percentage split. The instant a student taps their NFC Smart Pass at any gate, the tuition fee is atomically split between the teacher's payout ledger and the institute account, preventing manual disputes and calculation errors.</text>
+
+  <!-- 6. Grounded Footer -->
+  <rect x="230" y="1280" width="1210" height="160" fill="#0F172A"/>
+  <rect x="260" y="1306" width="36" height="36" rx="10" fill="#2563EB"/>
+  <text x="272" y="1330" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="17" font-weight="900">E</text>
+  <text x="308" y="1324" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="15" font-weight="900">EduSync Platform</text>
+  <text x="308" y="1338" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Unified Tuition Management &amp; NFC Ecosystem (SDGP CS76 - 2026)</text>
+  <circle cx="1220" cy="1324" r="3.5" fill="#34D399"/>
+  <text x="1232" y="1328" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">Helpline: <tspan fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-weight="800">077 129 6697</tspan></text>
+  <line x1="260" y1="1362" x2="1410" y2="1362" stroke="#1E293B" stroke-width="1"/>
+  <text x="260" y="1397" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">● RFID Turnstiles: Online (418ms)</text>
+  <text x="480" y="1397" fill="#60A5FA" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">● SMS Gateway: Connected</text>
+  <text x="820" y="1397" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Admin Overview • Students • Teachers (Active) • Parents • Operations</text>
+  <text x="1260" y="1397" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">© 2026 EduSync Team</text>
+</svg>

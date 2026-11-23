@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video DRM & Tute Distribution Center | EduSync</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            navy: {
+              900: '#0B1120',
+              950: '#060A14',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+    .behance-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 22px;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .behance-card:hover {
+      box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+    }
+    .sidebar-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #64748B;
+      transition: all 0.2s;
+    }
+    .sidebar-nav-btn:hover {
+      background-color: #F1F5F9;
+      color: #0F172A;
+    }
+    .sidebar-nav-btn.active {
+      background-color: #2563EB;
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+    .cinematic-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 55%, #312E81 100%);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    @keyframes floatWatermark {
+      0% { top: 15%; left: 15%; }
+      25% { top: 70%; left: 20%; }
+      50% { top: 60%; left: 65%; }
+      75% { top: 20%; left: 70%; }
+      100% { top: 15%; left: 15%; }
+    }
+    .dynamic-watermark {
+      position: absolute;
+      animation: floatWatermark 12s infinite linear;
+      pointer-events: none;
+      opacity: 0.45;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      font-size: 11px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex antialiased">
+
+  <!-- ================= DESKTOP SIDEBAR ================= -->
+  <aside class="w-64 bg-white border-r border-slate-200/80 p-5 hidden lg:flex flex-col justify-between shrink-0 fixed inset-y-0 z-30">
+    <div class="space-y-6">
+      
+      <!-- Logo -->
+      <a href="./teacher_dashboard.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md shadow-blue-600/20">
+          <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xl font-display font-black tracking-tight text-slate-900">
+            Edu<span class="text-blue-600">Sync</span>
+          </span>
+          <span class="block text-[10px] font-mono uppercase tracking-wider text-blue-600 font-extrabold -mt-1">
+            Teacher Portal
+          </span>
+        </div>
+      </a>
+
+      <!-- Identity Capsule -->
+      <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+        <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-400">
+          <span>Active Lecturer</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shrink-0 ring-2 ring-blue-600/30">
+            SP
+          </div>
+          <div class="truncate">
+            <div class="font-bold text-slate-900 leading-tight truncate">Eng. Saman Perera</div>
+            <div class="text-[11px] text-blue-600 font-mono">FAC-2018 • Combined Maths</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Menu: 6 Dedicated Teacher Pages -->
+      <nav class="space-y-1">
+        <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 px-3 pb-1 font-bold">
+          Lecturer Menu
+        </div>
+
+        <!-- 1. Teacher Overview -->
+        <a href="./teacher_dashboard.html" class="sidebar-nav-btn">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Teacher Overview</span>
+        </a>
+
+        <!-- 2. Timetable & Ad-Hoc Classes -->
+        <a href="./teacher_timetable.html" class="sidebar-nav-btn">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Timetable &amp; Ad-Hoc</span>
+        </a>
+
+        <!-- 3. Live Hall Attendance -->
+        <a href="./teacher_attendance.html" class="sidebar-nav-btn">
+          <i data-lucide="radio" class="w-4 h-4"></i>
+          <span>Live Hall Attendance</span>
+        </a>
+
+        <!-- 4. Video DRM & Tutes (ACTIVE) -->
+        <a href="./teacher_materials.html" class="sidebar-nav-btn active">
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
+          <span>Video DRM &amp; Tutes</span>
+        </a>
+
+        <!-- 5. MCQ Quiz Engine -->
+        <a href="./teacher_quizzes.html" class="sidebar-nav-btn">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          <span>MCQ Quiz Engine</span>
+        </a>
+
+        <!-- 6. Revenue & Split (80/20) -->
+        <a href="./teacher_revenue.html" class="sidebar-nav-btn">
+          <i data-lucide="wallet" class="w-4 h-4"></i>
+          <span>Revenue &amp; Split (80/20)</span>
+        </a>
+
+        <!-- External Portals -->
+        <a href="./admin_portal.html" class="sidebar-nav-btn text-amber-600 hover:text-amber-700 mt-2">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span>Admin Authority ↗</span>
+        </a>
+        <a href="./student_dashboard.html" class="sidebar-nav-btn text-blue-600 hover:text-blue-700">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span>Student Portal ↗</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom Commission Badge -->
+    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-1.5">
+      <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-400">
+        <span>PAYOUT AGREEMENT</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      </div>
+      <div class="text-xs font-bold text-slate-800">80% Teacher / 20% Net</div>
+      <div class="text-[11px] font-mono text-emerald-600 font-bold">Commercial Bank •••• 8912</div>
+    </div>
+  </aside>
+
+  <!-- ================= MOBILE DRAWER ================= -->
+  <div id="mobile-sidebar" class="fixed inset-0 z-50 flex hidden lg:hidden">
+    <div onclick="closeMobileSidebar()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-72 max-w-[85%] bg-white h-full p-5 space-y-6 flex flex-col justify-between shadow-2xl z-10 overflow-y-auto">
+      <div class="space-y-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+            <span class="text-lg font-display font-extrabold text-slate-900">EduSync</span>
+          </div>
+          <button onclick="closeMobileSidebar()" class="p-1 text-slate-400 hover:text-slate-700">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <nav class="space-y-1 text-sm font-semibold text-slate-600">
+          <a href="./teacher_dashboard.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+            <span>Teacher Overview</span>
+          </a>
+          <a href="./teacher_timetable.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+            <span>Timetable &amp; Ad-Hoc</span>
+          </a>
+          <a href="./teacher_attendance.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="radio" class="w-5 h-5"></i>
+            <span>Live Hall Attendance</span>
+          </a>
+          <a href="./teacher_materials.html" class="flex items-center gap-3 p-3 rounded-xl bg-blue-600 text-white font-bold">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+            <span>Video DRM &amp; Tutes</span>
+          </a>
+          <a href="./teacher_quizzes.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="award" class="w-5 h-5"></i>
+            <span>MCQ Quiz Engine</span>
+          </a>
+          <a href="./teacher_revenue.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="wallet" class="w-5 h-5"></i>
+            <span>Revenue &amp; Split (80/20)</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN LAYOUT WRAPPER ================= -->
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+    
+    <!-- TOP HEADER -->
+    <header class="h-20 bg-white/95 backdrop-blur-md border-b border-slate-200/80 px-4 sm:px-8 flex items-center justify-between sticky top-0 z-20">
+      <div class="flex items-center gap-3 sm:gap-4">
+        <button onclick="openMobileSidebar()" class="lg:hidden p-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+        <div>
+          <div class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+            <span>Teacher Portal</span>
+            <span>/</span>
+            <span class="text-indigo-600 font-bold">Digital Rights &amp; Tutes</span>
+          </div>
+          <h1 class="text-lg sm:text-xl font-display font-black text-slate-900 tracking-tight">
+            Video DRM Anti-Piracy &amp; Tute Dispatch Management
+          </h1>
+        </div>
+      </div>
+
+      <!-- Right Action Items -->
+      <div class="flex items-center gap-3">
+        <button onclick="openUploadModal()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition">
+          <i data-lucide="upload" class="w-4 h-4"></i>
+          <span>Upload New Lecture Video</span>
+        </button>
+
+        <a href="./student_lms.html" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-400 font-mono text-xs font-bold flex items-center gap-2 shadow-sm transition">
+          <i data-lucide="eye" class="w-4 h-4"></i>
+          <span>Student View</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="p-4 sm:p-8 max-w-7xl mx-auto w-full space-y-8 flex-grow">
+
+      <!-- HERO BANNER -->
+      <section class="cinematic-hero p-6 sm:p-10 text-white relative">
+        <div class="relative z-10 max-w-3xl space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold text-indigo-200">
+            <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+            <span>MEMBER 3 • DYNAMIC FORENSIC WATERMARKING &amp; ENCRYPTED DRM PLAYBACK</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-black tracking-tight leading-tight">
+            Anti-Piracy Video DRM &amp; Printed Tute Logistics
+          </h2>
+
+          <p class="text-indigo-100 text-xs sm:text-sm leading-relaxed">
+            Secure your high-value tuition intellectual property. All student video streams are dynamically watermarked with their individual student registration number, phone number, and IP address to completely eliminate leakages.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="openUploadModal()" class="px-4 py-2.5 rounded-xl bg-white text-indigo-950 font-bold text-xs transition flex items-center gap-2 shadow-md hover:bg-indigo-50">
+              <i data-lucide="upload-cloud" class="w-4 h-4 text-indigo-600"></i>
+              <span>Upload Video Lecture / PDF Notes</span>
+            </button>
+            <button onclick="alert('Forensic Watermark Engine is 100% active on all 248 enrolled student accounts.')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs backdrop-blur-md border border-white/20 transition flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-300"></i>
+              <span>Watermark Status: Active (AES-128)</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- DRM PREVIEW & TUTE METRICS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- DRM Screen Recording Protection Simulator -->
+        <div class="behance-card p-6 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div>
+              <h3 class="font-display font-extrabold text-sm text-slate-900 flex items-center gap-2">
+                <i data-lucide="shield" class="w-4 h-4 text-indigo-600"></i>
+                Live DRM Anti-Piracy Watermark Simulator
+              </h3>
+              <p class="text-xs text-slate-500">Simulates how a pirate student sees their dynamic moving watermark.</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">
+              DRM ACTIVE
+            </span>
+          </div>
+
+          <!-- Video Canvas Mockup with Moving Watermark -->
+          <div class="relative w-full h-64 bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center">
+            
+            <!-- Dynamic Moving Watermark -->
+            <div class="dynamic-watermark">
+              STU-9402 • Pasindu Nethsara<br>
+              077 129 6697 • IP: 192.168.1.45<br>
+              Eng. Saman Perera Combined Maths
+            </div>
+
+            <!-- Video Player Controls Overlay -->
+            <div class="text-center space-y-2 z-10">
+              <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center mx-auto text-white shadow-xl cursor-pointer hover:scale-105 transition">
+                <i data-lucide="play" class="w-6 h-6 fill-white"></i>
+              </div>
+              <div class="text-white text-xs font-bold">2026 Combined Maths: Special Definite Integrals</div>
+              <div class="text-slate-400 font-mono text-[10px]">1080p 60fps • Encrypted HLS Chunking • AES-128</div>
+            </div>
+
+            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <span>01:14:20 / 02:45:00</span>
+              <span class="text-emerald-400">● Live Leak-Proof Protection</span>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-1">
+            <span class="font-bold text-slate-800 block">Why this protects your income:</span>
+            If a student attempts to record their screen or use an external mobile camera, their Student ID (`STU-9402`) and Phone Number (`077 129 6697`) are permanently imprinted onto the recording, allowing instant copyright enforcement and automatic card freeze.
+          </div>
+        </div>
+
+        <!-- Tute Pack Inventory & Courier Dispatch Hub -->
+        <div class="behance-card p-6 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div>
+              <h3 class="font-display font-extrabold text-sm text-slate-900 flex items-center gap-2">
+                <i data-lucide="package" class="w-4 h-4 text-purple-600"></i>
+                Printed Tute Center &amp; Courier Logistics
+              </h3>
+              <p class="text-xs text-slate-500">Physical handouts at Institute counter + Home courier tracking.</p>
+            </div>
+            <button onclick="alert('Barcode scanning mode active at Counter 02.')" class="text-xs font-bold text-blue-600 hover:underline">
+              Counter Scanner Mode
+            </button>
+          </div>
+
+          <!-- Tute Item 1 -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 text-xs">Calculus Codex: Part IV (Integration Special)</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">
+                238 / 248 HANDED OUT
+              </span>
+            </div>
+            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+              <div class="bg-emerald-500 h-full rounded-full" style="width: 96%"></div>
+            </div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <span>10 Packs at Counter 02</span>
+              <span>14 Distance Dispatches</span>
+            </div>
+          </div>
+
+          <!-- Tute Item 2 -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 text-xs">Pure Maths Speed Paper Booklet 08</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-100 text-blue-800">
+                180 / 180 DISTRIBUTED
+              </span>
+            </div>
+            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+              <div class="bg-blue-600 h-full rounded-full" style="width: 100%"></div>
+            </div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <span>100% Handout Complete</span>
+              <span>Session 2 Ready</span>
+            </div>
+          </div>
+
+          <!-- Distance Courier Dispatch Status -->
+          <div class="p-3.5 rounded-xl bg-purple-50/70 border border-purple-100 text-xs space-y-2">
+            <div class="flex items-center justify-between font-bold text-purple-900">
+              <span>Recent Courier Waybill Dispatches</span>
+              <span class="font-mono text-[10px]">DOMEX / PROMPT</span>
+            </div>
+            <div class="space-y-1 text-[11px] text-purple-800 font-mono">
+              <div class="flex justify-between">
+                <span>STU-9402 (Pasindu Nethsara - Kandy)</span>
+                <span class="font-bold text-emerald-700">✓ Delivered (TRK-98212)</span>
+              </div>
+              <div class="flex justify-between">
+                <span>STU-8812 (Kavindu Silva - Galle)</span>
+                <span class="font-bold text-amber-700">In Transit (TRK-98213)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- UNIVERSAL FOOTER -->
+    <footer class="bg-slate-900 text-white mt-12 py-6 px-4 sm:px-8 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div class="flex items-center gap-2 text-slate-400">
+          <i data-lucide="shield-check" class="w-4 h-4 text-indigo-400"></i>
+          <span>EduSync Tuition Management &amp; NFC Ecosystem • SDGP CS76 (2026)</span>
+        </div>
+        <div class="flex items-center gap-4 text-slate-400 font-mono">
+          <span>Helpline: <strong class="text-white">077 129 6697</strong></span>
+          <span>•</span>
+          <a href="./teacher_dashboard.html" class="hover:text-white transition">Teacher Overview</a>
+          <span>•</span>
+          <a href="./teacher_timetable.html" class="hover:text-white transition">Timetable</a>
+          <span>•</span>
+          <a href="./student_lms.html" class="hover:text-white transition">Student DRM</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- UPLOAD MODAL -->
+  <div id="modal-upload" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full space-y-5 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <h3 class="font-display font-extrabold text-base text-slate-900">Upload Video / Tute PDF</h3>
+        <button onclick="closeUploadModal()" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Batch / Class</label>
+          <select class="w-full p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+            <option>2026 Combined Maths Theory (248 Enrolled)</option>
+            <option>2026 Pure Maths Paper Class (180 Enrolled)</option>
+            <option>2027 Foundation Batch (290 Enrolled)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Content Type</label>
+          <select class="w-full p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+            <option>Full HD Lecture Video (DRM Encrypted)</option>
+            <option>Printable Tute PDF Document (Watermarked)</option>
+            <option>Revision Summary Cheatsheet</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Lecture Title</label>
+          <input type="text" value="Definite Integration Unit 08: Special Substitution Techniques" class="w-full p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+        </div>
+        <div class="p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-900">
+          <div class="font-bold flex items-center gap-1.5">
+            <i data-lucide="shield-check" class="w-4 h-4 text-indigo-600"></i>
+            <span>Forensic Watermarking Enabled</span>
+          </div>
+          <p class="text-[11px] text-indigo-700 mt-0.5">
+            Individual student registration codes will automatically be rendered dynamically during video playback.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+        <button onclick="closeUploadModal()" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 font-bold text-xs hover:bg-slate-50 transition">
+          Cancel
+        </button>
+        <button onclick="confirmUpload()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition">
+          Process &amp; Publish DRM
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function openMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.remove('hidden');
+    }
+    function closeMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('hidden');
+    }
+
+    function openUploadModal() {
+      document.getElementById('modal-upload').classList.remove('hidden');
+    }
+    function closeUploadModal() {
+      document.getElementById('modal-upload').classList.add('hidden');
+    }
+    function confirmUpload() {
+      alert("✅ Video uploaded and processed! AES-128 DRM encryption applied and forensic watermark synchronized to all 248 enrolled student accounts.");
+      closeUploadModal();
+    }
+  </script>
+</body>
+</html>

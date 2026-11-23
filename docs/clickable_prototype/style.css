@@ -1,0 +1,75 @@
+/* EduSync Clickable Platform Prototype - Clean Blue & White Design System */
+
+:root {
+  --brand-blue: #1d4ed8;
+  --brand-blue-hover: #1e40af;
+  --brand-navy: #0f172a;
+  --brand-slate: #475569;
+  --bg-page: #f8fafc;
+  --card-bg: #ffffff;
+  --border-light: #e2e8f0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Base Card Styling */
+.proto-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+  transition: all 0.2s ease-out;
+}
+.proto-card-hover:hover {
+  box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.08), 0 8px 10px -6px rgba(29, 78, 216, 0.04);
+  border-color: #93c5fd;
+}
+
+/* Dynamic DRM Watermark Animation */
+@keyframes floatWatermark {
+  0% { top: 15%; left: 15%; opacity: 0.35; transform: rotate(-8deg); }
+  25% { top: 60%; left: 65%; opacity: 0.45; transform: rotate(5deg); }
+  50% { top: 30%; left: 45%; opacity: 0.3; transform: rotate(-5deg); }
+  75% { top: 70%; left: 20%; opacity: 0.4; transform: rotate(8deg); }
+  100% { top: 15%; left: 15%; opacity: 0.35; transform: rotate(-8deg); }
+}
+.animate-watermark-floating {
+  position: absolute;
+  animation: floatWatermark 14s infinite ease-in-out;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* NFC Radar Pulse */
+@keyframes nfcPulseGreen {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.3; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+.nfc-scan-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #10b981;
+  animation: nfcPulseGreen 2.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Active Nav Pill */
+.nav-pill-active {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+}

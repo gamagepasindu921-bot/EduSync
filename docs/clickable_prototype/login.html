@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSync | Sign In &amp; Registration</title>
+  
+  <!-- Modern Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              navy: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & Confetti -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.06) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(99, 102, 241, 0.05) 0px, transparent 60%);
+      min-height: 100vh;
+    }
+
+    .modern-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.02);
+    }
+
+    .role-btn.active {
+      background-color: #ffffff;
+      color: #1d4ed8;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+      font-weight: 700;
+    }
+
+    .auth-tab.active {
+      color: #1d4ed8;
+      border-bottom: 2px solid #1d4ed8;
+      font-weight: 700;
+    }
+
+    .smart-card-preview {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #0284c7 100%);
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="flex flex-col justify-between font-sans antialiased text-slate-800 selection:bg-blue-600 selection:text-white">
+
+  <!-- Minimal Top Header -->
+  <header class="w-full max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="./login.html" class="flex items-center gap-2.5 group">
+      <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/25 transition group-hover:scale-105">
+        <i data-lucide="nfc" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <span class="text-xl font-black tracking-tight text-slate-900 leading-none">Edu<span class="text-blue-600">Sync</span></span>
+        <div class="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider">Tuition Ecosystem 2026</div>
+      </div>
+    </a>
+
+    <div class="flex items-center gap-3">
+      <a href="./index.html" class="text-xs font-semibold text-slate-500 hover:text-slate-900 transition flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-slate-100">
+        <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+        <span>Full Platform</span>
+      </a>
+      <a href="https://wa.me/94771296697" target="_blank" class="text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+        <span>Support (077 129 6697)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Focused Auth Container -->
+  <main class="w-full max-w-xl mx-auto px-4 py-3 flex-1 flex flex-col justify-center">
+    
+    <div class="modern-card rounded-3xl p-6 sm:p-8 transition-all">
+      
+      <!-- Top Switcher: Sign In vs Register -->
+      <div class="flex border-b border-slate-200 mb-5">
+        <button onclick="setAuthMode('login')" id="tab-auth-login" class="auth-tab active flex-1 pb-3 text-sm font-semibold text-center transition">
+          Sign In
+        </button>
+        <button onclick="setAuthMode('register')" id="tab-auth-register" class="auth-tab flex-1 pb-3 text-sm font-semibold text-slate-400 hover:text-slate-600 text-center transition">
+          Register New Account
+        </button>
+      </div>
+
+      <!-- Welcome Title -->
+      <div class="mb-5">
+        <h1 id="auth-title" class="text-2xl font-black text-slate-900 tracking-tight">
+          Welcome back
+        </h1>
+        <p id="auth-subtitle" class="text-xs text-slate-500 mt-1">
+          Select your role and enter your credentials to sign in.
+        </p>
+      </div>
+
+      <!-- 3 Main Roles: Student, Parent, Teacher -->
+      <div class="mb-5">
+        <div class="bg-slate-100/90 p-1 rounded-2xl flex items-center justify-between gap-1 border border-slate-200/80">
+          <button onclick="setRole('student')" id="role-student" class="role-btn active flex-1 py-2 px-2 rounded-xl text-xs text-slate-600 transition flex items-center justify-center gap-1.5">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            <span>Student</span>
+          </button>
+          
+          <button onclick="setRole('parent')" id="role-parent" class="role-btn flex-1 py-2 px-2 rounded-xl text-xs text-slate-600 transition flex items-center justify-center gap-1.5">
+            <i data-lucide="users" class="w-3.5 h-3.5"></i>
+            <span>Parent</span>
+          </button>
+          
+          <button onclick="setRole('teacher')" id="role-teacher" class="role-btn flex-1 py-2 px-2 rounded-xl text-xs text-slate-600 transition flex items-center justify-center gap-1.5">
+            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+            <span>Teacher</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= SIGN IN FORM ================= -->
+      <form id="form-login" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+        
+        <!-- Identifier Input -->
+        <div>
+          <label id="label-identifier" class="block text-xs font-bold text-slate-700 mb-1.5">
+            Student Smart Card / Registration ID
+          </label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <i id="icon-identifier" data-lucide="credit-card" class="w-4 h-4"></i>
+            </div>
+            <input 
+              type="text" 
+              id="input-identifier"
+              value="STU-9402"
+              required
+              class="w-full pl-10 pr-4 py-3 bg-slate-50/50 hover:bg-white focus:bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100/70 transition shadow-sm"
+              placeholder="e.g. STU-9402"
+            >
+          </div>
+          <p id="hint-identifier" class="text-[11px] text-slate-400 mt-1">Enter your assigned Student ID (e.g. STU-9402)</p>
+        </div>
+
+        <!-- Password Input -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <label id="label-password" class="block text-xs font-bold text-slate-700">
+              Password
+            </label>
+            <a href="#" class="text-xs font-bold text-blue-600 hover:text-blue-700">Forgot?</a>
+          </div>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <i data-lucide="key-round" class="w-4 h-4"></i>
+            </div>
+            <input 
+              type="password" 
+              id="input-password"
+              value="student123"
+              required
+              class="w-full pl-10 pr-10 py-3 bg-slate-50/50 hover:bg-white focus:bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100/70 transition shadow-sm"
+              placeholder="••••••••"
+            >
+            <button type="button" onclick="togglePasswordVisibility('input-password', 'eye-icon')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600">
+              <i id="eye-icon" data-lucide="eye" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="flex items-center justify-between text-xs pt-0.5">
+          <label class="flex items-center gap-2 cursor-pointer select-none">
+            <input type="checkbox" checked class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+            <span class="text-slate-600 font-medium">Remember on this device</span>
+          </label>
+          <span class="text-emerald-600 font-mono text-[10px] font-bold">● HARDWARE BOUND</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+          type="submit" 
+          id="btn-submit"
+          class="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-600/25 transition transform active:scale-[0.99] flex items-center justify-center gap-2 mt-2"
+        >
+          <span id="btn-submit-text">Sign In as Student</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+
+      </form>
+
+      <!-- ================= REGISTER FORM ================= -->
+      <form id="form-register" onsubmit="handleRegistrationSubmit(event)" class="space-y-4 hidden">
+        
+        <!-- 1. Dedicated Photo Upload Component -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5 flex items-center justify-between">
+            <span id="label-photo-title">Upload Profile Photo (Passport Style)</span>
+            <span class="text-[10px] text-blue-600 font-bold">*Mandatory</span>
+          </label>
+
+          <div class="p-3 bg-slate-50 border-2 border-dashed border-slate-200 hover:border-blue-400 rounded-2xl flex items-center gap-4 transition">
+            <div class="relative shrink-0">
+              <img 
+                id="photo-preview" 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" 
+                alt="Profile Photo Preview" 
+                class="w-16 h-16 rounded-2xl object-cover border-2 border-white shadow-md shadow-slate-200"
+              >
+              <div id="photo-badge" class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[10px] shadow">
+                ✓
+              </div>
+            </div>
+
+            <div class="flex-1 space-y-1.5">
+              <div class="flex items-center gap-2">
+                <label for="photo-file-input" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg cursor-pointer transition inline-flex items-center gap-1.5 shadow-sm">
+                  <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+                  <span>Upload Photo</span>
+                </label>
+                <input type="file" id="photo-file-input" accept="image/*" class="hidden" onchange="previewUserPhoto(event)">
+
+                <button type="button" onclick="loadRandomDemoPhoto()" class="px-2.5 py-1.5 bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-medium rounded-lg transition inline-flex items-center gap-1">
+                  <i data-lucide="refresh-cw" class="w-3 h-3 text-slate-400"></i>
+                  <span>Demo Photo</span>
+                </button>
+              </div>
+
+              <p id="label-photo-desc" class="text-[10.5px] text-slate-500 leading-snug">
+                Photo will be printed onto your physical 13.56MHz NFC Smart Card &amp; used for gate turnstile Face-ID.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Full Name -->
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">First Name</label>
+            <input 
+              type="text" 
+              id="reg-first-name"
+              placeholder="e.g. Pasindu" 
+              value="Pasindu"
+              required
+              class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition"
+            >
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Last Name</label>
+            <input 
+              type="text" 
+              id="reg-last-name"
+              placeholder="e.g. Nethsara" 
+              value="Nethsara"
+              required
+              class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition"
+            >
+          </div>
+        </div>
+
+        <!-- 3. ROLE-SPECIFIC REGISTRATION SECTIONS -->
+        
+        <!-- ==================== STUDENT REGISTRATION ==================== -->
+        <div id="fields-reg-student" class="space-y-3">
+          
+          <!-- Concurrency Notice -->
+          <div class="p-2.5 bg-blue-50/70 border border-blue-200/80 rounded-xl flex items-center gap-2 text-[11px] text-blue-900">
+            <i data-lucide="shield-check" class="w-4 h-4 text-blue-600 shrink-0"></i>
+            <span><strong>Atomic ID Issuance:</strong> Unique <strong>Student ID (STU-XXXX)</strong> &amp; 13.56MHz NFC UID will be atomically generated when you click Register.</span>
+          </div>
+
+          <!-- Grade Level & Medium of Instruction -->
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">
+                Select Grade / Batch
+              </label>
+              <select 
+                id="reg-student-grade" 
+                onchange="handleGradeChange(this.value)"
+                class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+              >
+                <optgroup label="School Grades (Grade 1 - 11)">
+                  <option value="Grade 1">Grade 1</option>
+                  <option value="Grade 2">Grade 2</option>
+                  <option value="Grade 3">Grade 3</option>
+                  <option value="Grade 4">Grade 4</option>
+                  <option value="Grade 5">Grade 5 (Scholarship)</option>
+                  <option value="Grade 6">Grade 6</option>
+                  <option value="Grade 7">Grade 7</option>
+                  <option value="Grade 8">Grade 8</option>
+                  <option value="Grade 9">Grade 9</option>
+                  <option value="Grade 10">Grade 10 (O/L)</option>
+                  <option value="Grade 11">Grade 11 (O/L)</option>
+                </optgroup>
+                <optgroup label="Advanced Level (A/L Batches)">
+                  <option value="2026 A/L" selected>2026 A/L Batch</option>
+                  <option value="2027 A/L">2027 A/L Batch</option>
+                  <option value="2028 A/L">2028 A/L Batch</option>
+                  <option value="2029 A/L">2029 A/L Batch</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">
+                Medium of Study
+              </label>
+              <select 
+                id="reg-student-medium"
+                class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+              >
+                <option value="Sinhala Medium" selected>Sinhala Medium (සිංහල)</option>
+                <option value="English Medium">English Medium</option>
+                <option value="Tamil Medium">Tamil Medium (தமிழ்)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Conditional A/L Stream Container (Only appears if A/L option selected!) -->
+          <div id="container-al-stream" class="p-3 bg-blue-50/50 border border-blue-200 rounded-2xl space-y-1.5 transition-all">
+            <label class="block text-xs font-bold text-blue-900 flex items-center justify-between">
+              <span>A/L Specialization Stream</span>
+              <span class="text-[10px] text-blue-600 font-mono font-bold">*Required for A/L</span>
+            </label>
+            <select 
+              id="reg-student-stream"
+              class="w-full px-3 py-2 bg-white border border-blue-300 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600"
+            >
+              <option selected>Combined Mathematics (Physical Science)</option>
+              <option>Biological Science</option>
+              <option>Commerce &amp; Accounting</option>
+              <option>Technology (ET / SFT / BST)</option>
+              <option>Arts &amp; Humanities</option>
+            </select>
+            <p class="text-[10.5px] text-blue-700/80">Only applies to Advanced Level students. Unlocks relevant lecture videos &amp; quizzes.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">
+              Parent Mobile / WhatsApp (Instant Gate SMS Alerts)
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+              </div>
+              <input 
+                type="tel" 
+                value="+94 77 129 6697"
+                required
+                class="w-full pl-9 pr-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                placeholder="+94 77 129 6697"
+              >
+            </div>
+            <p class="text-[10px] text-slate-400 mt-1">NFC gate entrance &amp; absent SMS alerts will be sent to this phone.</p>
+          </div>
+        </div>
+
+        <!-- ==================== PARENT REGISTRATION (Multi-Child Dynamic Sibling Linking) ==================== -->
+        <div id="fields-reg-parent" class="space-y-3 hidden">
+          <div class="p-2.5 bg-emerald-50/70 border border-emerald-200/80 rounded-xl flex items-center gap-2 text-[11px] text-emerald-900">
+            <i data-lucide="id-card" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+            <span><strong>Atomic Parent ID:</strong> A permanent <strong>Parent ID (PID-XXXX)</strong> will be issued upon registration linking all your children.</span>
+          </div>
+
+          <!-- Dynamic Multi-Child Student ID Linking Container -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <label class="block text-xs font-bold text-slate-700">
+                Link Children / Siblings (Add all your children)
+              </label>
+              <button 
+                type="button" 
+                onclick="addChildField()" 
+                class="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1"
+              >
+                <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i>
+                <span>+ Link Another Child</span>
+              </button>
+            </div>
+
+            <!-- List of Child Inputs -->
+            <div id="children-input-list" class="space-y-2">
+              
+              <!-- Child 1 Entry (Default) -->
+              <div class="flex items-center gap-2">
+                <div class="relative flex-1">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-600">
+                    <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <input 
+                    type="text" 
+                    value="STU-9402"
+                    required
+                    class="w-full pl-9 pr-24 py-2 bg-blue-50/50 border border-blue-200 rounded-xl text-xs font-mono font-bold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                    placeholder="Child 1 Student ID (e.g. STU-9402)"
+                  >
+                  <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] font-bold text-emerald-600">
+                    ✓ VERIFIED
+                  </span>
+                </div>
+                <span class="text-xs text-slate-400 px-2 font-bold">Child 1</span>
+              </div>
+
+            </div>
+            <p class="text-[10.5px] text-slate-500">You can add multiple children. The parent portal allows seamless 1-click switching between siblings.</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Parent Mobile / WhatsApp</label>
+              <input 
+                type="tel" 
+                value="+94 77 129 6697"
+                required
+                class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600"
+                placeholder="+94 77 129 6697"
+              >
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Relationship</label>
+              <select class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600">
+                <option>Mother</option>
+                <option>Father</option>
+                <option>Legal Guardian</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TEACHER REGISTRATION (Multi-Bank Accounts & Atomic TID) ==================== -->
+        <div id="fields-reg-teacher" class="space-y-3 hidden">
+          
+          <div class="p-2.5 bg-indigo-50/70 border border-indigo-200/80 rounded-xl flex items-center gap-2 text-[11px] text-indigo-900">
+            <i data-lucide="award" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+            <span><strong>Atomic Faculty ID:</strong> Your official <strong>Teacher ID (TID-XXXX)</strong> will be generated upon registration.</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Teaching Subject</label>
+              <input 
+                type="text" 
+                value="Combined Mathematics"
+                required
+                class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600"
+                placeholder="e.g. Combined Maths"
+              >
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Faculty Academic Email</label>
+              <input 
+                type="email" 
+                value="perera.maths@edusync.lk"
+                required
+                class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600"
+                placeholder="e.g. teacher@edusync.lk"
+              >
+            </div>
+          </div>
+
+          <!-- Dynamic Multi-Bank Account Section -->
+          <div class="space-y-2 pt-1">
+            <div class="flex items-center justify-between">
+              <label class="block text-xs font-bold text-slate-700">
+                Payout Bank Accounts (Automated 80% Royalty Splits)
+              </label>
+              <button 
+                type="button" 
+                onclick="addTeacherBankField()" 
+                class="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1"
+              >
+                <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i>
+                <span>+ Add Another Bank Account</span>
+              </button>
+            </div>
+
+            <!-- Bank Accounts List Container -->
+            <div id="teacher-bank-list" class="space-y-2">
+              
+              <!-- Primary Bank Account (Default) -->
+              <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+                <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+                  <span class="flex items-center gap-1.5 text-blue-700">
+                    <i data-lucide="landmark" class="w-3.5 h-3.5"></i>
+                    <span>Primary Bank Account (Default)</span>
+                  </span>
+                  <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-mono">PRIMARY</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <input type="text" placeholder="Bank Name (e.g. Commercial Bank)" value="Commercial Bank" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600">
+                  <input type="text" placeholder="Branch (e.g. Nugegoda)" value="Nugegoda Branch" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600">
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <input type="text" placeholder="Account Number" value="892004128" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-mono font-bold text-slate-900 focus:outline-none focus:border-blue-600">
+                  <input type="text" placeholder="Account Holder Name" value="Eng. Saman Perera" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600">
+                </div>
+              </div>
+
+            </div>
+            <p class="text-[10.5px] text-slate-500">Teachers can add multiple accounts. Weekly 80% fees are settled automatically via atomic splits.</p>
+          </div>
+
+        </div>
+
+        <!-- 4. Password Creation -->
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Create Password</label>
+            <input 
+              type="password" 
+              id="reg-password"
+              placeholder="Min 8 chars" 
+              value="eduSync2026!"
+              required
+              class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600"
+            >
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Confirm Password</label>
+            <input 
+              type="password" 
+              id="reg-confirm-password"
+              placeholder="Re-enter" 
+              value="eduSync2026!"
+              required
+              class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600"
+            >
+          </div>
+        </div>
+
+        <!-- Submit Registration Button -->
+        <button 
+          type="submit" 
+          id="btn-reg-submit"
+          class="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-600/25 transition transform active:scale-[0.99] flex items-center justify-center gap-2 mt-2"
+        >
+          <span id="btn-reg-text">Complete Registration &amp; Issue Smart ID</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+
+      <!-- Subtle Divider -->
+      <div class="border-t border-slate-100 my-5"></div>
+
+      <!-- Small Bottom Discreet Admin Link -->
+      <div class="text-center">
+        <button 
+          onclick="toggleAdminModal()" 
+          class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-slate-700 transition py-1 px-3 rounded-lg hover:bg-slate-50"
+        >
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-slate-400"></i>
+          <span>Institute Staff? <strong class="text-slate-600 font-bold hover:underline">Log in as Admin</strong></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Quick Evaluator Viva Shortcuts -->
+    <div class="mt-4 flex items-center justify-center gap-2 text-[11px] text-slate-400">
+      <span>Quick Evaluator Demo:</span>
+      <button onclick="setRole('student'); handleAuthSubmit(new Event('submit'))" class="text-blue-600 font-bold hover:underline">Student (STU-9402)</button>
+      <span>•</span>
+      <button onclick="setRole('parent'); handleAuthSubmit(new Event('submit'))" class="text-blue-600 font-bold hover:underline">Parent (PID-8492)</button>
+      <span>•</span>
+      <button onclick="setRole('teacher'); handleAuthSubmit(new Event('submit'))" class="text-blue-600 font-bold hover:underline">Teacher (TID-102)</button>
+    </div>
+  </main>
+
+  <!-- ================= REGISTRATION SUCCESS / SMART ID ISSUED MODAL ================= -->
+  <div id="modal-reg-success" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+    <div class="modern-card max-w-md w-full rounded-3xl p-6 sm:p-7 relative text-center">
+      
+      <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3 shadow-sm">
+        <i data-lucide="check-circle-2" class="w-7 h-7"></i>
+      </div>
+
+      <h2 class="text-xl font-black text-slate-900">Registration Successful!</h2>
+      <p class="text-xs text-slate-500 mt-1 mb-5">Your permanent EduSync credentials have been atomically generated.</p>
+
+      <!-- Digital Smart Card Preview -->
+      <div class="smart-card-preview rounded-2xl p-5 text-white text-left shadow-xl mb-5 relative">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center text-white">
+              <i data-lucide="nfc" class="w-4 h-4"></i>
+            </div>
+            <span class="font-bold text-sm tracking-tight">EduSync Smart Pass</span>
+          </div>
+          <span class="text-[10px] font-mono bg-white/20 px-2 py-0.5 rounded font-bold">13.56 MHz</span>
+        </div>
+
+        <div class="flex items-center gap-3 mb-4">
+          <img id="card-modal-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" class="w-14 h-14 rounded-xl object-cover border-2 border-white/50">
+          <div>
+            <div id="card-modal-name" class="font-bold text-sm">Pasindu Nethsara</div>
+            <div id="card-modal-role" class="text-xs text-blue-100">Student • 2026 Combined Maths</div>
+            <div class="text-[10px] text-emerald-300 font-mono mt-0.5">● CHIP ACTIVE &amp; VERIFIED</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-3 border-t border-white/20 font-mono text-xs">
+          <div>
+            <div class="text-[10px] text-blue-200">ASSIGNED ID</div>
+            <div id="card-modal-id" class="font-bold text-white text-sm">STU-9402</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-blue-200">NFC HARDWARE UID</div>
+            <div id="card-modal-uid" class="font-bold text-white text-xs">NFC-7E-F2-18-9B</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <button 
+        onclick="proceedToLoginWithNewID()" 
+        class="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-600/30 transition flex items-center justify-center gap-2"
+      >
+        <span>Proceed to Sign In with this ID</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+
+      <p class="text-[10px] text-slate-400 mt-3 font-mono">
+        *Immutable record stored securely. Bound to hardware UUID.
+      </p>
+    </div>
+  </div>
+
+  <!-- ================= ADMIN LOGIN MODAL ================= -->
+  <div id="modal-admin" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="modern-card max-w-sm w-full rounded-3xl p-6 sm:p-7 relative">
+      <button onclick="toggleAdminModal()" class="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-slate-700 rounded-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center text-xs">
+          <i data-lucide="shield-alert" class="w-4 h-4 text-amber-400"></i>
+        </div>
+        <div>
+          <h3 class="text-base font-black text-slate-900">Institute Admin Access</h3>
+          <p class="text-[11px] text-slate-500">Restricted to Tuition Institute Command Staff</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleAdminSubmit(event)" class="space-y-3.5 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Staff / Admin Key</label>
+          <input type="text" value="ADM-001" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-mono font-bold text-slate-900 focus:outline-none focus:border-blue-600">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Master Passphrase</label>
+          <input type="password" value="adminSec9402" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-semibold text-slate-900 focus:outline-none focus:border-blue-600">
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md transition mt-2">
+          Authenticate &amp; Open Command Center &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Minimal Footer -->
+  <footer class="w-full max-w-5xl mx-auto px-6 py-4 text-center text-[11px] text-slate-400">
+    EduSync SDGP 2026 • Group CS76 • All 5 Modules Architected
+  </footer>
+
+  <!-- Interactive Logic -->
+  <script>
+    lucide.createIcons();
+
+    let currentMode = 'login';
+    let currentRole = 'student';
+    let newlyGeneratedID = 'STU-9402';
+    let childCount = 1;
+    let bankCount = 1;
+
+    const samplePhotos = {
+      student: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      parent: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+      teacher: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
+    };
+
+    const roleData = {
+      student: {
+        title: 'Student Sign In',
+        idLabel: 'Student Smart Card / Registration ID',
+        idPlaceholder: 'e.g. STU-9402 or student@edusync.lk',
+        idDefault: 'STU-9402',
+        idHint: 'Enter your assigned Student ID (e.g. STU-9402)',
+        idIcon: 'credit-card',
+        secretDefault: 'student123',
+        btnText: 'Sign In as Student',
+        photoTitle: 'Upload Student Profile Photo (Passport Style)',
+        photoDesc: 'Photo will be printed onto your physical 13.56MHz NFC Smart Card & used for gate turnstile Face-ID.',
+        regBtnText: 'Complete Registration & Issue Student Smart Card',
+        idPrefix: 'STU',
+        redirect: './student_dashboard.html'
+      },
+      parent: {
+        title: 'Parent Sign In',
+        idLabel: 'Parent ID (PID-XXXX) or Child\'s Student ID',
+        idPlaceholder: 'e.g. PID-8492 or STU-9402 or Phone',
+        idDefault: 'PID-8492',
+        idHint: 'Parents can log in with Parent ID (PID-XXXX), Child\'s Student ID or Phone',
+        idIcon: 'users',
+        secretDefault: 'parent123',
+        btnText: 'Sign In as Parent',
+        photoTitle: 'Upload Guardian Identification Photo',
+        photoDesc: 'Required for institute gate security verification when visiting or picking up children.',
+        regBtnText: 'Register Parent & Issue Parent ID (PID-XXXX)',
+        idPrefix: 'PID',
+        redirect: './parent_dashboard.html'
+      },
+      teacher: {
+        title: 'Teacher Sign In',
+        idLabel: 'Faculty / Teacher ID (TID-XXXX) or Email',
+        idPlaceholder: 'e.g. TID-102 or perera.maths@edusync.lk',
+        idDefault: 'TID-102',
+        idHint: 'Enter your assigned Faculty ID (e.g. TID-102)',
+        idIcon: 'award',
+        secretDefault: 'teacher123',
+        btnText: 'Sign In to Teacher Portal',
+        photoTitle: 'Upload Faculty Professional Headshot',
+        photoDesc: 'Displayed to students on LMS video lessons & batch timetables.',
+        regBtnText: 'Register Faculty & Issue Teacher ID (TID-XXXX)',
+        idPrefix: 'TID',
+        redirect: './teacher_portal.html'
+      }
+    };
+
+    // Conditional A/L Stream visibility handler
+    function handleGradeChange(gradeValue) {
+      const streamContainer = document.getElementById('container-al-stream');
+      if (gradeValue.includes('A/L')) {
+        streamContainer.classList.remove('hidden');
+      } else {
+        streamContainer.classList.add('hidden');
+      }
+    }
+
+    // Dynamic Multi-Child input appender for Parents
+    function addChildField() {
+      childCount++;
+      const container = document.getElementById('children-input-list');
+      const div = document.createElement('div');
+      div.className = 'flex items-center gap-2';
+      div.id = `child-row-${childCount}`;
+      div.innerHTML = `
+        <div class="relative flex-1">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-600">
+            <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+          </div>
+          <input 
+            type="text" 
+            required
+            class="w-full pl-9 pr-24 py-2 bg-blue-50/50 border border-blue-200 rounded-xl text-xs font-mono font-bold text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+            placeholder="Child ${childCount} Student ID (e.g. STU-940${childCount})"
+          >
+          <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] font-bold text-emerald-600">
+            ✓ LINKED
+          </span>
+        </div>
+        <span class="text-xs text-slate-400 px-1 font-bold">Child ${childCount}</span>
+        <button type="button" onclick="removeChildField('child-row-${childCount}')" class="p-1.5 text-slate-400 hover:text-red-600 rounded-lg hover:bg-red-50">
+          <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+        </button>
+      `;
+      container.appendChild(div);
+      lucide.createIcons();
+    }
+
+    function removeChildField(id) {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    }
+
+    // Dynamic Multi-Bank input appender for Teachers
+    function addTeacherBankField() {
+      bankCount++;
+      const container = document.getElementById('teacher-bank-list');
+      const div = document.createElement('div');
+      div.className = 'p-3 bg-slate-50 border border-slate-200 rounded-2xl space-y-2';
+      div.id = `bank-row-${bankCount}`;
+      div.innerHTML = `
+        <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+          <span class="flex items-center gap-1.5 text-slate-600">
+            <i data-lucide="landmark" class="w-3.5 h-3.5"></i>
+            <span>Secondary Bank Account #${bankCount}</span>
+          </span>
+          <button type="button" onclick="removeBankField('bank-row-${bankCount}')" class="text-[10px] text-red-600 hover:underline">
+            Remove
+          </button>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <input type="text" placeholder="Bank Name (e.g. Bank of Ceylon)" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600">
+          <input type="text" placeholder="Branch" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600">
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <input type="text" placeholder="Account Number" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-mono font-bold text-slate-900 focus:outline-none focus:border-blue-600">
+          <input type="text" placeholder="Account Holder Name" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-600">
+        </div>
+      `;
+      container.appendChild(div);
+      lucide.createIcons();
+    }
+
+    function removeBankField(id) {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    }
+
+    function setAuthMode(mode) {
+      currentMode = mode;
+      const tabLogin = document.getElementById('tab-auth-login');
+      const tabReg = document.getElementById('tab-auth-register');
+      const formLogin = document.getElementById('form-login');
+      const formReg = document.getElementById('form-register');
+      const authTitle = document.getElementById('auth-title');
+      const authSubtitle = document.getElementById('auth-subtitle');
+
+      if (mode === 'login') {
+        tabLogin.classList.add('active');
+        tabLogin.classList.remove('text-slate-400');
+        tabReg.classList.remove('active');
+        tabReg.classList.add('text-slate-400');
+        formLogin.classList.remove('hidden');
+        formReg.classList.add('hidden');
+        authTitle.textContent = 'Welcome back';
+        authSubtitle.textContent = 'Select your role and enter your credentials to sign in.';
+      } else {
+        tabReg.classList.add('active');
+        tabReg.classList.remove('text-slate-400');
+        tabLogin.classList.remove('active');
+        tabLogin.classList.add('text-slate-400');
+        formReg.classList.remove('hidden');
+        formLogin.classList.add('hidden');
+        authTitle.textContent = 'Create an account';
+        authSubtitle.textContent = 'Upload your photo & fill details to atomically generate your Smart ID.';
+      }
+    }
+
+    function setRole(role) {
+      currentRole = role;
+      ['student', 'parent', 'teacher'].forEach(r => {
+        const btn = document.getElementById(`role-${r}`);
+        if (r === role) {
+          btn.classList.add('active');
+          btn.classList.remove('text-slate-600');
+        } else {
+          btn.classList.remove('active');
+          btn.classList.add('text-slate-600');
+        }
+      });
+
+      const data = roleData[role];
+      // Login Form Updates
+      document.getElementById('label-identifier').textContent = data.idLabel;
+      document.getElementById('input-identifier').placeholder = data.idPlaceholder;
+      document.getElementById('input-identifier').value = data.idDefault;
+      document.getElementById('hint-identifier').textContent = data.idHint;
+      document.getElementById('input-password').value = data.secretDefault;
+      document.getElementById('btn-submit-text').textContent = data.btnText;
+
+      // Registration Form Updates
+      document.getElementById('photo-preview').src = samplePhotos[role];
+      document.getElementById('label-photo-title').textContent = data.photoTitle;
+      document.getElementById('label-photo-desc').textContent = data.photoDesc;
+      document.getElementById('btn-reg-text').textContent = data.regBtnText;
+
+      // Show/Hide Role-specific Registration Form sections
+      document.getElementById('fields-reg-student').classList.toggle('hidden', role !== 'student');
+      document.getElementById('fields-reg-parent').classList.toggle('hidden', role !== 'parent');
+      document.getElementById('fields-reg-teacher').classList.toggle('hidden', role !== 'teacher');
+
+      const icon = document.getElementById('icon-identifier');
+      icon.setAttribute('data-lucide', data.idIcon);
+      lucide.createIcons();
+    }
+
+    function togglePasswordVisibility(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.setAttribute('data-lucide', 'eye-off');
+      } else {
+        input.type = 'password';
+        icon.setAttribute('data-lucide', 'eye');
+      }
+      lucide.createIcons();
+    }
+
+    function previewUserPhoto(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          document.getElementById('photo-preview').src = evt.target.result;
+          document.getElementById('card-modal-photo').src = evt.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function loadRandomDemoPhoto() {
+      const demoList = [
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80"
+      ];
+      const random = demoList[Math.floor(Math.random() * demoList.length)];
+      document.getElementById('photo-preview').src = random;
+      document.getElementById('card-modal-photo').src = random;
+    }
+
+    function toggleAdminModal() {
+      const modal = document.getElementById('modal-admin');
+      modal.classList.toggle('hidden');
+    }
+
+    function handleAuthSubmit(e) {
+      if (e) e.preventDefault();
+      const btnText = document.getElementById('btn-submit-text');
+      btnText.textContent = 'Verifying Smart Card ID & UUID...';
+
+      setTimeout(() => {
+        window.location.href = roleData[currentRole].redirect;
+      }, 600);
+    }
+
+    // Atomic Registration Submission
+    function handleRegistrationSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-reg-submit');
+      const btnText = document.getElementById('btn-reg-text');
+      btn.disabled = true;
+      btnText.textContent = 'Atomically Assigning Unique ID...';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btnText.textContent = roleData[currentRole].regBtnText;
+
+        // Generate unique atomic ID
+        const randomNum = Math.floor(1000 + Math.random() * 9000);
+        const prefix = roleData[currentRole].idPrefix;
+        newlyGeneratedID = `${prefix}-${randomNum}`;
+        const hex = Math.floor(Math.random()*16777215).toString(16).toUpperCase();
+        const generatedUID = `NFC-${hex.substring(0,2)}-${hex.substring(2,4)}-${randomNum.toString().substring(0,2)}`;
+
+        const firstName = document.getElementById('reg-first-name').value || 'Registered';
+        const lastName = document.getElementById('reg-last-name').value || 'User';
+
+        // Populate Modal
+        document.getElementById('card-modal-name').textContent = `${firstName} ${lastName}`;
+        document.getElementById('card-modal-id').textContent = newlyGeneratedID;
+        document.getElementById('card-modal-uid').textContent = generatedUID;
+        document.getElementById('card-modal-photo').src = document.getElementById('photo-preview').src;
+
+        if (currentRole === 'student') {
+          const grade = document.getElementById('reg-student-grade').value;
+          const medium = document.getElementById('reg-student-medium').value;
+          document.getElementById('card-modal-role').textContent = `Student • ${grade} (${medium})`;
+        } else if (currentRole === 'parent') {
+          document.getElementById('card-modal-role').textContent = `Parent • Linked to ${childCount} Child(ren)`;
+        } else {
+          document.getElementById('card-modal-role').textContent = `Faculty • Combined Mathematics (${bankCount} Bank Accounts Linked)`;
+        }
+
+        // Show Modal & Trigger celebratory confetti
+        document.getElementById('modal-reg-success').classList.remove('hidden');
+        confetti({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.6 }
+        });
+      }, 650);
+    }
+
+    function proceedToLoginWithNewID() {
+      document.getElementById('modal-reg-success').classList.add('hidden');
+      setAuthMode('login');
+      document.getElementById('input-identifier').value = newlyGeneratedID;
+      document.getElementById('input-password').focus();
+    }
+
+    function handleAdminSubmit(e) {
+      e.preventDefault();
+      window.location.href = './index.html?role=admin&module=screen-overview';
+    }
+  </script>
+</body>
+</html>

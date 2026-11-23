@@ -1,0 +1,211 @@
+<svg width="1440" height="1100" viewBox="0 0 1440 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="att-hero-grad" x1="260" y1="94" x2="1410" y2="244" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="55%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1440" height="1100" fill="#F4F7FE"/>
+
+  <!-- ================= 1. SIDEBAR (230px) ================= -->
+  <rect width="230" height="1100" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- EduSync Logo (Original Sapphire Blue Box with NFC Waves) -->
+  <rect x="24" y="24" width="38" height="38" rx="12" fill="#2563EB"/>
+  <path d="M43 36C41 38 40 41 41 44C42 47 45 48 48 47" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 34C37 37 36 42 38 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <text x="72" y="44" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.5">Edu<tspan fill="#2563EB">Sync</tspan></text>
+  <text x="72" y="56" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">TEACHER PORTAL</text>
+
+  <!-- Identity Capsule -->
+  <rect x="16" y="78" width="198" height="66" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="94" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700">ACTIVE LECTURER</text>
+  <circle cx="196" cy="91" r="3.5" fill="#10B981"/>
+  <circle cx="42" cy="122" r="14" fill="#0F172A"/>
+  <text x="35" y="126" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="900">SP</text>
+  <text x="64" y="118" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Eng. Saman Perera</text>
+  <text x="64" y="132" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">FAC-2018 • Combined Maths</text>
+
+  <!-- Nav -->
+  <text x="28" y="166" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">LECTURER MENU</text>
+
+  <rect x="16" y="178" width="198" height="38" rx="12" fill="transparent"/>
+  <text x="54" y="202" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Teacher Overview</text>
+
+  <rect x="16" y="220" width="198" height="38" rx="12" fill="transparent"/>
+  <text x="54" y="244" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Timetable &amp; Ad-Hoc</text>
+
+  <!-- ACTIVE: Live Hall Attendance -->
+  <rect x="16" y="262" width="198" height="38" rx="12" fill="#059669"/>
+  <circle cx="39" cy="281" r="5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="39" cy="281" r="2" fill="#FFFFFF"/>
+  <text x="54" y="286" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Live Hall Attendance</text>
+
+  <rect x="16" y="304" width="198" height="38" rx="12" fill="transparent"/>
+  <text x="54" y="328" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Video DRM &amp; Tutes</text>
+
+  <rect x="16" y="346" width="198" height="38" rx="12" fill="transparent"/>
+  <text x="54" y="370" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">MCQ Quiz Engine</text>
+
+  <rect x="16" y="388" width="198" height="38" rx="12" fill="transparent"/>
+  <text x="54" y="412" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Revenue &amp; Split (80/20)</text>
+
+  <!-- Bottom Payout Badge -->
+  <rect x="16" y="1000" width="198" height="74" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="1022" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700">PAYOUT AGREEMENT</text>
+  <circle cx="196" cy="1019" r="3.5" fill="#10B981"/>
+  <text x="28" y="1042" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">80% Teacher / 20% Net</text>
+  <text x="28" y="1058" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">Commercial Bank •••• 8912</text>
+
+  <!-- ================= 2. HEADER ================= -->
+  <rect x="230" y="0" width="1210" height="70" fill="#FFFFFF" fill-opacity="0.95" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="260" y="28" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">Teacher Portal / <tspan fill="#059669" font-weight="700">Hall 04 Live Attendance Telemetry</tspan></text>
+  <text x="260" y="52" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.5">Physical NFC Turnstile Gate Stream &amp; Automated SMS</text>
+
+  <rect x="1060" y="18" width="210" height="34" rx="17" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="1076" cy="35" r="4" fill="#10B981"/>
+  <text x="1088" y="39" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">Hall 04: <tspan font-family="JetBrains Mono, monospace">248 / 300 Present</tspan></text>
+
+  <circle cx="1310" cy="35" r="16" fill="#0F172A"/>
+  <text x="1302" y="40" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="11" font-weight="900">SP</text>
+
+  <!-- ================= 3. HERO BANNER ================= -->
+  <rect x="260" y="94" width="1150" height="136" rx="24" fill="url(#att-hero-grad)"/>
+  <rect x="290" y="112" width="480" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="304" cy="124" r="4" fill="#34D399"/>
+  <text x="316" y="128" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">REAL-TIME NFC CARD SENSOR • TURNSTILE 01 &amp; 02 MOTORIZED SYNCHRONIZATION</text>
+
+  <text x="290" y="162" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="22" font-weight="900">Hall 04 Live Attendance &amp; Gate Tap Telemetry</text>
+  <text x="290" y="184" fill="#D1FAE5" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Instant card tap validation, automatic parental SMS notification dispatch, automated class fee ledger deduction, and motorized turnstile unlatching.</text>
+
+  <rect x="290" y="196" width="190" height="24" rx="8" fill="#FFFFFF"/>
+  <text x="304" y="212" fill="#064E3B" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Simulate Live Card Tap (+1)</text>
+
+  <rect x="490" y="196" width="220" height="24" rx="8" fill="#D97706"/>
+  <text x="504" y="212" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800">Dispatch 15-Min Absent SMS (52)</text>
+
+  <!-- ================= 4. METRIC CARDS ROW ================= -->
+  <rect x="260" y="246" width="270" height="88" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="280" y="272" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">PRESENT IN HALL 04</text>
+  <text x="280" y="306" fill="#059669" font-family="Montserrat, sans-serif" font-size="24" font-weight="900">248 <tspan fill="#94A3B8" font-size="14" font-weight="600">/ 300 Seats</tspan></text>
+  <text x="280" y="324" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">82.6% Occupancy Rate</text>
+
+  <rect x="545" y="246" width="270" height="88" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="565" y="272" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">ABSENT STUDENTS</text>
+  <text x="565" y="306" fill="#E11D48" font-family="Montserrat, sans-serif" font-size="24" font-weight="900">52 Students</text>
+  <text x="565" y="324" fill="#BE123C" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">Automated SMS Dispatched</text>
+
+  <rect x="830" y="246" width="270" height="88" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="850" y="272" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">TURNSTILE BARRIERS</text>
+  <text x="850" y="306" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="20" font-weight="900">Motorized Live</text>
+  <text x="850" y="324" fill="#059669" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">0.3s Unlatch • Zero Queue</text>
+
+  <rect x="1115" y="246" width="295" height="88" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1135" y="272" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">TODAY'S TEACHER SHARE</text>
+  <text x="1135" y="306" fill="#2563EB" font-family="Montserrat, sans-serif" font-size="24" font-weight="900">Rs. 892,800</text>
+  <text x="1135" y="324" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">80% Net Payout Verified</text>
+
+  <!-- ================= 5. LIVE TAP STREAM TABLE ================= -->
+  <rect x="260" y="350" width="1150" height="660" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <circle cx="286" cy="382" r="5" fill="#10B981"/>
+  <text x="300" y="386" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="14" font-weight="900">Live NFC Turnstile Card Tap Stream (Hall 04 Entrance)</text>
+  <text x="1380" y="386" text-anchor="end" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">SYNCHRONIZED WITH RFID CARDS &amp; SMS GATEWAY</text>
+
+  <!-- Table Header -->
+  <rect x="286" y="408" width="1098" height="34" rx="8" fill="#F8FAFC"/>
+  <text x="304" y="430" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">STUDENT &amp; PHOTO</text>
+  <text x="510" y="430" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">STUDENT ID / NFC UID</text>
+  <text x="690" y="430" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">TAP TIME</text>
+  <text x="810" y="430" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">BARRIER ROUTE</text>
+  <text x="960" y="430" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">FEE DEDUCTION</text>
+  <text x="1130" y="430" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">PARENTAL SMS</text>
+  <text x="1360" y="430" text-anchor="end" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800">STATUS</text>
+
+  <!-- Row 1: Pasindu Nethsara -->
+  <line x1="286" y1="442" x2="1384" y2="442" stroke="#F1F5F9" stroke-width="1"/>
+  <circle cx="316" cy="470" r="14" fill="#2563EB"/>
+  <text x="309" y="474" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">PN</text>
+  <text x="340" y="466" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Pasindu Nethsara</text>
+  <text x="340" y="480" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9">2026 Combined Maths</text>
+
+  <text x="510" y="472" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">STU-9402 <tspan fill="#94A3B8">(04:A2:3B:4C)</tspan></text>
+  <text x="690" y="472" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="11">07:58:12 AM</text>
+  <text x="810" y="472" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">Turnstile 01 Motor</text>
+  <text x="960" y="472" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">Rs. 4,500 (Paid ✓)</text>
+  
+  <rect x="1130" y="458" width="165" height="22" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="1138" y="473" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">✓ SMS Sent (077 ••• 6697)</text>
+
+  <rect x="1310" y="458" width="60" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1318" y="473" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">PRESENT</text>
+
+  <!-- Row 2: Tharushi Nethsara -->
+  <line x1="286" y1="500" x2="1384" y2="500" stroke="#F1F5F9" stroke-width="1"/>
+  <circle cx="316" cy="528" r="14" fill="#9333EA"/>
+  <text x="309" y="532" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">TN</text>
+  <text x="340" y="524" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Tharushi Nethsara</text>
+  <text x="340" y="538" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9">Sibling Discount (10%)</text>
+
+  <text x="510" y="530" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">STU-9403 <tspan fill="#94A3B8">(04:E8:11:5F)</tspan></text>
+  <text x="690" y="530" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="11">07:59:44 AM</text>
+  <text x="810" y="530" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">Turnstile 02 Motor</text>
+  <text x="960" y="530" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">Rs. 4,050 (10% Off)</text>
+
+  <rect x="1130" y="516" width="165" height="22" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="1138" y="531" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">✓ SMS Sent (071 ••• 8821)</text>
+
+  <rect x="1310" y="516" width="60" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1318" y="531" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">PRESENT</text>
+
+  <!-- Row 3: Kaveen Senanayake -->
+  <line x1="286" y1="558" x2="1384" y2="558" stroke="#F1F5F9" stroke-width="1"/>
+  <circle cx="316" cy="586" r="14" fill="#0F172A"/>
+  <text x="309" y="590" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">KS</text>
+  <text x="340" y="582" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Kaveen Senanayake</text>
+  <text x="340" y="596" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9">2026 Combined Maths</text>
+
+  <text x="510" y="588" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">STU-8821 <tspan fill="#94A3B8">(04:77:C2:90)</tspan></text>
+  <text x="690" y="588" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="11">08:01:05 AM</text>
+  <text x="810" y="588" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">Turnstile 01 Motor</text>
+  <text x="960" y="588" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">Rs. 4,500 (Paid ✓)</text>
+
+  <rect x="1130" y="574" width="165" height="22" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="1138" y="589" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">✓ SMS Sent (072 ••• 3120)</text>
+
+  <rect x="1310" y="574" width="60" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1318" y="589" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">PRESENT</text>
+
+  <!-- Row 4: Dulina Mendis -->
+  <line x1="286" y1="616" x2="1384" y2="616" stroke="#F1F5F9" stroke-width="1"/>
+  <circle cx="316" cy="644" r="14" fill="#D97706"/>
+  <text x="309" y="648" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="900">DM</text>
+  <text x="340" y="640" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Dulina Mendis</text>
+  <text x="340" y="654" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9">2026 Combined Maths</text>
+
+  <text x="510" y="646" fill="#0F172A" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">STU-7719 <tspan fill="#94A3B8">(04:33:91:AA)</tspan></text>
+  <text x="690" y="646" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="11">08:02:50 AM</text>
+  <text x="810" y="646" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">Turnstile 02 Motor</text>
+  <text x="960" y="646" fill="#059669" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800">Rs. 4,500 (Paid ✓)</text>
+
+  <rect x="1130" y="632" width="165" height="22" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="1138" y="647" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">✓ SMS Sent (077 ••• 9940)</text>
+
+  <rect x="1310" y="632" width="60" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="1318" y="647" fill="#047857" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">PRESENT</text>
+
+  <!-- Bottom Quick Info Card -->
+  <rect x="286" y="870" width="1098" height="110" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="310" y="902" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="13" font-weight="800">Automated Parental Attendance Notification Protocol (Member 2 Card 2)</text>
+  <text x="310" y="924" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">When a student taps their NFC Smart Pass, an automated SMS notification is dispatched within 1.2 seconds: <tspan fill="#059669" font-family="JetBrains Mono, monospace">"EduSync: Dear Parent, Pasindu Nethsara safely entered Hall 04 at 07:58 AM for Combined Maths Theory."</tspan></text>
+  <text x="310" y="944" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5">Students remaining un-tapped 15 minutes after session kickoff are automatically batched into the 15-Minute Absentee SMS blast protocol.</text>
+
+  <!-- ================= 6. UNIVERSAL FOOTER ================= -->
+  <rect x="0" y="1030" width="1440" height="70" fill="#0F172A"/>
+  <text x="60" y="1069" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">EduSync Unified Tuition Management &amp; NFC Ecosystem • Hall Telemetry Engine (SDGP CS76 - 2026)</text>
+  <text x="1380" y="1069" text-anchor="end" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10.5">Helpline: <tspan fill="#FFFFFF" font-weight="700">077 129 6697</tspan> • Teacher Portal • Kiosk Screen</text>
+</svg>

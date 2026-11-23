@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSync | Admin Overview &amp; Command Center</title>
+  
+  <!-- Premium Google Fonts: Montserrat (Headings) + Plus Jakarta Sans (Body) + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Montserrat', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            canvas: '#F4F7FE',
+            card: '#FFFFFF',
+            primary: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #F4F7FE;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Behance Card Elevation */
+    .behance-card {
+      background: #FFFFFF;
+      border-radius: 22px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.025);
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .behance-card:hover {
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      border-color: rgba(203, 213, 225, 0.95);
+    }
+
+    /* Unified Header & Sidebar */
+    .unified-header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    .sidebar-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #64748B;
+      transition: all 0.2s ease;
+    }
+    .sidebar-nav-btn:hover {
+      color: #0F172A;
+      background: #F8FAFC;
+    }
+    .sidebar-nav-btn.active {
+      color: #FFFFFF;
+      background: #0F172A;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+    }
+
+    /* Hero Gradient */
+    .cinematic-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 55%, #334155 100%);
+      border-radius: 24px;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.3);
+    }
+
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-slate-900 selection:text-white">
+
+  <!-- ================= 1. BEHANCE MINIMAL LEFT SIDEBAR (FIXED LG SCREENS) ================= -->
+  <aside class="fixed top-0 left-0 h-screen w-64 bg-white border-r border-slate-200/90 z-40 hidden lg:flex flex-col justify-between p-5 select-none overflow-y-auto">
+    
+    <div class="space-y-5">
+      <!-- EduSync Brand Logo (Original Sapphire Blue Box with NFC Waves) -->
+      <a href="./admin_portal.html" class="flex items-center gap-3 px-1 group">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/25 group-hover:scale-105 transition">
+          <i data-lucide="nfc" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-xl font-display font-black text-slate-900 tracking-tight leading-none">
+            Edu<span class="text-blue-600">Sync</span>
+          </div>
+          <div class="text-xs font-semibold text-slate-400 tracking-wide mt-0.5">
+            Admin Portal
+          </div>
+        </div>
+      </a>
+
+      <!-- Admin Identity Capsule -->
+      <div class="p-3 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-2 text-xs">
+        <div class="flex items-center justify-between text-slate-400 font-mono font-bold text-[10px] uppercase">
+          <span>Master Authority</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 ring-2 ring-slate-800">
+            AW
+          </div>
+          <div class="truncate">
+            <div class="font-bold text-slate-900 leading-tight truncate">Dr. A. Wickramasinghe</div>
+            <div class="text-[11px] text-slate-500 font-mono">ADM-001 • Registrar</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Menu: 5 Dedicated Admin Modules -->
+      <nav class="space-y-1">
+        <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 px-3 pb-1 font-bold">
+          Master Administration
+        </div>
+
+        <!-- 1. Admin Overview (ACTIVE) -->
+        <a href="./admin_portal.html" class="sidebar-nav-btn active">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Admin Overview</span>
+        </a>
+
+        <!-- 2. This Week Schedule (Member 2 Card 4) -->
+        <a href="./admin_timetable.html" class="sidebar-nav-btn">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>This Week Schedule</span>
+        </a>
+
+        <!-- 2. Student Management -->
+        <a href="./admin_students.html" class="sidebar-nav-btn">
+          <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+          <span>Student Management</span>
+        </a>
+
+        <!-- 3. Teacher Management & Commissions -->
+        <a href="./admin_teachers.html" class="sidebar-nav-btn">
+          <i data-lucide="briefcase" class="w-4 h-4"></i>
+          <span>Teacher &amp; Commissions</span>
+        </a>
+
+        <!-- 4. Parent Directory & SMS Hub -->
+        <a href="./admin_parents.html" class="sidebar-nav-btn">
+          <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+          <span>Parent &amp; SMS Hub</span>
+        </a>
+
+        <!-- 5. Operations, Timetable & Inventory -->
+        <a href="./admin_operations.html" class="sidebar-nav-btn">
+          <i data-lucide="box" class="w-4 h-4"></i>
+          <span>Operations &amp; Logistics</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom Security Health Badge -->
+    <div class="p-3.5 rounded-2xl bg-slate-900 text-white space-y-1.5 shadow-sm mt-4">
+      <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-400">
+        <span>SECURITY ENCLAVE</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      </div>
+      <div class="text-xs font-bold text-white">System Security: Operational</div>
+      <div class="text-[10px] font-mono text-emerald-400 font-bold">AES-256 • Hardware MAC Verified</div>
+    </div>
+  </aside>
+
+  <!-- ================= MOBILE DRAWER SIDEBAR ================= -->
+  <div id="mobile-sidebar" class="fixed inset-0 z-50 flex hidden lg:hidden">
+    <div onclick="closeMobileSidebar()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-72 max-w-[85%] bg-white h-full p-5 space-y-6 flex flex-col justify-between shadow-2xl z-10 overflow-y-auto">
+      <div class="space-y-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md shadow-blue-500/25">
+              <i data-lucide="nfc" class="w-5 h-5"></i>
+            </div>
+            <span class="text-lg font-display font-extrabold text-slate-900">Edu<span class="text-blue-600">Sync</span></span>
+          </div>
+          <button onclick="closeMobileSidebar()" class="p-1 text-slate-400 hover:text-slate-700">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <nav class="space-y-1 text-sm font-semibold text-slate-600">
+          <a href="./admin_portal.html" class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 text-white font-bold">
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+            <span>Admin Overview</span>
+          </a>
+          <a href="./admin_students.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            <span>Student Management</span>
+          </a>
+          <a href="./admin_teachers.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="briefcase" class="w-5 h-5"></i>
+            <span>Teacher &amp; Commissions</span>
+          </a>
+          <a href="./admin_parents.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+            <span>Parent &amp; SMS Hub</span>
+          </a>
+          <a href="./admin_operations.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="box" class="w-5 h-5"></i>
+            <span>Operations &amp; Logistics</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="p-3 bg-slate-50 rounded-xl text-xs font-mono text-slate-500 space-y-1">
+        <div class="font-bold text-slate-800">Dr. A. Wickramasinghe</div>
+        <div>Registrar • ADM-001</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <div class="lg:pl-64 flex flex-col flex-grow">
+
+    <!-- ================= 2. UNIFIED UNIVERSAL HEADER ================= -->
+    <header class="sticky top-0 z-30 unified-header px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Left: Mobile Menu & Breadcrumb -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <button 
+          onclick="openMobileSidebar()" 
+          class="lg:hidden p-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 transition"
+        >
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+
+        <div>
+          <div class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+            <span>Admin Portal</span>
+            <span>/</span>
+            <span class="text-slate-900 font-bold">Command Center Overview</span>
+          </div>
+          <h1 class="text-lg sm:text-xl font-display font-black text-slate-900 tracking-tight">
+            Institute Master Overview
+          </h1>
+        </div>
+      </div>
+
+      <!-- Center: Universal Quick Search (⌘K) -->
+      <div class="hidden md:flex items-center max-w-sm w-full mx-4">
+        <div 
+          onclick="alert('Searching across all 5 admin modules: students, faculty, gates, and audit logs...')"
+          class="w-full py-2 px-3.5 bg-slate-50 hover:bg-slate-100/80 border border-slate-200/90 rounded-2xl flex items-center justify-between text-xs text-slate-400 transition cursor-pointer shadow-sm"
+        >
+          <div class="flex items-center gap-2">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400"></i>
+            <span>Search faculty, students, UIDs, gates...</span>
+          </div>
+          <kbd class="px-2 py-0.5 rounded-md bg-white border border-slate-200 font-mono text-[10px] text-slate-500 font-bold shadow-2xs">
+            ⌘K
+          </kbd>
+        </div>
+      </div>
+
+      <!-- Right: Live Attendance Capsule + Notifications + Admin Capsule -->
+      <div class="flex items-center gap-2.5 sm:gap-3.5">
+        
+        <!-- Live Total Campus Attendance Capsule -->
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-semibold shadow-2xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Institute Live: <strong class="font-mono">1,420 / 1,600</strong></span>
+          <span class="text-slate-400 font-mono font-bold">(88.75%)</span>
+        </div>
+
+        <!-- Notification Bell Dropdown -->
+        <div class="relative">
+          <button 
+            onclick="toggleNotificationDropdown()"
+            class="relative p-2.5 rounded-full text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200/80 transition"
+          >
+            <i data-lucide="bell" class="w-4 h-4"></i>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-500 ring-2 ring-white"></span>
+          </button>
+
+          <!-- Dropdown Panel -->
+          <div 
+            id="dropdown-notifications"
+            class="absolute right-0 mt-3 w-80 sm:w-96 bg-white rounded-2xl p-4 shadow-2xl border border-slate-200 space-y-3 z-50 hidden"
+          >
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <h4 class="text-sm font-display font-bold text-slate-900">Registrar Priority Alerts</h4>
+              <span class="text-[11px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">All Systems Online</span>
+            </div>
+
+            <div class="space-y-2.5 max-h-72 overflow-y-auto text-xs">
+              <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 space-y-1">
+                <div class="flex items-center justify-between font-bold text-emerald-900">
+                  <span>Turnstile Gate A2 Surge</span>
+                  <span class="font-mono text-[10px] text-emerald-700">08:02 AM</span>
+                </div>
+                <p class="text-emerald-800 text-[11px]">
+                  Hall 04 entrance turnstile processed 248 entries smoothly. 0 reader jams detected.
+                </p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-100 space-y-1">
+                <div class="flex items-center justify-between font-bold text-blue-900">
+                  <span>NFC Card Issued</span>
+                  <span class="font-mono text-[10px] text-blue-700">08:14 AM</span>
+                </div>
+                <p class="text-blue-800 text-[11px]">
+                  Card UID 04:7A:B2:9C successfully bound to Pasindu Nethsara (STU-9402).
+                </p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-100 space-y-1">
+                <div class="flex items-center justify-between font-bold text-amber-900">
+                  <span>Teacher Payroll Clear</span>
+                  <span class="font-mono text-[10px] text-amber-700">08:20 AM</span>
+                </div>
+                <p class="text-amber-800 text-[11px]">
+                  LKR 4,544,000.00 disburse batch generated for senior lecturers via Commercial Bank.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Profile Capsule -->
+        <div class="flex items-center gap-2.5 pl-2 sm:pl-3 border-l border-slate-200">
+          <div class="w-9 h-9 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-xs ring-2 ring-slate-800">
+            AW
+          </div>
+          <div class="hidden xl:block text-left">
+            <div class="text-xs font-bold text-slate-900 leading-tight">Dr. A. Wickramasinghe</div>
+            <div class="text-[10px] text-slate-400 font-mono">Registrar • ADM-001</div>
+          </div>
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- ================= MAIN BODY CONTENT CONTAINER ================= -->
+    <main class="p-4 sm:p-8 max-w-7xl mx-auto w-full space-y-8 flex-grow">
+
+      <!-- ================= HERO BANNER ================= -->
+      <section class="cinematic-hero p-6 sm:p-10 text-white relative">
+        <div class="relative z-10 max-w-3xl space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>INSTITUTE MASTER REGISTRAR DESK • ALL 4 HALLS SYNCHRONIZED</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-black tracking-tight leading-tight">
+            Institute Master Command &amp; Operations
+          </h2>
+
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Consolidated oversight across 1,420 students, 12 faculty members, 1,180 parents, 8 physical turnstile gates, automated 80/20 teacher royalty splits, real-time NFC smart card enrollment, and automated SMS broadcast gateways.
+          </p>
+
+          <!-- Quick Module Navigation Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button 
+              onclick="emergencyGateUnlock()"
+              class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs transition flex items-center gap-2 shadow-lg shadow-rose-600/30"
+            >
+              <i data-lucide="unlock" class="w-4 h-4"></i>
+              <span>Emergency Gate Override</span>
+            </button>
+
+            <a 
+              href="./admin_students.html"
+              class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition flex items-center gap-2 shadow-lg shadow-blue-600/30"
+            >
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <span>Manage Students →</span>
+            </a>
+
+            <a 
+              href="./admin_teachers.html"
+              class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition flex items-center gap-2 border border-slate-700"
+            >
+              <i data-lucide="pie-chart" class="w-4 h-4 text-amber-400"></i>
+              <span>Commissions &amp; Payouts →</span>
+            </a>
+
+            <button 
+              onclick="downloadConsolidatedAuditReport()"
+              class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs backdrop-blur-md border border-white/20 transition flex items-center gap-2"
+            >
+              <i data-lucide="file-spreadsheet" class="w-4 h-4 text-emerald-300"></i>
+              <span>Master Audit (PDF)</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4 METRICS CARDS ROW ================= -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Metric 1: Total Attendance -->
+        <a href="./admin_students.html" class="behance-card p-5 space-y-3 block hover:border-blue-400">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Institute Inflow Today</span>
+            <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+              <i data-lucide="users" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-mono font-black text-slate-900">1,420</span>
+            <span class="text-xs text-slate-400 font-mono">/ 1,600 Total</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full rounded-full" style="width: 88.75%"></div>
+          </div>
+          <div class="text-[11px] text-slate-500 flex items-center justify-between">
+            <span class="text-emerald-600 font-bold font-mono">88.75% Attendance</span>
+            <span class="text-blue-600 font-bold">View Registry →</span>
+          </div>
+        </a>
+
+        <!-- Metric 2: Gross Fees & Institute Commission -->
+        <a href="./admin_teachers.html" class="behance-card p-5 space-y-3 block hover:border-blue-400">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Institute Net Commission</span>
+            <div class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+              <i data-lucide="pie-chart" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-mono font-black text-blue-600">LKR 1,136,000</span>
+          </div>
+          <div class="text-[11px] text-slate-500 space-y-1 font-mono">
+            <div class="flex justify-between">
+              <span>Gross Collections:</span>
+              <span class="font-bold text-slate-800">LKR 5,680,000</span>
+            </div>
+            <div class="flex justify-between text-slate-500">
+              <span>Teacher 80% Payouts:</span>
+              <span class="text-emerald-600 font-bold">LKR 4.54M →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Metric 3: Hardware Gate Health -->
+        <div class="behance-card p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Turnstiles Health</span>
+            <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+              <i data-lucide="radio" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-mono font-black text-slate-900">8 / 8</span>
+            <span class="text-xs text-emerald-600 font-bold font-mono">ONLINE ✓</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full rounded-full" style="width: 100%"></div>
+          </div>
+          <div class="text-[11px] text-slate-500 flex items-center justify-between">
+            <span>Avg Hardware Ping: <strong>418ms</strong></span>
+            <span class="text-emerald-700 font-mono font-bold">0 Faults</span>
+          </div>
+        </div>
+
+        <!-- Metric 4: Smart Pass Enrolled -->
+        <a href="./admin_students.html" class="behance-card p-5 space-y-3 block hover:border-amber-400">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Active NFC Cards</span>
+            <div class="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+              <i data-lucide="credit-card" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-mono font-black text-amber-600">1,540</span>
+            <span class="text-xs text-slate-400 font-mono">Enrolled</span>
+          </div>
+          <div class="text-[11px] text-slate-500 flex items-center justify-between pt-2 border-t border-slate-100">
+            <span>Frozen: <strong>14 Cards</strong></span>
+            <span class="text-blue-600 font-bold">+ Pair Card →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- ================= SECTION: THIS WEEK'S INSTITUTE LECTURE SCHEDULE & HALL ALLOCATION ================= -->
+      <section id="section-this-week" class="behance-card p-6 sm:p-8 space-y-6">
+        
+        <!-- Header & Action Row -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-mono font-bold mb-2">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
+              <span>MEMBER 2 CARD 4 • 7-DAY ALLOCATION &amp; SAME-DAY MULTI-SESSION ENGINE</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-display font-extrabold text-slate-900 tracking-tight">
+              This Week's Institute Lecture Schedule &amp; Hall Allocation Matrix
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+              Master timetable of all faculty lectures across Halls 01 - 04, highlighting same-day multiple classes, live registered student headcounts, and conflict-free room allocations.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5">
+            <a 
+              href="./admin_teachers.html"
+              class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition flex items-center gap-2 shadow-sm"
+            >
+              <i data-lucide="plus-circle" class="w-4 h-4 text-amber-400"></i>
+              <span>+ Add Faculty Slot</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Weekly Summary & Conflict Status Strip -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200/80 text-xs">
+          <div>
+            <span class="text-[11px] text-slate-400 block font-mono">Total Weekly Sessions</span>
+            <span class="font-mono font-black text-slate-900 text-base">18 Classes</span>
+            <span class="text-[10px] text-indigo-600 block font-mono">Halls 01 — 04 Booked</span>
+          </div>
+          <div>
+            <span class="text-[11px] text-slate-400 block font-mono">Today's Active Attendance</span>
+            <span class="font-mono font-black text-emerald-600 text-base">1,420 Enrolled</span>
+            <span class="text-[10px] text-emerald-700 block font-mono">Turnstile Gates Live</span>
+          </div>
+          <div>
+            <span class="text-[11px] text-slate-400 block font-mono">Peak Attendance Day</span>
+            <span class="font-mono font-black text-blue-600 text-base">Saturday (Peak)</span>
+            <span class="text-[10px] text-blue-700 block font-mono">1,540 Students Registered</span>
+          </div>
+          <div>
+            <span class="text-[11px] text-slate-400 block font-mono">Hall Clash Protocol</span>
+            <span class="font-mono font-black text-emerald-700 text-base">0 Conflicts ✓</span>
+            <span class="text-[10px] text-emerald-600 block font-mono">100% Collision-Free</span>
+          </div>
+        </div>
+
+        <!-- ================= 1. INTERACTIVE 7-DAY HORIZON BAR ================= -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-mono font-bold uppercase tracking-wider text-slate-400">
+              Select Day to Filter Sessions &amp; Same-Day Multi-Classes:
+            </span>
+            <div class="flex items-center gap-2">
+              <button onclick="filterAdminSchedule('all')" id="admin-tab-all" class="px-2.5 py-1 rounded-lg bg-slate-900 text-white font-mono font-bold text-[11px] shadow-sm">
+                This Week (All 18)
+              </button>
+              <button onclick="filterAdminSchedule('today')" id="admin-tab-today" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-mono font-bold text-[11px]">
+                Today Only (7)
+              </button>
+            </div>
+          </div>
+
+          <!-- 7 Day Horizon Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-xs">
+            
+            <!-- Mon -->
+            <button onclick="filterAdminSchedule('monday')" id="admin-pill-monday" class="p-3.5 rounded-2xl bg-blue-600 text-white text-left shadow-md shadow-blue-600/20 transition-all border-2 border-blue-500">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-black text-sm">Monday</span>
+                <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-black bg-white/20 text-white">TODAY</span>
+              </div>
+              <div class="font-mono text-[11px] text-blue-100 mt-1">23 Nov 2026</div>
+              <div class="text-[10px] font-mono font-bold text-blue-200 mt-2">7 Sessions • 4 Halls</div>
+            </button>
+
+            <!-- Tue -->
+            <button onclick="filterAdminSchedule('tuesday')" id="admin-pill-tuesday" class="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-slate-800 text-sm">Tuesday</span>
+                <span class="text-[9px] font-mono text-slate-400">OFFICE</span>
+              </div>
+              <div class="font-mono text-[11px] text-slate-400 mt-1">24 Nov 2026</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-2">2 Consult Sessions</div>
+            </button>
+
+            <!-- Wed -->
+            <button onclick="filterAdminSchedule('wednesday')" id="admin-pill-wednesday" class="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-slate-800 text-sm">Wednesday</span>
+                <span class="text-[9px] font-mono text-indigo-600 font-bold">SEMINARS</span>
+              </div>
+              <div class="font-mono text-[11px] text-slate-400 mt-1">25 Nov 2026</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-2">4 Sessions (Hall 02)</div>
+            </button>
+
+            <!-- Thu -->
+            <button onclick="filterAdminSchedule('thursday')" id="admin-pill-thursday" class="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-slate-800 text-sm">Thursday</span>
+                <span class="text-[9px] font-mono text-purple-600 font-bold">REVISION</span>
+              </div>
+              <div class="font-mono text-[11px] text-slate-400 mt-1">26 Nov 2026</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-2">3 Revision Classes</div>
+            </button>
+
+            <!-- Fri -->
+            <button onclick="filterAdminSchedule('friday')" id="admin-pill-friday" class="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-slate-800 text-sm">Friday</span>
+                <span class="text-[9px] font-mono text-emerald-600 font-bold">TESTS</span>
+              </div>
+              <div class="font-mono text-[11px] text-slate-400 mt-1">27 Nov 2026</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-2">4 Speed Tests</div>
+            </button>
+
+            <!-- Sat -->
+            <button onclick="filterAdminSchedule('saturday')" id="admin-pill-saturday" class="p-3.5 rounded-2xl bg-white border-2 border-emerald-500/40 hover:border-emerald-500 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-extrabold text-slate-900 text-sm">Saturday</span>
+                <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-emerald-100 text-emerald-800">PEAK</span>
+              </div>
+              <div class="font-mono text-[11px] text-slate-400 mt-1">28 Nov 2026</div>
+              <div class="text-[10px] font-mono font-bold text-emerald-700 mt-2">8 Sessions • 1,540 In</div>
+            </button>
+
+            <!-- Sun -->
+            <button onclick="filterAdminSchedule('sunday')" id="admin-pill-sunday" class="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-slate-800 text-sm">Sunday</span>
+                <span class="text-[9px] font-mono text-blue-600 font-bold">MEGA</span>
+              </div>
+              <div class="font-mono text-[11px] text-slate-400 mt-1">29 Nov 2026</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-2">4 Mega Papers</div>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- ================= 2. MAIN SPACIOUS CARDS STAGE ================= -->
+        <div class="space-y-4 pt-2" id="admin-schedule-stage">
+          
+          <!-- SECTION TITLE -->
+          <div class="flex items-center justify-between pb-2 border-b border-slate-100 text-xs">
+            <h4 id="admin-schedule-view-title" class="text-base font-display font-extrabold text-slate-900">
+              Monday Active Sessions &amp; Same-Day Multi-Class Management (7 Lectures)
+            </h4>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold text-[10px]">
+              ALL 4 HALLS ONLINE &amp; CONFLICT-FREE ✓
+            </span>
+          </div>
+
+          <!-- TEACHER 1: ENG. SAMAN PERERA (SHOWING SAME-DAY MULTI-CLASS) -->
+          <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-4 admin-item mon" data-day="monday">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0">
+                  SP
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h5 class="font-display font-black text-slate-900 text-sm sm:text-base">Eng. Saman Perera</h5>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-100 text-blue-800">Combined Mathematics</span>
+                  </div>
+                  <div class="text-xs text-slate-500 font-mono">FAC-2018 • Senior Faculty • 80/20 Royalty Agreement</div>
+                </div>
+              </div>
+
+              <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-mono font-bold text-xs border border-amber-300">
+                ⚡ 2 CLASSES TODAY (MORNING + AFTERNOON)
+              </span>
+            </div>
+
+            <!-- Two Sub-Class Cards for Saman Perera on Monday -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              
+              <!-- Session 1: Morning -->
+              <div class="p-4 rounded-xl bg-blue-50/60 border border-blue-200/80 space-y-3">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-600 text-white">
+                    SESSION 1 • MORNING THEORY
+                  </span>
+                  <span class="text-emerald-700 font-mono font-bold text-[11px] animate-pulse">● IN SESSION</span>
+                </div>
+                <div class="font-bold text-slate-900 text-sm">Combined Mathematics 2026 Theory</div>
+                <div class="text-blue-800 font-mono font-bold text-xs">08:00 AM — 01:00 PM (5.0 Hours)</div>
+                
+                <div class="p-2.5 rounded-lg bg-white border border-blue-200 space-y-1.5 text-xs">
+                  <div class="flex items-center justify-between font-bold">
+                    <span class="text-slate-700">Lecture Hall 04 (300 Seats)</span>
+                    <span class="font-mono text-blue-700">248 / 300 Seats</span>
+                  </div>
+                  <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                    <div class="bg-blue-600 h-full rounded-full" style="width: 83%"></div>
+                  </div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-slate-500">
+                    <span>Enrolled: <strong class="text-emerald-700">248 Students Registered</strong></span>
+                    <span class="text-emerald-700 font-bold">52 Free Seats ✓</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 2: Afternoon (Same Day!) -->
+              <div class="p-4 rounded-xl bg-amber-50/60 border border-amber-300 space-y-3">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500 text-white">
+                    SESSION 2 • ⚡ SAME-DAY AFTERNOON PAPER
+                  </span>
+                  <span class="text-amber-800 font-mono font-bold text-[11px]">STARTS 02:00 PM</span>
+                </div>
+                <div class="font-bold text-slate-900 text-sm">Pure Mathematics Paper Class &amp; Speed Test</div>
+                <div class="text-amber-800 font-mono font-bold text-xs">02:00 PM — 05:00 PM (3.0 Hours)</div>
+                
+                <div class="p-2.5 rounded-lg bg-white border border-amber-200 space-y-1.5 text-xs">
+                  <div class="flex items-center justify-between font-bold">
+                    <span class="text-slate-700">Lecture Hall 01 (Auditorium Floor - 200 Seats)</span>
+                    <span class="font-mono text-amber-700">180 / 200 Seats</span>
+                  </div>
+                  <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                    <div class="bg-amber-500 h-full rounded-full" style="width: 90%"></div>
+                  </div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-slate-500">
+                    <span>Enrolled: <strong class="text-emerald-700">180 Students Registered</strong></span>
+                    <span class="text-emerald-700 font-bold">20 Free Seats ✓</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- TEACHER 2: DR. K. SILVA (SHOWING SAME-DAY MULTI-CLASS IN HALL 01) -->
+          <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-4 admin-item mon" data-day="monday">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0">
+                  KS
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h5 class="font-display font-black text-slate-900 text-sm sm:text-base">Dr. K. Silva</h5>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">Chemistry Department</span>
+                  </div>
+                  <div class="text-xs text-slate-500 font-mono">FAC-2014 • Senior Faculty • 80/20 Royalty Agreement</div>
+                </div>
+              </div>
+
+              <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-mono font-bold text-xs border border-amber-300">
+                ⚡ 2 CLASSES TODAY (HALL 01 ROTATION)
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              
+              <!-- Session 1: Morning Revision -->
+              <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-200 space-y-3">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-600 text-white">
+                    SESSION 1 • MORNING REVISION
+                  </span>
+                  <span class="text-emerald-700 font-mono font-bold text-[11px] animate-pulse">● IN SESSION</span>
+                </div>
+                <div class="font-bold text-slate-900 text-sm">Chemistry Revision &amp; Advanced Theory</div>
+                <div class="text-emerald-800 font-mono font-bold text-xs">08:30 AM — 12:30 PM (4.0 Hours)</div>
+                
+                <div class="p-2.5 rounded-lg bg-white border border-emerald-200 space-y-1.5 text-xs">
+                  <div class="flex items-center justify-between font-bold">
+                    <span class="text-slate-700">Lecture Hall 01 (200 Seats)</span>
+                    <span class="font-mono text-emerald-700">188 / 200 Seats</span>
+                  </div>
+                  <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                    <div class="bg-emerald-600 h-full rounded-full" style="width: 94%"></div>
+                  </div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-slate-500">
+                    <span>Enrolled: <strong class="text-emerald-700">188 Students Registered</strong></span>
+                    <span class="text-emerald-700 font-bold">12 Free Seats ✓</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 2: Afternoon Organic Workshop (Same-Day) -->
+              <div class="p-4 rounded-xl bg-amber-50/60 border border-amber-300 space-y-3">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500 text-white">
+                    SESSION 2 • ⚡ ORGANIC PAPER LAB
+                  </span>
+                  <span class="text-amber-800 font-mono font-bold text-[11px]">STARTS 01:30 PM</span>
+                </div>
+                <div class="font-bold text-slate-900 text-sm">Organic Chemistry Mechanisms &amp; Synthesis Paper</div>
+                <div class="text-amber-800 font-mono font-bold text-xs">01:30 PM — 04:30 PM (3.0 Hours)</div>
+                
+                <div class="p-2.5 rounded-lg bg-white border border-amber-200 space-y-1.5 text-xs">
+                  <div class="flex items-center justify-between font-bold">
+                    <span class="text-slate-700">Lecture Hall 01 (200 Seats)</span>
+                    <span class="font-mono text-amber-700">150 / 200 Seats</span>
+                  </div>
+                  <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                    <div class="bg-amber-500 h-full rounded-full" style="width: 75%"></div>
+                  </div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-slate-500">
+                    <span>Enrolled: <strong class="text-emerald-700">150 Students Registered</strong></span>
+                    <span class="text-emerald-700 font-bold">50 Free Seats ✓</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- TEACHER 3: PROF. R. JAYAWARDENA (HALL 02) -->
+          <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-4 admin-item mon" data-day="monday">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0">
+                  RJ
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h5 class="font-display font-black text-slate-900 text-sm sm:text-base">Prof. R. Jayawardena</h5>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-indigo-100 text-indigo-800">Physics Department</span>
+                  </div>
+                  <div class="text-xs text-slate-500 font-mono">FAC-1998 • Senior Faculty • 75/25 Royalty Agreement</div>
+                </div>
+              </div>
+
+              <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-900 font-mono font-bold text-xs">
+                HALL 02 (AUDITORIUM WING)
+              </span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-200 space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-indigo-600 text-white">
+                  REGULAR THEORY SESSION
+                </span>
+                <span class="text-emerald-700 font-mono font-bold text-[11px] animate-pulse">● IN SESSION</span>
+              </div>
+              <div class="font-bold text-slate-900 text-sm">Physics Mechanics, Oscillations &amp; Wave Optics</div>
+              <div class="text-indigo-800 font-mono font-bold text-xs">08:00 AM — 01:00 PM (5.0 Hours)</div>
+              
+              <div class="p-2.5 rounded-lg bg-white border border-indigo-200 space-y-1.5 text-xs">
+                <div class="flex items-center justify-between font-bold">
+                  <span class="text-slate-700">Lecture Hall 02 (350 Seats)</span>
+                  <span class="font-mono text-indigo-700">275 / 350 Seats</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                  <div class="bg-indigo-600 h-full rounded-full" style="width: 78%"></div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] font-mono text-slate-500">
+                  <span>Enrolled: <strong class="text-emerald-700">275 Students Registered</strong></span>
+                  <span class="text-emerald-700 font-bold">75 Free Seats ✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TEACHER 4: SATURDAY PEAK SHOWCASE -->
+          <div class="p-5 sm:p-6 rounded-2xl bg-white border-2 border-emerald-500/40 shadow-sm space-y-4 admin-item sat" data-day="saturday">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0">
+                  SP
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h5 class="font-display font-black text-slate-900 text-sm sm:text-base">Eng. Saman Perera</h5>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">Saturday Peak Foundation</span>
+                  </div>
+                  <div class="text-xs text-slate-500 font-mono">Saturday 28 Nov • 2027 A/L Theory Foundation</div>
+                </div>
+              </div>
+
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-mono font-bold text-xs border border-emerald-300">
+                ⭐ INSTITUTE PEAK DAY
+              </span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-200 space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-600 text-white">
+                  FOUNDATION THEORY SESSION
+                </span>
+                <span class="text-emerald-700 font-mono font-bold text-[11px]">SCHEDULED (SATURDAY)</span>
+              </div>
+              <div class="font-bold text-slate-900 text-sm">2027 Combined Mathematics Foundation Theory &amp; Core Codex</div>
+              <div class="text-emerald-800 font-mono font-bold text-xs">07:30 AM — 01:30 PM (6.0 Hours)</div>
+              
+              <div class="p-2.5 rounded-lg bg-white border border-emerald-200 space-y-1.5 text-xs">
+                <div class="flex items-center justify-between font-bold">
+                  <span class="text-slate-700">Lecture Hall 04 (300 Seats Capacity)</span>
+                  <span class="font-mono text-emerald-700 font-bold">290 / 300 Seats</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                  <div class="bg-emerald-600 h-full rounded-full" style="width: 97%"></div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] font-mono text-slate-500">
+                  <span>Enrolled: <strong class="text-emerald-700">290 Students Registered</strong></span>
+                  <span class="text-emerald-700 font-bold">10 Buffer Seats (97% Full)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ================= MAIN TWO-COLUMN WORKSPACE ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <!-- ================= LEFT COLUMN: HALLS & QUICK STATIONS (2 COLS) ================= -->
+        <div class="lg:col-span-2 space-y-8">
+
+          <!-- ================= 1. LIVE LECTURE HALL TELEMETRY & GATES ================= -->
+          <section id="section-halls" class="behance-card p-6 sm:p-8 space-y-6">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center font-bold">
+                  <i data-lucide="building" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="text-base sm:text-lg font-display font-extrabold text-slate-900">Institute Lecture Halls &amp; Turnstile Gates</h3>
+                  <p class="text-xs text-slate-500">Live occupancy head-count, active faculty sessions, and physical turnstile status</p>
+                </div>
+              </div>
+
+              <span class="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 font-bold font-mono text-xs flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>ALL GATES SYNCED</span>
+              </span>
+            </div>
+
+            <!-- 4 Halls Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              
+              <!-- Hall 04: Combined Maths -->
+              <div class="p-4 rounded-2xl bg-white border-2 border-blue-600/40 shadow-sm space-y-3 relative overflow-hidden">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    <span class="font-bold text-slate-900 text-sm">Lecture Hall 04</span>
+                  </div>
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-mono text-[10px] font-bold">ACTIVE CLASS</span>
+                </div>
+
+                <div class="text-slate-600">
+                  <div class="font-bold text-slate-900">Combined Mathematics (Theory)</div>
+                  <div class="text-[11px] text-slate-500 font-mono">Eng. Saman Perera • 08:00 AM - 01:00 PM</div>
+                </div>
+
+                <div class="space-y-1 font-mono">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Occupancy:</span>
+                    <span class="font-bold text-slate-900">248 / 300 Seats (82.6%)</span>
+                  </div>
+                  <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div class="bg-blue-600 h-full rounded-full" style="width: 82.6%"></div>
+                  </div>
+                </div>
+
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+                  <span>Hardware: Turnstile A2 &amp; B1</span>
+                  <a href="./teacher_portal.html" class="text-blue-600 font-bold hover:underline">View Stream →</a>
+                </div>
+              </div>
+
+              <!-- Hall 01: Chemistry -->
+              <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="font-bold text-slate-900 text-sm">Lecture Hall 01</span>
+                  </div>
+                  <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold">ACTIVE CLASS</span>
+                </div>
+
+                <div class="text-slate-600">
+                  <div class="font-bold text-slate-900">Chemistry Revision &amp; Paper Class</div>
+                  <div class="text-[11px] text-slate-500 font-mono">Dr. K. Silva • 08:30 AM - 12:30 PM</div>
+                </div>
+
+                <div class="space-y-1 font-mono">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Occupancy:</span>
+                    <span class="font-bold text-slate-900">188 / 200 Seats (94.0%)</span>
+                  </div>
+                  <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div class="bg-emerald-600 h-full rounded-full" style="width: 94%"></div>
+                  </div>
+                </div>
+
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+                  <span>Hardware: Turnstile A1</span>
+                  <span class="text-emerald-700 font-bold font-mono">Normal Flow</span>
+                </div>
+              </div>
+
+              <!-- Hall 02: Physics -->
+              <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="font-bold text-slate-900 text-sm">Lecture Hall 02</span>
+                  </div>
+                  <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold">ACTIVE CLASS</span>
+                </div>
+
+                <div class="text-slate-600">
+                  <div class="font-bold text-slate-900">Physics Mechanics &amp; Waves (Theory)</div>
+                  <div class="text-[11px] text-slate-500 font-mono">Prof. R. Jayawardena • 08:00 AM - 01:00 PM</div>
+                </div>
+
+                <div class="space-y-1 font-mono">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Occupancy:</span>
+                    <span class="font-bold text-slate-900">275 / 350 Seats (78.5%)</span>
+                  </div>
+                  <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div class="bg-indigo-600 h-full rounded-full" style="width: 78.5%"></div>
+                  </div>
+                </div>
+
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+                  <span>Hardware: Turnstile B2</span>
+                  <span class="text-emerald-700 font-bold font-mono">Normal Flow</span>
+                </div>
+              </div>
+
+              <!-- Hall 03: Guest Lecture -->
+              <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="font-bold text-slate-900 text-sm">Lecture Hall 03</span>
+                  </div>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-[10px] font-bold">SEMINAR</span>
+                </div>
+
+                <div class="text-slate-600">
+                  <div class="font-bold text-slate-900">ICT &amp; Software Architecture Workshop</div>
+                  <div class="text-[11px] text-slate-500 font-mono">Eng. M. H. De Silva • 09:00 AM - 01:00 PM</div>
+                </div>
+
+                <div class="space-y-1 font-mono">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Occupancy:</span>
+                    <span class="font-bold text-slate-900">120 / 150 Seats (80.0%)</span>
+                  </div>
+                  <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div class="bg-amber-500 h-full rounded-full" style="width: 80%"></div>
+                  </div>
+                </div>
+
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+                  <span>Hardware: Turnstile C1</span>
+                  <span class="text-emerald-700 font-bold font-mono">Normal Flow</span>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+          <!-- ================= 2. DEDICATED MODULE PORTALS CARDS ================= -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            
+            <!-- Link to Student Management -->
+            <div class="behance-card p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                  <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">1,420 Enrolled</span>
+              </div>
+              <h4 class="text-base font-display font-extrabold text-slate-900">Student &amp; NFC Wallet Desk</h4>
+              <p class="text-xs text-slate-500">Enroll new students, bind RFID Smart Passes, manage virtual wallet balances, and reset anti-piracy device bindings.</p>
+              <a href="./admin_students.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 pt-1">
+                <span>Open Student Management</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Link to Faculty Management -->
+            <div class="behance-card p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
+                  <i data-lucide="briefcase" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-mono font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">12 Faculty</span>
+              </div>
+              <h4 class="text-base font-display font-extrabold text-slate-900">Teacher Commissions &amp; Payouts</h4>
+              <p class="text-xs text-slate-500">Configure 80/20 &amp; 75/25 commission splits, monitor entrance tap collections, and execute Commercial Bank bulk transfers.</p>
+              <a href="./admin_teachers.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 hover:text-purple-700 pt-1">
+                <span>Open Faculty Management</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Link to Parent & SMS Gateway -->
+            <div class="behance-card p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                  <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">1,180 Parents</span>
+              </div>
+              <h4 class="text-base font-display font-extrabold text-slate-900">Parent Directory &amp; SMS Hub</h4>
+              <p class="text-xs text-slate-500">Multi-child sibling linking, automated 15-minute absentee alerts, fee tap SMS logs, and institute-wide emergency broadcasts.</p>
+              <a href="./admin_parents.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 pt-1">
+                <span>Open Parent Management</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Link to Operations & Logistics -->
+            <div class="behance-card p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                  <i data-lucide="box" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Counters 01-03</span>
+              </div>
+              <h4 class="text-base font-display font-extrabold text-slate-900">Operations &amp; Tute Inventory</h4>
+              <p class="text-xs text-slate-500">Daily smart timetable matrix, 4K projector &amp; mic equipment reservations, central tute stock levels, and End-of-Day financial audit.</p>
+              <a href="./admin_operations.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 hover:text-amber-700 pt-1">
+                <span>Open Logistics &amp; Inventory</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= RIGHT COLUMN: SMS, RECONCILIATION & HELPLINE (1 COL) ================= -->
+        <div class="space-y-8">
+
+          <!-- ================= SMS GATEWAY HUB ================= -->
+          <section class="behance-card p-6 space-y-5">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <i data-lucide="radio" class="w-4 h-4 text-blue-600"></i>
+                <h4 class="text-sm font-display font-bold text-slate-900">SMS Gateway Infrastructure</h4>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">CONNECTED</span>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="p-3 bg-slate-50 rounded-xl space-y-1 font-mono text-[11px]">
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Today's Push Notifications:</span>
+                  <span class="font-bold text-slate-900">1,418 Sent</span>
+                </div>
+                <div class="flex justify-between text-emerald-700 font-bold">
+                  <span>Delivery Success Rate:</span>
+                  <span>99.8% (2 Retrying)</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                  <span>Sender ID:</span>
+                  <span>EduSyncGate</span>
+                </div>
+              </div>
+
+              <!-- Broadcast Message Form -->
+              <div class="space-y-2">
+                <label class="block font-bold text-slate-700 text-xs">Institute Emergency Broadcast to Parents</label>
+                <textarea 
+                  id="sms-broadcast-text"
+                  rows="2" 
+                  placeholder="Type institute announcement (e.g. Weather notice or special seminar)..."
+                  class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+                <button 
+                  onclick="sendSmsBroadcast()"
+                  class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition flex items-center justify-center gap-1.5"
+                >
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <span>Broadcast to 1,420 Parents</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= END-OF-DAY RECONCILIATION SUMMARY (MEMBER 5) ================= -->
+          <div class="behance-card p-6 space-y-4">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider font-mono">End-of-Day Audit Summary</h4>
+              <span class="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">BALANCED ✓</span>
+            </div>
+            
+            <div class="space-y-2 text-xs font-mono">
+              <div class="flex justify-between text-slate-600">
+                <span>Online Gateway Reloads:</span>
+                <span class="font-bold text-slate-900">LKR 3,420,000</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Over-The-Counter Cash:</span>
+                <span class="font-bold text-slate-900">LKR 2,260,000</span>
+              </div>
+              <div class="flex justify-between text-slate-800 font-bold border-t border-slate-100 pt-1">
+                <span>Gross Collections:</span>
+                <span>LKR 5,680,000</span>
+              </div>
+              <div class="flex justify-between text-emerald-700 font-bold">
+                <span>Teacher Royalties Disbursed:</span>
+                <span>LKR 4,544,000</span>
+              </div>
+              <div class="flex justify-between text-blue-600 font-bold">
+                <span>Institute Net Retained:</span>
+                <span>LKR 1,136,000</span>
+              </div>
+            </div>
+
+            <button 
+              onclick="downloadConsolidatedAuditReport()"
+              class="w-full py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Export Today's Reconciliation PDF</span>
+            </button>
+          </div>
+
+          <!-- ================= INSTITUTE SUPPORT & HELPLINE ================= -->
+          <div class="behance-card p-6 space-y-4">
+            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider font-mono">Master Registrar Helpline</h4>
+            
+            <a 
+              href="https://wa.me/94771296697" 
+              target="_blank"
+              class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-sm"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WhatsApp: 077 129 6697</span>
+            </a>
+
+            <div class="text-[11px] text-slate-400 text-center">
+              Direct hotline for hardware engineers, turnstile maintenance, and fee audits.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- ================= 4. FULL-WIDTH UNIVERSAL FOOTER ================= -->
+    <footer class="w-full bg-slate-900 text-slate-400 border-t border-slate-800 mt-12 py-8 px-4 sm:px-8 lg:px-12">
+      <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- Row 1: Brand & Helpline -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm font-black shadow-md shadow-blue-500/30">
+              E
+            </div>
+            <div>
+              <div class="text-base font-display font-black text-white tracking-tight">EduSync Platform</div>
+              <div class="text-xs text-slate-400">Unified Tuition Management &amp; NFC Ecosystem (SDGP CS76 - 2026)</div>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Helpline -->
+          <div class="flex items-center gap-2 text-xs text-slate-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Helpline: <strong class="text-white font-bold font-mono">077 129 6697</strong> (WhatsApp Active)</span>
+          </div>
+        </div>
+
+        <!-- Row 2: Live Hardware & Service Operational Status + Policies -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-slate-400">
+          
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-400 font-semibold flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span>RFID Turnstiles: Online (418ms)</span>
+            </span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-blue-400 font-semibold flex items-center gap-1.5">
+              <span>SMS Gateway: Connected &amp; Active</span>
+            </span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 text-xs">
+            <a href="./admin_portal.html" class="text-slate-300 hover:text-white transition font-bold">Admin Overview</a>
+            <span class="text-slate-700">•</span>
+            <a href="./admin_students.html" class="text-slate-300 hover:text-white transition">Students</a>
+            <span class="text-slate-700">•</span>
+            <a href="./admin_teachers.html" class="text-slate-300 hover:text-white transition">Teachers</a>
+            <span class="text-slate-700">•</span>
+            <a href="./admin_parents.html" class="text-slate-300 hover:text-white transition">Parents</a>
+            <span class="text-slate-700">•</span>
+            <a href="./admin_operations.html" class="text-slate-300 hover:text-white transition">Operations</a>
+            <span class="text-slate-700">•</span>
+            <span>© 2026 EduSync Team. All rights reserved.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive JavaScript Engine -->
+  <script>
+    lucide.createIcons();
+
+    function openMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.remove('hidden');
+    }
+    function closeMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('hidden');
+    }
+
+    function toggleNotificationDropdown() {
+      const dd = document.getElementById('dropdown-notifications');
+      dd.classList.toggle('hidden');
+    }
+
+    function emergencyGateUnlock() {
+      const confirmUnlock = confirm('⚠️ EMERGENCY OVERRIDE CONFIRMATION:\nAre you sure you want to trigger physical relays on ALL 8 TURNSTILES to FREE PASSAGE mode?');
+      if (confirmUnlock) {
+        alert('🚨 [EMERGENCY COMMAND DISPATCHED TO HARDWARE RELAYS]:\nTurnstiles Gate A1, A2, B1, B2, C1 and Perimeter Gates 1-4 UNLOCKED in Free Evacuation Passage Mode.');
+      }
+    }
+
+    function sendSmsBroadcast() {
+      const msg = document.getElementById('sms-broadcast-text').value;
+      if (msg && msg.trim() !== '') {
+        alert(`🔔 [INSTITUTE SMS BROADCAST DISPATCHED]:\nDelivered message to 1,420 registered parents via Automated SMS Gateway:\n"${msg}"`);
+        document.getElementById('sms-broadcast-text').value = '';
+      } else {
+        alert('Please enter an announcement message first.');
+      }
+    }
+
+    function downloadConsolidatedAuditReport() {
+      alert('Generating Consolidated Institute Financial & Hardware Gate Audit Report (PDF)...\nGross: LKR 5,680,000 • Net: LKR 1,136,000 • 1,420 Students • 8 Turnstiles.');
+    }
+
+    // This Week Schedule Tab Filter
+    function filterScheduleTab(day) {
+      const tabs = ['all', 'monday', 'wednesday', 'friday', 'saturday'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        if (btn) {
+          if (t === day) {
+            btn.className = "px-3.5 py-1.5 rounded-xl bg-slate-900 text-white shadow-sm transition";
+          } else {
+            btn.className = "px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition";
+          }
+        }
+      });
+
+      const items = document.querySelectorAll('.schedule-item');
+      items.forEach(el => {
+        if (day === 'all') {
+          el.style.display = 'block';
+        } else {
+          if (el.getAttribute('data-day') === day) {
+            el.style.display = 'block';
+          } else {
+            el.style.display = 'none';
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

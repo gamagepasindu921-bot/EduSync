@@ -1,0 +1,248 @@
+<svg width="1440" height="1060" viewBox="0 0 1440 1060" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="profile-hero-grad" x1="260" y1="104" x2="1410" y2="254" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="60%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Soft Canvas Background -->
+  <rect width="1440" height="1060" fill="#F4F7FE"/>
+
+  <!-- ================= 1. BEHANCE MINIMAL LEFT SIDEBAR (230px) ================= -->
+  <rect width="230" height="1060" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- Logo -->
+  <rect x="24" y="24" width="38" height="38" rx="12" fill="#2563EB"/>
+  <path d="M43 36C41 38 40 41 41 44C42 47 45 48 48 47" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 34C37 37 36 42 38 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <text x="72" y="44" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.5">Edu<tspan fill="#2563EB">Sync</tspan></text>
+  <text x="72" y="56" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">STUDENT PORTAL</text>
+
+  <text x="28" y="100" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" letter-spacing="1">MAIN MENU</text>
+
+  <!-- Navigation Items -->
+  <rect x="16" y="112" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="138" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">Dashboard</text>
+
+  <rect x="16" y="162" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="188" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">My Classes</text>
+
+  <rect x="16" y="210" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="236" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">LMS Video Player</text>
+
+  <rect x="16" y="258" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="284" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">Tute Center</text>
+
+  <rect x="16" y="306" width="198" height="42" rx="12" fill="transparent"/>
+  <text x="58" y="332" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">Quizzes &amp; Ranks</text>
+
+  <!-- Active Profile / Security Pill -->
+  <rect x="16" y="354" width="198" height="44" rx="12" fill="#2563EB"/>
+  <text x="58" y="382" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="700">Profile &amp; Security</text>
+
+  <!-- Bottom Cohort Badge -->
+  <rect x="16" y="960" width="198" height="58" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="980" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700">PROFILE STATUS</text>
+  <circle cx="196" cy="977" r="3.5" fill="#10B981"/>
+  <text x="28" y="996" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700">Verified &amp; Active</text>
+  <text x="28" y="1008" fill="#2563EB" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="600">STU-9402 Bound</text>
+
+  <!-- ================= 2. UNIFIED UNIVERSAL HEADER ================= -->
+  <rect x="230" y="0" width="1210" height="80" fill="#FFFFFF" fill-opacity="0.95" stroke="#E2E8F0" stroke-width="1"/>
+
+  <text x="260" y="32" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600">Student Portal / <tspan fill="#2563EB" font-weight="700">Profile &amp; Credentials</tspan></text>
+  <text x="260" y="58" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="20" font-weight="900" letter-spacing="-0.5">Student Profile &amp; Settings</text>
+
+  <rect x="520" y="20" width="370" height="40" rx="20" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="544" cy="40" r="5" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="548" y1="44" x2="554" y2="50" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="566" y="44" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Search personal details, settings...</text>
+
+  <!-- Right: Attendance Capsule + Profile Capsule -->
+  <rect x="910" y="22" width="190" height="36" rx="18" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="926" cy="40" r="4" fill="#10B981"/>
+  <text x="936" y="44" fill="#065F46" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Hall 04 Checked-In</text>
+  <text x="1040" y="44" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="11">• 08:02</text>
+
+  <circle cx="1126" cy="40" r="18" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="1134" cy="32" r="3.5" fill="#2563EB"/>
+
+  <rect x="1160" y="16" width="230" height="48" rx="24" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="1184" cy="40" r="16" fill="#E2E8F0"/>
+  <circle cx="1194" cy="48" r="4" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="1208" y="36" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Pasindu Nethsara</text>
+  <text x="1208" y="48" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">STU-9402 • 2027 A/L</text>
+
+  <!-- ================= 3. CINEMATIC PROFILE HERO BANNER ================= -->
+  <rect x="260" y="104" width="1150" height="140" rx="22" fill="url(#profile-hero-grad)"/>
+
+  <!-- Avatar & Bio -->
+  <circle cx="325" cy="174" r="38" fill="#FFFFFF" fill-opacity="0.2"/>
+  <circle cx="325" cy="174" r="34" fill="#E2E8F0"/>
+  <text x="312" y="182" fill="#1D4ED8" font-family="Montserrat, sans-serif" font-size="20" font-weight="900">PN</text>
+
+  <text x="380" y="152" fill="#93C5FD" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1">STUDENT PROFILE &amp; ACADEMIC IDENTITY</text>
+  <text x="380" y="178" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="22" font-weight="900">Pasindu Nethsara <tspan fill="#34D399" font-size="15">(Verified Student ✓)</tspan></text>
+  <text x="380" y="200" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="12">STU-9402 • 2027 A/L Physical Science • English Medium</text>
+
+  <rect x="1170" y="145" width="210" height="42" rx="12" fill="#FFFFFF" fill-opacity="0.15" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="1192" cy="166" r="4" fill="#10B981"/>
+  <text x="1206" y="170" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">NFC Card Active (UID: 04:7A)</text>
+
+  <!-- ================= 4. TWO-COLUMN LAYOUT ================= -->
+  
+  <!-- LEFT COLUMN (690px): PERSONAL CREDENTIALS (WITH PENCIL EDIT ICON) & NFC HARDWARE -->
+  
+  <!-- CARD 1: Personal & Academic Credentials (EDITABLE) -->
+  <rect x="260" y="264" width="690" height="340" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+
+  <text x="285" y="296" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="16" font-weight="800">Personal &amp; Academic Credentials</text>
+  <text x="285" y="314" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Official student details registered with the institute</text>
+
+  <!-- Verified Badge -->
+  <rect x="660" y="282" width="130" height="24" rx="12" fill="#DCFCE7"/>
+  <text x="672" y="298" fill="#15803D" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">VERIFIED STUDENT ✓</text>
+
+  <!-- PENCIL EDIT BUTTON (USER REQUESTED WITH PENCIL ICON) -->
+  <rect x="800" y="280" width="125" height="28" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <!-- Pencil Icon -->
+  <path d="M814 298L812 302L816 300L824 292L822 290L814 298Z" fill="#1D4ED8"/>
+  <path d="M822 290L824 288C825 287 826 287 827 288L828 289C829 290 829 291 828 292L826 294L822 290Z" fill="#1D4ED8"/>
+  <text x="834" y="298" fill="#1D4ED8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">Edit Profile</text>
+
+  <!-- Input Field 1: Full Legal Name -->
+  <text x="285" y="348" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Full Legal Name</text>
+  <rect x="285" y="356" width="305" height="38" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="298" y="380" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Pasindu Nethsara</text>
+
+  <!-- Input Field 2: Assigned Student ID (System Locked) -->
+  <text x="615" y="348" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Assigned Registration ID (Locked)</text>
+  <rect x="615" y="356" width="310" height="38" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="628" y="380" fill="#2563EB" font-family="JetBrains Mono, monospace" font-size="12" font-weight="800">STU-9402 🔒</text>
+
+  <!-- Input Field 3: Academic Stream -->
+  <text x="285" y="418" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Academic Stream &amp; Target Year</text>
+  <rect x="285" y="426" width="305" height="38" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="298" y="450" fill="#334155" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">2027 A/L Physical Science</text>
+
+  <!-- Input Field 4: Primary Email -->
+  <text x="615" y="418" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Primary Email Address</text>
+  <rect x="615" y="426" width="310" height="38" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="628" y="450" fill="#334155" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">pasindu.nethsara@edusync.lk</text>
+
+  <!-- Input Field 5: Contact Mobile -->
+  <text x="285" y="488" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Student Contact Mobile</text>
+  <rect x="285" y="496" width="305" height="38" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="298" y="520" fill="#334155" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">+94 71 884 9201</text>
+
+  <!-- Input Field 6: Residential City -->
+  <text x="615" y="488" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Residential City / District</text>
+  <rect x="615" y="496" width="310" height="38" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="628" y="520" fill="#334155" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">Maharagama, Colombo District</text>
+
+  <!-- Save Changes Banner & Button -->
+  <line x1="285" y1="550" x2="925" y2="550" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="298" y="580" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Click Edit Profile to unlock fields &amp; save updates.</text>
+  <rect x="785" y="560" width="140" height="32" rx="8" fill="#059669"/>
+  <text x="808" y="580" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">Save Changes ✓</text>
+
+  <!-- CARD 2: Physical NFC Hardware Binding & Turnstile Protection -->
+  <rect x="260" y="620" width="690" height="244" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+
+  <text x="285" y="652" fill="#2563EB" font-family="Montserrat, sans-serif" font-size="11" font-weight="800">PHYSICAL HARDWARE LAYER</text>
+  <text x="285" y="674" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="15" font-weight="800">Physical NFC Hardware Binding &amp; Emergency Freeze</text>
+
+  <rect x="800" y="642" width="125" height="24" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="812" y="658" fill="#1D4ED8" font-family="JetBrains Mono, monospace" font-size="10" font-weight="800">UID: 04:7A:B2:9C:11</text>
+
+  <!-- Freeze Card Alert Box -->
+  <rect x="285" y="694" width="640" height="70" rx="14" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/>
+  <text x="305" y="722" fill="#991B1B" font-family="Montserrat, sans-serif" font-size="12" font-weight="800">Emergency Card Freeze / Lost Report</text>
+  <text x="305" y="742" fill="#B91C1C" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Lost your physical card? Freeze it immediately to protect your LKR 8,400 balance.</text>
+  
+  <rect x="815" y="712" width="95" height="32" rx="8" fill="#DC2626"/>
+  <text x="830" y="732" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">Freeze Card</text>
+
+  <!-- Recent Tap Log -->
+  <rect x="285" y="778" width="640" height="66" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="308" cy="811" r="4" fill="#10B981"/>
+  <text x="322" y="805" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Latest Turnstile Gate Tap: <tspan font-weight="500">Hall 04 Entrance Gate A2 (08:02:14 AM)</tspan></text>
+  <text x="322" y="823" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">Fee Deducted: -LKR 4,000.00 • New Balance: LKR 8,400.00</text>
+  <rect x="825" y="800" width="85" height="22" rx="6" fill="#DCFCE7"/>
+  <text x="835" y="815" fill="#15803D" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">VERIFIED ✓</text>
+
+  <!-- RIGHT COLUMN (440px): ANTI-PIRACY DEVICE WHITELIST & SECURITY -->
+  <rect x="970" y="264" width="440" height="600" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+
+  <text x="995" y="296" fill="#2563EB" font-family="Montserrat, sans-serif" font-size="11" font-weight="800">DIGITAL RIGHTS MANAGEMENT (DRM)</text>
+  <text x="995" y="318" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="16" font-weight="800">Device Whitelist (Anti-Piracy)</text>
+  <text x="995" y="338" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Stream video lectures on authorized devices only (Max 2).</text>
+
+  <!-- Device 1: Current MacBook Pro -->
+  <rect x="995" y="355" width="390" height="90" rx="14" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <circle cx="1025" cy="390" r="16" fill="#DBEAFE"/>
+  <text x="1018" y="395" fill="#1D4ED8" font-family="Plus Jakarta Sans, sans-serif" font-size="14">💻</text>
+  <text x="1055" y="385" fill="#1E40AF" font-family="Montserrat, sans-serif" font-size="13" font-weight="800">Apple MacBook Pro (16-inch, M2)</text>
+  <rect x="1315" y="370" width="55" height="18" rx="6" fill="#2563EB"/>
+  <text x="1323" y="383" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">CURRENT</text>
+  <text x="1055" y="405" fill="#3B82F6" font-family="JetBrains Mono, monospace" font-size="10">macOS Sonoma • Chrome 130.0 • IP: 192.168.1.42</text>
+  <text x="1055" y="423" fill="#16A34A" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700">✔ DRM Dynamic Floating Watermark Active</text>
+
+  <!-- Device 2: Mobile Phone -->
+  <rect x="995" y="458" width="390" height="90" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="1025" cy="493" r="16" fill="#F1F5F9"/>
+  <text x="1018" y="498" fill="#64748B" font-family="Plus Jakarta Sans, sans-serif" font-size="14">📱</text>
+  <text x="1055" y="488" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="13" font-weight="800">Samsung Galaxy A54 5G</text>
+  <rect x="1305" y="473" width="65" height="18" rx="6" fill="#F1F5F9"/>
+  <text x="1312" y="486" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="9" font-weight="800">AUTHORIZED</text>
+  <text x="1055" y="508" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">Android 14 • EduSync Student Mobile App</text>
+  <text x="1315" y="532" fill="#DC2626" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700">Deregister</text>
+
+  <!-- Register New Device Button -->
+  <rect x="995" y="562" width="390" height="42" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-dasharray="4 4" stroke-width="1.5"/>
+  <text x="1115" y="588" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">+ Register New Hardware Device</text>
+
+  <!-- Quick Account Security Actions -->
+  <text x="995" y="640" fill="#0F172A" font-family="Montserrat, sans-serif" font-size="13" font-weight="800">Account Credentials &amp; Security</text>
+
+  <rect x="995" y="658" width="390" height="42" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1020" y="684" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">🔑 Change Student Portal Password</text>
+
+  <rect x="995" y="712" width="390" height="42" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1020" y="738" fill="#0F172A" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">📱 Update Emergency Phone Number</text>
+
+  <rect x="995" y="766" width="390" height="42" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/>
+  <text x="1020" y="792" fill="#DC2626" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">🚪 Sign Out of All Connected Devices</text>
+
+  <!-- ================= 5. FULL-WIDTH UNIVERSAL FOOTER ================= -->
+  <rect x="230" y="890" width="1210" height="170" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Row 1: Brand & Helpline -->
+  <rect x="260" y="915" width="34" height="34" rx="10" fill="#2563EB"/>
+  <text x="270" y="937" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="900">E</text>
+  <text x="306" y="931" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="14" font-weight="900">EduSync Platform</text>
+  <text x="306" y="945" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Unified Tuition Management &amp; NFC Ecosystem (SDGP CS76 - 2026)</text>
+
+  <circle cx="1140" cy="931" r="4" fill="#10B981"/>
+  <text x="1152" y="935" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Helpline: <tspan fill="#FFFFFF" font-weight="700" font-family="JetBrains Mono, monospace">077 129 6697</tspan> (WhatsApp Active)</text>
+
+  <line x1="260" y1="963" x2="1390" y2="963" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Row 2: Status & Legal Links -->
+  <rect x="260" y="981" width="220" height="26" rx="6" fill="#1E293B"/>
+  <circle cx="274" cy="994" r="3.5" fill="#10B981"/>
+  <text x="286" y="998" fill="#34D399" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">RFID Turnstiles: Online (418ms)</text>
+
+  <rect x="490" y="981" width="180" height="26" rx="6" fill="#1E293B"/>
+  <text x="502" y="998" fill="#60A5FA" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600">SMS Gateway: Connected & Active</text>
+
+  <text x="960" y="998" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Smart Card Pass</text>
+  <text x="1070" y="998" fill="#475569">•</text>
+  <text x="1085" y="998" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">80% Rule Policy</text>
+  <text x="1190" y="998" fill="#475569">•</text>
+  <text x="1205" y="998" fill="#94A3B8" font-family="Plus Jakarta Sans, sans-serif" font-size="11">© 2026 EduSync Team</text>
+
+</svg>

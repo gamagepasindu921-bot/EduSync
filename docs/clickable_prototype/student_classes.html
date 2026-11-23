@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSync | My Enrolled Classes &amp; Resource Hub</title>
+  
+  <!-- Premium Google Fonts: Montserrat (Headings) + Plus Jakarta Sans (Body) + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Montserrat', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            canvas: '#F4F7FE',
+            card: '#FFFFFF',
+            primary: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #F4F7FE;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Behance Card Elevation */
+    .behance-card {
+      background: #FFFFFF;
+      border-radius: 22px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.025);
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+    .behance-card:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+      border-color: rgba(203, 213, 225, 1);
+    }
+
+    /* Course Card Photo Zoom Effect (Big Plate Style) */
+    .course-card-img-wrap {
+      overflow: hidden;
+      position: relative;
+      height: 160px;
+    }
+    .course-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .behance-card:hover .course-card-img {
+      transform: scale(1.06);
+    }
+
+    /* Cinematic Hero Banner (PG Travelers Style) */
+    .cinematic-hero {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      background-image: 
+        linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 58, 138, 0.84) 55%, rgba(37, 99, 235, 0.76) 100%),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center 25%;
+      box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.25);
+    }
+
+    /* Frosted Glass Button (Big Plate Style) */
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      transition: all 0.25s ease;
+    }
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* Universal Header Styling */
+    .unified-header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid #E2E8F0;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.02);
+    }
+
+    /* Sidebar Active Tab Pill */
+    .sidebar-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #64748B;
+      transition: all 0.2s ease;
+    }
+    .sidebar-nav-btn:hover {
+      color: #0F172A;
+      background: #F8FAFC;
+    }
+    .sidebar-nav-btn.active {
+      color: #FFFFFF;
+      background: #2563EB;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    /* Profile / Smart Pass Slide Drawer */
+    .drawer-backdrop {
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(8px);
+    }
+    .drawer-panel {
+      box-shadow: -15px 0 45px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="flex min-h-screen selection:bg-blue-600 selection:text-white">
+
+  <!-- ================= 1. BEHANCE MINIMAL LEFT SIDEBAR (DESKTOP) ================= -->
+  <aside class="w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between shrink-0 hidden lg:flex sticky top-0 h-screen z-30 p-6">
+    
+    <div class="space-y-8">
+      <!-- Minimalist Brand Logo -->
+      <a href="./student_dashboard.html" class="flex items-center gap-3 px-1 group">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/25 group-hover:scale-105 transition">
+          <i data-lucide="nfc" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-xl font-display font-black text-slate-900 tracking-tight leading-none">
+            Edu<span class="text-blue-600">Sync</span>
+          </div>
+          <div class="text-xs font-semibold text-slate-400 tracking-wide mt-0.5">
+            Student Portal
+          </div>
+        </div>
+      </a>
+
+      <!-- Clean Navigation List (Behance LMS Style) -->
+      <nav class="space-y-2">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Main Menu</div>
+
+        <a href="./student_dashboard.html" class="sidebar-nav-btn">
+          <i data-lucide="layout-grid" class="w-5 h-5"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="./student_classes.html" class="sidebar-nav-btn active">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          <span>My Classes</span>
+        </a>
+
+        <a href="./student_lms.html" class="sidebar-nav-btn">
+          <i data-lucide="play-circle" class="w-5 h-5"></i>
+          <span>LMS Video Player</span>
+        </a>
+
+        <a href="./student_tutes.html" class="sidebar-nav-btn">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
+          <span>Tute Center</span>
+        </a>
+
+        <a href="./student_quizzes.html" class="sidebar-nav-btn">
+          <i data-lucide="award" class="w-5 h-5"></i>
+          <span>Quizzes &amp; Ranks</span>
+        </a>
+
+        <!-- Trigger to open NFC Smart Pass Drawer -->
+        <button onclick="openSmartPassDrawer()" class="w-full sidebar-nav-btn text-left">
+          <i data-lucide="credit-card" class="w-5 h-5"></i>
+          <span>Smart Pass &amp; ID</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Sidebar Bottom: Cohort Badge & Sign Out -->
+    <div class="space-y-3 pt-4 border-t border-slate-100">
+      <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/70 text-xs">
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-slate-400 uppercase">Current Batch</span>
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500" title="Gate Access Active"></span>
+        </div>
+        <div class="font-bold text-slate-900 text-sm mt-1">2027 A/L Physical Science</div>
+        <div class="text-xs text-blue-600 font-semibold mt-0.5">3 Enrolled Subjects</div>
+      </div>
+
+      <a href="./login.html" class="flex items-center gap-2 text-xs text-slate-500 hover:text-rose-600 px-3 py-1 font-semibold transition">
+        <i data-lucide="log-out" class="w-4 h-4"></i>
+        <span>Sign Out</span>
+      </a>
+    </div>
+
+  </aside>
+
+  <!-- ================= MOBILE SIDEBAR DRAWER (< LG SCREENS) ================= -->
+  <div id="mobile-sidebar" class="fixed inset-0 z-50 flex hidden lg:hidden">
+    <div onclick="closeMobileSidebar()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-72 bg-white h-full p-6 space-y-6 shadow-2xl flex flex-col justify-between z-10">
+      <div class="space-y-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white">
+              <i data-lucide="nfc" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xl font-display font-black text-slate-900">EduSync</span>
+          </div>
+          <button onclick="closeMobileSidebar()" class="p-1.5 text-slate-400 hover:text-slate-700">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <nav class="space-y-1.5">
+          <a href="./student_dashboard.html" class="sidebar-nav-btn">
+            <i data-lucide="layout-grid" class="w-5 h-5"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="./student_classes.html" class="sidebar-nav-btn active">
+            <i data-lucide="book-open" class="w-5 h-5"></i>
+            <span>My Classes</span>
+          </a>
+          <a href="./student_lms.html" class="sidebar-nav-btn">
+            <i data-lucide="play-circle" class="w-5 h-5"></i>
+            <span>LMS Video Player</span>
+          </a>
+          <a href="./student_tutes.html" class="sidebar-nav-btn">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+            <span>Tute Center</span>
+          </a>
+          <a href="./student_quizzes.html" class="sidebar-nav-btn">
+            <i data-lucide="award" class="w-5 h-5"></i>
+            <span>Quizzes &amp; Ranks</span>
+          </a>
+          <button onclick="openSmartPassDrawer(); closeMobileSidebar();" class="w-full sidebar-nav-btn text-left">
+            <i data-lucide="credit-card" class="w-5 h-5"></i>
+            <span>Smart Pass &amp; ID</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100">
+        <a href="./login.html" class="flex items-center gap-2 text-xs text-rose-600 font-bold">
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          <span>Sign Out</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2. MAIN APPLICATION WORKSPACE ================= -->
+  <div class="flex-1 flex flex-col min-w-0 overflow-x-hidden">
+    
+    <!-- ================= UNIFIED UNIVERSAL HEADER (EXACT SAME AS DASHBOARD) ================= -->
+    <header class="h-20 unified-header px-4 sm:px-8 flex items-center justify-between gap-4 sticky top-0 z-20">
+      
+      <!-- Left: Mobile Menu Trigger + Breadcrumb Title -->
+      <div class="flex items-center gap-3">
+        <button onclick="openMobileSidebar()" class="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-xl hover:bg-slate-100 transition">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+
+        <div>
+          <div class="text-xs font-semibold text-slate-400">
+            Student Portal / <span class="text-blue-600 font-bold">Academics</span>
+          </div>
+          <h1 class="text-xl font-display font-extrabold text-slate-900 tracking-tight leading-tight">
+            My Enrolled Classes
+          </h1>
+        </div>
+      </div>
+
+      <!-- Center: Responsive Command Search Bar -->
+      <div class="flex-1 max-w-md hidden md:block">
+        <div class="relative w-full">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+            <i data-lucide="search" class="w-4 h-4"></i>
+          </div>
+          <input 
+            type="text" 
+            placeholder="Search classes, syllabus topics, teachers... (⌘K)" 
+            class="w-full pl-10 pr-12 py-2.5 bg-slate-50 hover:bg-white focus:bg-white border border-slate-200 rounded-full text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition"
+          >
+          <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-xs font-mono text-slate-400 font-bold">
+            ⌘K
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Live Attendance Badge + Notification + Profile Capsule (NO QR BUTTON) -->
+      <div class="flex items-center gap-3 shrink-0">
+        
+        <!-- Live Turnstile Attendance Capsule -->
+        <div class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs text-emerald-800">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="font-bold">Hall 04 Checked-In</span>
+          <span class="text-slate-400 font-mono">• 08:02 AM</span>
+        </div>
+
+        <!-- Notification Bell -->
+        <button class="relative p-2.5 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-full transition">
+          <i data-lucide="bell" class="w-5 h-5"></i>
+          <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-blue-600"></span>
+        </button>
+
+        <!-- Vertical Divider -->
+        <span class="h-6 w-px bg-slate-200 hidden sm:block"></span>
+
+        <!-- Student Profile Capsule Button -->
+        <button 
+          onclick="openSmartPassDrawer()"
+          class="flex items-center gap-2.5 p-1.5 sm:pr-3 rounded-full hover:bg-slate-100 border border-transparent hover:border-slate-200 transition text-left group"
+          title="Click to view full Profile, NFC Smart Card & Gate Ledger"
+        >
+          <div class="relative">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" 
+              class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100 group-hover:ring-blue-500 transition"
+              alt="Student Avatar"
+            >
+            <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white"></span>
+          </div>
+
+          <div class="hidden md:block">
+            <div class="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition leading-tight">
+              Pasindu Nethsara
+            </div>
+            <div class="text-xs text-slate-400 font-medium">
+              STU-9402
+            </div>
+          </div>
+
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-hover:text-slate-600 hidden sm:block"></i>
+        </button>
+
+      </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT WORKSPACE ================= -->
+    <main class="p-4 sm:p-6 lg:p-8 space-y-8 flex-1 max-w-7xl w-full mx-auto">
+      
+      <!-- ================= 1. CINEMATIC ACADEMIC HERO BANNER ================= -->
+      <section class="cinematic-hero p-6 sm:p-10 text-white relative">
+        <div class="max-w-2xl space-y-3 relative z-10">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-xs font-bold tracking-wide">
+            <span>📚</span>
+            <span>ACADEMIC TERM 2026 / 2027</span>
+            <span class="text-white/40">•</span>
+            <span>3 SUBJECTS ENROLLED</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-4xl font-display font-black tracking-tight leading-tight">
+            Curated Study Hub &amp; Schedules
+          </h2>
+
+          <p class="text-sm sm:text-base text-slate-200 leading-relaxed max-w-xl">
+            Access in-person lecture schedules, watch-time requirements, monthly tuition fee payment slips, and printed theory tute counters in one unified place.
+          </p>
+
+          <div class="pt-3 flex flex-wrap items-center gap-3.5">
+            <button 
+              onclick="openEnrollModal()" 
+              class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-blue-600/30 transition inline-flex items-center gap-2"
+            >
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span>+ Enroll in New Subject</span>
+            </button>
+
+            <a 
+              href="./student_tutes.html"
+              class="btn-glass px-5 py-2.5 text-xs font-bold rounded-xl inline-flex items-center gap-2"
+            >
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>View Printed Tute Counter</span>
+            </a>
+          </div>
+
+          <div class="pt-3 flex flex-wrap items-center gap-4 text-xs text-slate-300 font-medium">
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Tuition Fees Fully Cleared for November</span>
+            </span>
+            <span class="text-white/30">•</span>
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="lock" class="w-4 h-4 text-sky-400"></i>
+              <span>80% Watch-Time Stream Rules Enforced</span>
+            </span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= 2. FILTER PILLS & ACTION BAR ================= -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        
+        <div class="flex items-center gap-2 overflow-x-auto pb-1">
+          <button class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-sm shadow-blue-500/20 whitespace-nowrap">
+            All Enrolled (3)
+          </button>
+          <button class="px-4 py-2 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 text-xs font-bold transition whitespace-nowrap">
+            Theory Classes
+          </button>
+          <button class="px-4 py-2 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 text-xs font-bold transition whitespace-nowrap">
+            Revision &amp; Paper
+          </button>
+          <button class="px-4 py-2 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 text-xs font-bold transition whitespace-nowrap">
+            Online VOD Streams
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-slate-500 font-medium">Batch:</span>
+          <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-800">
+            2027 A/L Physical Science
+          </span>
+        </div>
+
+      </div>
+
+      <!-- ================= 3. ENROLLED CLASSES GRID (PHOTO COVERS + BIG PLATE ZOOM) ================= -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- ================= COURSE CARD 1: COMBINED MATHS ================= -->
+        <div class="behance-card flex flex-col justify-between">
+          <div>
+            <!-- Zoom Photo Cover -->
+            <div class="course-card-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&auto=format&fit=crop&q=80" 
+                class="course-card-img" 
+                alt="Combined Maths Theory"
+              >
+              <!-- Live / Active Badge -->
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>IN SESSION • HALL 04</span>
+              </div>
+              <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md text-white text-xs font-mono font-bold">
+                LKR 4,000/mo
+              </div>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="p-5 space-y-4">
+              <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-blue-600">Combined Mathematics</div>
+                <h3 class="text-base font-display font-extrabold text-slate-900 mt-0.5">Calculus &amp; Complex Analysis (Theory)</h3>
+                <div class="flex items-center gap-2 mt-2">
+                  <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center">
+                    SP
+                  </div>
+                  <span class="text-xs text-slate-600 font-semibold">Eng. Saman Perera</span>
+                </div>
+              </div>
+
+              <!-- Schedule & Venue Details -->
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5 text-xs">
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Weekly Schedule:</span>
+                  <span class="font-bold text-slate-800">Sunday 08:00 AM - 01:00 PM</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Physical Venue:</span>
+                  <span class="font-bold text-blue-600 font-mono">Main Hall 04 (Seat A-24)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Attendance Rate:</span>
+                  <span class="font-bold text-emerald-600 font-mono">96.8% (12 / 13 Taps)</span>
+                </div>
+              </div>
+
+              <!-- 80% Rule Stream Progress -->
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-slate-700 flex items-center gap-1">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-600"></i>
+                    <span>80% Stream Requirement</span>
+                  </span>
+                  <span class="font-mono font-bold text-blue-600">78% Complete</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-blue-600 h-full rounded-full" style="width: 78%"></div>
+                </div>
+                <div class="text-xs text-slate-400">12 mins remaining to unlock Model Exam Pack</div>
+              </div>
+
+              <!-- Monthly Fee Status & Receipt -->
+              <div class="flex items-center justify-between p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs">
+                <div class="flex items-center gap-1.5 text-emerald-800 font-bold">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                  <span>Nov Fee Paid (LKR 4,000)</span>
+                </div>
+                <button onclick="alert('Downloading Fee Receipt #REC-8842 (PDF)...')" class="text-blue-700 hover:underline font-bold font-mono">
+                  Receipt #8842
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+            <a 
+              href="./student_lms.html" 
+              class="py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm"
+            >
+              <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+              <span>Watch Video</span>
+            </a>
+            <button 
+              onclick="alert('Showing Physical Tute Counter 02 Delivery Code: #TUTE-MATH-04')"
+              class="py-2.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-800 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-500"></i>
+              <span>Tute 04 Pass</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= COURSE CARD 2: CHEMISTRY ================= -->
+        <div class="behance-card flex flex-col justify-between">
+          <div>
+            <!-- Zoom Photo Cover -->
+            <div class="course-card-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80" 
+                class="course-card-img" 
+                alt="Chemistry Revision"
+              >
+              <!-- Upcoming Badge -->
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="clock" class="w-3 h-3 text-amber-400"></i>
+                <span>UPCOMING • 01:00 PM</span>
+              </div>
+              <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md text-white text-xs font-mono font-bold">
+                LKR 3,800/mo
+              </div>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="p-5 space-y-4">
+              <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-amber-600">Chemistry Revision</div>
+                <h3 class="text-base font-display font-extrabold text-slate-900 mt-0.5">Organic Reaction Mechanisms &amp; Kinetics</h3>
+                <div class="flex items-center gap-2 mt-2">
+                  <div class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center">
+                    KS
+                  </div>
+                  <span class="text-xs text-slate-600 font-semibold">Dr. K. Silva</span>
+                </div>
+              </div>
+
+              <!-- Schedule & Venue Details -->
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5 text-xs">
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Weekly Schedule:</span>
+                  <span class="font-bold text-slate-800">Saturday 01:00 PM - 05:30 PM</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Physical Venue:</span>
+                  <span class="font-bold text-amber-600 font-mono">Lecture Hall 01 (Balcony)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Attendance Rate:</span>
+                  <span class="font-bold text-emerald-600 font-mono">92.3% (11 / 12 Taps)</span>
+                </div>
+              </div>
+
+              <!-- 80% Rule Stream Progress -->
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-slate-700 flex items-center gap-1">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-500"></i>
+                    <span>80% Stream Requirement</span>
+                  </span>
+                  <span class="font-mono font-bold text-amber-600">60% Complete</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-amber-500 h-full rounded-full" style="width: 60%"></div>
+                </div>
+                <div class="text-xs text-slate-400">Need 20% more watch time to unlock paper discussion</div>
+              </div>
+
+              <!-- Monthly Fee Status & Receipt -->
+              <div class="flex items-center justify-between p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs">
+                <div class="flex items-center gap-1.5 text-emerald-800 font-bold">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                  <span>Nov Fee Paid (LKR 3,800)</span>
+                </div>
+                <button onclick="alert('Downloading Fee Receipt #REC-8711 (PDF)...')" class="text-blue-700 hover:underline font-bold font-mono">
+                  Receipt #8711
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+            <a 
+              href="./student_lms.html" 
+              class="py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm"
+            >
+              <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+              <span>Watch Video</span>
+            </a>
+            <button 
+              onclick="alert('Showing Physical Tute Counter 01 Delivery Code: #TUTE-CHEM-02')"
+              class="py-2.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-800 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-500"></i>
+              <span>Paper Pack</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= COURSE CARD 3: PHYSICS ================= -->
+        <div class="behance-card flex flex-col justify-between">
+          <div>
+            <!-- Zoom Photo Cover -->
+            <div class="course-card-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&auto=format&fit=crop&q=80" 
+                class="course-card-img" 
+                alt="Physics Theory"
+              >
+              <!-- Online VOD Badge -->
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="wifi" class="w-3 h-3 text-white"></i>
+                <span>HYBRID STREAM</span>
+              </div>
+              <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md text-white text-xs font-mono font-bold">
+                LKR 3,500/mo
+              </div>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="p-5 space-y-4">
+              <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-emerald-600">Physics Masterclass</div>
+                <h3 class="text-base font-display font-extrabold text-slate-900 mt-0.5">Rotational Dynamics &amp; Gravitation</h3>
+                <div class="flex items-center gap-2 mt-2">
+                  <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center">
+                    AW
+                  </div>
+                  <span class="text-xs text-slate-600 font-semibold">Prof. Asanka Wijesinghe</span>
+                </div>
+              </div>
+
+              <!-- Schedule & Venue Details -->
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5 text-xs">
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Weekly Schedule:</span>
+                  <span class="font-bold text-slate-800">Wednesday 06:00 PM - 09:30 PM</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Format:</span>
+                  <span class="font-bold text-emerald-600 font-mono">Live Interactive Zoom + Studio VOD</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Attendance Rate:</span>
+                  <span class="font-bold text-emerald-600 font-mono">100% (14 / 14 Logs)</span>
+                </div>
+              </div>
+
+              <!-- 80% Rule Stream Progress (Fully Unlocked) -->
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-slate-700 flex items-center gap-1">
+                    <i data-lucide="unlock" class="w-3.5 h-3.5 text-emerald-600"></i>
+                    <span>80% Stream Requirement</span>
+                  </span>
+                  <span class="font-mono font-bold text-emerald-600">92% (UNLOCKED ✓)</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-emerald-500 h-full rounded-full" style="width: 92%"></div>
+                </div>
+                <div class="text-xs text-emerald-600 font-semibold">All model paper solutions unlocked!</div>
+              </div>
+
+              <!-- Monthly Fee Status & Receipt -->
+              <div class="flex items-center justify-between p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs">
+                <div class="flex items-center gap-1.5 text-emerald-800 font-bold">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                  <span>Nov Fee Paid (LKR 3,500)</span>
+                </div>
+                <button onclick="alert('Downloading Fee Receipt #REC-8604 (PDF)...')" class="text-blue-700 hover:underline font-bold font-mono">
+                  Receipt #8604
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+            <a 
+              href="./student_lms.html" 
+              class="py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm"
+            >
+              <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+              <span>Watch Video</span>
+            </a>
+            <button 
+              onclick="alert('Downloading DRM-stamped Physics Mechanics notes (PDF)...')"
+              class="py-2.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-800 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5 text-slate-500"></i>
+              <span>Notes PDF</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= 4. PRINTED TUTE COUNTER DISTRIBUTION DESK ================= -->
+      <section class="behance-card p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+          <div>
+            <div class="text-xs font-bold text-blue-600 uppercase tracking-wider">Physical Institute Counters</div>
+            <h3 class="text-lg font-display font-extrabold text-slate-900 mt-0.5">Printed Material &amp; Tute Distribution Desk</h3>
+            <p class="text-xs text-slate-500 mt-1">Show your NFC Smart Card or Digital Pass at Counter 01 / 02 to collect hardcopy books.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-xs font-bold text-slate-700">Counter Desk Status: Open (Hall A Lobby)</span>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="border-b border-slate-100 text-slate-400 font-bold uppercase tracking-wider">
+                <th class="py-3 px-4">Subject &amp; Material</th>
+                <th class="py-3 px-4">Batch / Week</th>
+                <th class="py-3 px-4">Counter Location</th>
+                <th class="py-3 px-4">Collection Status</th>
+                <th class="py-3 px-4 text-right">Verification</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700 font-medium">
+              <!-- Item 1 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4">
+                  <div class="font-bold text-slate-900">Calculus &amp; Integration Theory (Part IV)</div>
+                  <div class="text-xs text-slate-400 font-mono">ISBN: EDU-MAT-2027-04 • 142 Pages</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold">Week 44 (Nov)</td>
+                <td class="py-3.5 px-4">Counter 02 (Hall 04 Entrance)</td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold font-mono">
+                    COLLECTED ✓ (08:05 AM)
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right">
+                  <button onclick="alert('Tute verified via NFC Card UID 04:7A:B2:9C:11')" class="text-blue-600 hover:underline font-bold">
+                    View Slip
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Item 2 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4">
+                  <div class="font-bold text-slate-900">Chemistry Revision Model Paper 02 Pack</div>
+                  <div class="text-xs text-slate-400 font-mono">ISBN: EDU-CHM-2027-02 • 36 Pages + Mark Scheme</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold">Week 44 (Nov)</td>
+                <td class="py-3.5 px-4">Counter 01 (Main Auditorium)</td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 font-bold font-mono">
+                    READY FOR PICKUP
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right">
+                  <button onclick="alert('Show Barcode #CHM-PAP-8902 to Counter Staff')" class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition">
+                    Show Barcode
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Item 3 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4">
+                  <div class="font-bold text-slate-900">Physics Mechanics Complete Formula Codex</div>
+                  <div class="text-xs text-slate-400 font-mono">ISBN: EDU-PHY-2027-01 • 88 Pages Hardcover</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold">Term Bonus</td>
+                <td class="py-3.5 px-4">Bookshop Counter</td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 font-bold font-mono">
+                    DIGITAL BACKUP ONLY
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right">
+                  <button onclick="alert('Downloading DRM-stamped digital PDF...')" class="text-blue-600 hover:underline font-bold">
+                    Download PDF
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ================= FULL-WIDTH UNIVERSAL FOOTER (NO ROUNDED CORNERS ISLAND) ================= -->
+    <footer class="w-full bg-slate-900 text-slate-400 border-t border-slate-800 mt-12 py-8 px-4 sm:px-8 lg:px-12">
+      <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- Row 1: Brand & Helpline -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm font-black shadow-md shadow-blue-500/30">
+              E
+            </div>
+            <div>
+              <div class="text-base font-display font-black text-white tracking-tight">EduSync Platform</div>
+              <div class="text-xs text-slate-400">Unified Tuition Management &amp; NFC Ecosystem (SDGP CS76 - 2026)</div>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Helpline -->
+          <div class="flex items-center gap-2 text-xs text-slate-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Helpline: <strong class="text-white font-bold font-mono">077 129 6697</strong> (WhatsApp Active)</span>
+          </div>
+        </div>
+
+        <!-- Row 2: Live Hardware & Service Operational Status + Policies -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-slate-400">
+          
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-400 font-semibold flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span>RFID Turnstiles: Online (418ms)</span>
+            </span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-blue-400 font-semibold flex items-center gap-1.5">
+              <span>SMS Gateway: Connected & Active</span>
+            </span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 text-xs">
+            <button onclick="openSmartPassDrawer()" class="text-slate-300 hover:text-white transition">Smart Card Pass</button>
+            <span class="text-slate-700">•</span>
+            <a href="javascript:void(0)" onclick="alert('EduSync 80% Stream Rule: 80% video watch-time is mandatory before exam papers unlock.')" class="text-slate-300 hover:text-white transition">80% Rule Policy</a>
+            <span class="text-slate-700">•</span>
+            <span>© 2026 EduSync Team. All rights reserved.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================= 3. SLIDE-OVER PROFILE & SMART PASS DRAWER (EXACT SAME AS DASHBOARD) ================= -->
+  <div id="drawer-smart-pass" class="fixed inset-0 z-50 overflow-hidden hidden">
+    <div onclick="closeSmartPassDrawer()" class="absolute inset-0 drawer-backdrop transition-opacity"></div>
+
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-white drawer-panel p-6 sm:p-8 overflow-y-auto space-y-6 flex flex-col justify-between">
+        
+        <div class="space-y-6">
+          
+          <!-- Drawer Header -->
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-extrabold text-slate-900 text-base">Student Profile &amp; Pass</h3>
+                <p class="text-xs text-slate-400">NFC Smart Card &amp; Turnstile Logs</p>
+              </div>
+            </div>
+
+            <button onclick="closeSmartPassDrawer()" class="p-2 text-slate-400 hover:text-slate-700 rounded-xl hover:bg-slate-100 transition">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <!-- Student Profile Capsule Card -->
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80 flex items-center gap-4">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" 
+              class="w-14 h-14 rounded-2xl object-cover ring-2 ring-white shadow-sm"
+              alt="Pasindu Nethsara"
+            >
+            <div class="space-y-0.5">
+              <div class="text-sm font-display font-extrabold text-slate-900">Pasindu Nethsara</div>
+              <div class="text-xs font-mono font-semibold text-blue-600">ID: STU-9402 • 2027 A/L</div>
+              <div class="text-xs text-slate-500 font-medium">Guardian Phone: +94 77 129 6697</div>
+            </div>
+          </div>
+
+          <!-- Photorealistic FinTech NFC Card -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Physical NFC Smart Card</span>
+              <span class="text-xs font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">ACTIVE ON TURNSTILES</span>
+            </div>
+
+            <!-- Card Visual -->
+            <div class="relative w-full h-48 rounded-2xl p-5 text-white shadow-xl overflow-hidden flex flex-col justify-between bg-gradient-to-tr from-slate-950 via-slate-900 to-blue-950 border border-slate-800">
+              
+              <div class="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-blue-600/20 blur-2xl pointer-events-none"></div>
+
+              <!-- Top Row: Card Title & NFC Chip -->
+              <div class="flex items-center justify-between relative z-10">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center font-black text-xs text-white">
+                    E
+                  </div>
+                  <span class="text-xs font-display font-bold tracking-wider text-slate-200">EduSync SmartPass</span>
+                </div>
+                <div class="flex items-center gap-1 text-slate-400">
+                  <i data-lucide="wifi" class="w-5 h-5 rotate-90 text-blue-400"></i>
+                  <span class="text-xs font-mono font-bold">NFC</span>
+                </div>
+              </div>
+
+              <!-- Center: EMV Chip & Balance -->
+              <div class="flex items-center justify-between relative z-10">
+                <div class="w-10 h-7 rounded bg-amber-400/90 border border-amber-300 shadow-inner flex items-center justify-center">
+                  <div class="w-6 h-4 border border-amber-600/40 rounded-sm"></div>
+                </div>
+                <div class="text-right">
+                  <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Wallet Balance</div>
+                  <div class="text-xl font-mono font-black text-white tracking-tight">LKR 8,400.00</div>
+                </div>
+              </div>
+
+              <!-- Bottom Row: Card Holder & UID -->
+              <div class="flex items-end justify-between relative z-10 pt-2 border-t border-slate-800/80">
+                <div>
+                  <div class="text-xs text-slate-400 font-mono tracking-widest uppercase">PASINDU NETHSARA</div>
+                  <div class="text-xs font-mono text-blue-400 mt-0.5">UID: 04:7A:B2:9C:11</div>
+                </div>
+                <div class="text-xs font-mono font-bold text-slate-400">EXP: 12/27</div>
+              </div>
+
+            </div>
+
+            <!-- Card Action Buttons -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <button 
+                onclick="openTopupModal()"
+                class="py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm shadow-blue-600/20"
+              >
+                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                <span>Top Up Balance</span>
+              </button>
+
+              <button 
+                onclick="openEmergencyQrModal()"
+                class="py-2.5 px-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <i data-lucide="qr-code" class="w-4 h-4 text-amber-400"></i>
+                <span>Emergency QR Pass</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Recent Turnstile Hardware Swipes -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Gate Ledger &amp; RFID Swipes</span>
+              <span class="text-xs text-blue-600 font-semibold font-mono">LIVE SYNC</span>
+            </div>
+
+            <div class="space-y-2 text-xs">
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-between">
+                <div>
+                  <div class="font-bold text-slate-800">Hall 04 Entrance Tap</div>
+                  <div class="text-xs text-slate-400 font-mono">08:02:14 AM • Fee: LKR 4,000</div>
+                </div>
+                <span class="text-emerald-600 font-bold font-mono">Deducted ✓</span>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-between">
+                <div>
+                  <div class="font-bold text-slate-800">Main Gate Turnstile A2</div>
+                  <div class="text-xs text-slate-400 font-mono">07:55:02 AM • Institute Entry</div>
+                </div>
+                <span class="text-slate-500 font-mono">Verified ✓</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sign Out Link -->
+          <div class="pt-4 border-t border-slate-100">
+            <a href="./login.html" class="w-full py-2.5 rounded-xl border border-slate-200 hover:bg-rose-50 hover:text-rose-600 text-slate-600 text-xs font-bold transition flex items-center justify-center gap-2">
+              <i data-lucide="log-out" class="w-4 h-4"></i>
+              <span>Sign Out of EduSync</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ENROLL NEW CLASS MODAL ================= -->
+  <div id="modal-enroll" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white max-w-lg w-full rounded-3xl p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-100 relative">
+      <button onclick="closeEnrollModal()" class="absolute top-5 right-5 p-1 text-slate-400 hover:text-slate-700 rounded-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+          <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-base font-display font-extrabold text-slate-900">Enroll in a New Subject</h3>
+          <p class="text-xs text-slate-500">2027 A/L Physical Science &amp; Technology Streams</p>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Select Subject Stream</label>
+          <select class="w-full p-2.5 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-blue-600">
+            <option>Information &amp; Communication Technology (A/L ICT)</option>
+            <option>Physics Speed Revision &amp; 1000 MCQ Marathon</option>
+            <option>Applied Mathematics Paper Practice Class</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Choose Lecturer &amp; Time Slot</label>
+          <select class="w-full p-2.5 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-blue-600">
+            <option>Eng. Nalaka Silva (Every Friday 03:00 PM - Hall 02) • LKR 3,500/mo</option>
+            <option>Dr. K. Silva (Every Thursday 05:00 PM - Online Studio) • LKR 3,200/mo</option>
+          </select>
+        </div>
+
+        <div class="p-3 bg-blue-50 rounded-xl border border-blue-200 text-xs text-blue-900 space-y-1">
+          <div class="font-bold flex items-center gap-1.5">
+            <i data-lucide="info" class="w-4 h-4 text-blue-600"></i>
+            <span>NFC Turnstile Access Integration</span>
+          </div>
+          <div>Enrolling will automatically link your physical NFC Card (UID: 04:7A:B2:9C:11) to the lecture hall turnstile gates.</div>
+        </div>
+      </div>
+
+      <div class="pt-2 flex items-center justify-end gap-3">
+        <button onclick="closeEnrollModal()" class="px-4 py-2 border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50">
+          Cancel
+        </button>
+        <button onclick="confirmEnroll()" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-sm">
+          Confirm Enrollment
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= EMERGENCY GATE QR MODAL (30s DYNAMIC OTP) ================= -->
+  <div id="modal-emergency-qr" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white max-w-sm w-full rounded-3xl p-6 text-center space-y-4 shadow-2xl border border-slate-100 relative">
+      <button onclick="closeEmergencyQrModal()" class="absolute top-4 right-4 p-1 text-slate-400 hover:text-slate-700 rounded-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
+        <i data-lucide="qr-code" class="w-5 h-5"></i>
+      </div>
+
+      <div>
+        <h3 class="text-base font-display font-bold text-slate-900">Emergency Gate Pass</h3>
+        <p class="text-xs text-slate-500 mt-1">Show this QR to the optical scanner if you forgot your physical NFC card.</p>
+      </div>
+
+      <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl inline-block">
+        <div class="w-36 h-36 bg-white p-2 rounded-xl border border-slate-200 flex items-center justify-center mx-auto">
+          <svg class="w-full h-full text-slate-900" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm-2 10h8v8H2v-8zm2 2v4h4v-4H4zm10-14h8v8h-8V2zm2 2v4h4V4h-4zm3 7h2v2h-2v-2zm-3 0h1v2h-1v-2zm-2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4-6h1v2h-1v-2zm0 4h2v2h-2v-2zm0 2h1v2h-1v-2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="space-y-1 font-mono text-xs">
+        <div class="text-emerald-600 font-bold" id="qr-timer-text">OTP: 894-012 • REFRESH IN 24s</div>
+        <div class="text-xs text-slate-400">Rotating single-use security token prevents screenshot abuse.</div>
+      </div>
+
+      <button onclick="closeEmergencyQrModal()" class="w-full py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs">
+        Done
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= TOP UP MODAL ================= -->
+  <div id="modal-topup" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white max-w-sm w-full rounded-3xl p-6 space-y-4 shadow-2xl border border-slate-100 relative">
+      <button onclick="closeTopupModal()" class="absolute top-4 right-4 p-1 text-slate-400 hover:text-slate-700 rounded-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <h3 class="text-sm font-display font-bold text-slate-900">Top Up Smart Card</h3>
+          <p class="text-xs text-slate-400 font-mono">UID: 04:7A:B2:9C:11</p>
+        </div>
+      </div>
+
+      <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-between text-xs">
+        <span class="text-slate-500 font-medium">Current Balance:</span>
+        <span class="font-mono font-bold text-slate-900 text-sm">LKR 8,400.00</span>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-700 mb-1.5">Select Reload Amount</label>
+        <div class="grid grid-cols-3 gap-2">
+          <button onclick="selectTopupAmount(1000)" class="py-2 text-xs font-mono font-bold border border-slate-200 rounded-xl hover:border-blue-600 focus:border-blue-600 focus:bg-blue-50">LKR 1,000</button>
+          <button onclick="selectTopupAmount(2500)" class="py-2 text-xs font-mono font-bold border border-slate-200 rounded-xl hover:border-blue-600 focus:border-blue-600 focus:bg-blue-50">LKR 2,500</button>
+          <button onclick="selectTopupAmount(5000)" class="py-2 text-xs font-mono font-bold border border-slate-200 rounded-xl hover:border-blue-600 focus:border-blue-600 focus:bg-blue-50">LKR 5,000</button>
+        </div>
+      </div>
+
+      <button onclick="executeTopup()" class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition shadow-sm">
+        Confirm &amp; Pay Securely
+      </button>
+    </div>
+  </div>
+
+  <!-- Lucide Icons & Scripts -->
+  <script>
+    lucide.createIcons();
+
+    // Drawer Logic
+    function openSmartPassDrawer() {
+      document.getElementById('drawer-smart-pass').classList.remove('hidden');
+    }
+    function closeSmartPassDrawer() {
+      document.getElementById('drawer-smart-pass').classList.add('hidden');
+    }
+
+    // Mobile Sidebar
+    function openMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.remove('hidden');
+    }
+    function closeMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('hidden');
+    }
+
+    // Enroll Modal
+    function openEnrollModal() {
+      document.getElementById('modal-enroll').classList.remove('hidden');
+    }
+    function closeEnrollModal() {
+      document.getElementById('modal-enroll').classList.add('hidden');
+    }
+    function confirmEnroll() {
+      alert('Enrollment requested successfully! Your turnstile gate access will be enabled once tuition fee is verified.');
+      closeEnrollModal();
+    }
+
+    // Emergency QR Logic
+    let qrTimerInterval;
+    let qrSeconds = 24;
+    function openEmergencyQrModal() {
+      document.getElementById('modal-emergency-qr').classList.remove('hidden');
+      qrSeconds = 24;
+      updateQrTimer();
+      clearInterval(qrTimerInterval);
+      qrTimerInterval = setInterval(() => {
+        qrSeconds--;
+        if (qrSeconds <= 0) {
+          qrSeconds = 30;
+          const token = Math.floor(100000 + Math.random() * 900000);
+          document.getElementById('qr-timer-text').innerText = `OTP: ${token} • REFRESH IN ${qrSeconds}s`;
+        } else {
+          updateQrTimer();
+        }
+      }, 1000);
+    }
+    function updateQrTimer() {
+      document.getElementById('qr-timer-text').innerText = `OTP: 894-012 • REFRESH IN ${qrSeconds}s`;
+    }
+    function closeEmergencyQrModal() {
+      document.getElementById('modal-emergency-qr').classList.add('hidden');
+      clearInterval(qrTimerInterval);
+    }
+
+    // Topup Logic
+    let topupAmount = 2500;
+    function openTopupModal() {
+      document.getElementById('modal-topup').classList.remove('hidden');
+    }
+    function closeTopupModal() {
+      document.getElementById('modal-topup').classList.add('hidden');
+    }
+    function selectTopupAmount(amt) {
+      topupAmount = amt;
+    }
+    function executeTopup() {
+      alert(`Top Up of LKR ${topupAmount.toLocaleString()} successful on Smart Card STU-9402.`);
+      closeTopupModal();
+    }
+  </script>
+</body>
+</html>

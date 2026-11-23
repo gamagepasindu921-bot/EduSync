@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Quiz Sprint & Leaderboard Engine | EduSync</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            navy: {
+              900: '#0B1120',
+              950: '#060A14',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+    .behance-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 22px;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .behance-card:hover {
+      box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+    }
+    .sidebar-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #64748B;
+      transition: all 0.2s;
+    }
+    .sidebar-nav-btn:hover {
+      background-color: #F1F5F9;
+      color: #0F172A;
+    }
+    .sidebar-nav-btn.active {
+      background-color: #2563EB;
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+    .cinematic-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #431407 55%, #EA580C 100%);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex antialiased">
+
+  <!-- ================= DESKTOP SIDEBAR ================= -->
+  <aside class="w-64 bg-white border-r border-slate-200/80 p-5 hidden lg:flex flex-col justify-between shrink-0 fixed inset-y-0 z-30">
+    <div class="space-y-6">
+      
+      <!-- Logo -->
+      <a href="./teacher_dashboard.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md shadow-blue-600/20">
+          <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xl font-display font-black tracking-tight text-slate-900">
+            Edu<span class="text-blue-600">Sync</span>
+          </span>
+          <span class="block text-[10px] font-mono uppercase tracking-wider text-blue-600 font-extrabold -mt-1">
+            Teacher Portal
+          </span>
+        </div>
+      </a>
+
+      <!-- Identity Capsule -->
+      <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+        <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-400">
+          <span>Active Lecturer</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shrink-0 ring-2 ring-blue-600/30">
+            SP
+          </div>
+          <div class="truncate">
+            <div class="font-bold text-slate-900 leading-tight truncate">Eng. Saman Perera</div>
+            <div class="text-[11px] text-blue-600 font-mono">FAC-2018 • Combined Maths</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Menu: 6 Dedicated Teacher Pages -->
+      <nav class="space-y-1">
+        <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 px-3 pb-1 font-bold">
+          Lecturer Menu
+        </div>
+
+        <!-- 1. Teacher Overview -->
+        <a href="./teacher_dashboard.html" class="sidebar-nav-btn">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Teacher Overview</span>
+        </a>
+
+        <!-- 2. Timetable & Ad-Hoc Classes -->
+        <a href="./teacher_timetable.html" class="sidebar-nav-btn">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Timetable &amp; Ad-Hoc</span>
+        </a>
+
+        <!-- 3. Live Hall Attendance -->
+        <a href="./teacher_attendance.html" class="sidebar-nav-btn">
+          <i data-lucide="radio" class="w-4 h-4"></i>
+          <span>Live Hall Attendance</span>
+        </a>
+
+        <!-- 4. Video DRM & Tutes -->
+        <a href="./teacher_materials.html" class="sidebar-nav-btn">
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
+          <span>Video DRM &amp; Tutes</span>
+        </a>
+
+        <!-- 5. MCQ Quiz Engine (ACTIVE) -->
+        <a href="./teacher_quizzes.html" class="sidebar-nav-btn active">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          <span>MCQ Quiz Engine</span>
+        </a>
+
+        <!-- 6. Revenue & Split (80/20) -->
+        <a href="./teacher_revenue.html" class="sidebar-nav-btn">
+          <i data-lucide="wallet" class="w-4 h-4"></i>
+          <span>Revenue &amp; Split (80/20)</span>
+        </a>
+
+        <!-- External Portals -->
+        <a href="./admin_portal.html" class="sidebar-nav-btn text-amber-600 hover:text-amber-700 mt-2">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span>Admin Authority ↗</span>
+        </a>
+        <a href="./student_dashboard.html" class="sidebar-nav-btn text-blue-600 hover:text-blue-700">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span>Student Portal ↗</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom Commission Badge -->
+    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-1.5">
+      <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-400">
+        <span>PAYOUT AGREEMENT</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      </div>
+      <div class="text-xs font-bold text-slate-800">80% Teacher / 20% Net</div>
+      <div class="text-[11px] font-mono text-emerald-600 font-bold">Commercial Bank •••• 8912</div>
+    </div>
+  </aside>
+
+  <!-- ================= MOBILE DRAWER ================= -->
+  <div id="mobile-sidebar" class="fixed inset-0 z-50 flex hidden lg:hidden">
+    <div onclick="closeMobileSidebar()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-72 max-w-[85%] bg-white h-full p-5 space-y-6 flex flex-col justify-between shadow-2xl z-10 overflow-y-auto">
+      <div class="space-y-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+            <span class="text-lg font-display font-extrabold text-slate-900">EduSync</span>
+          </div>
+          <button onclick="closeMobileSidebar()" class="p-1 text-slate-400 hover:text-slate-700">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <nav class="space-y-1 text-sm font-semibold text-slate-600">
+          <a href="./teacher_dashboard.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+            <span>Teacher Overview</span>
+          </a>
+          <a href="./teacher_timetable.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+            <span>Timetable &amp; Ad-Hoc</span>
+          </a>
+          <a href="./teacher_attendance.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="radio" class="w-5 h-5"></i>
+            <span>Live Hall Attendance</span>
+          </a>
+          <a href="./teacher_materials.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+            <span>Video DRM &amp; Tutes</span>
+          </a>
+          <a href="./teacher_quizzes.html" class="flex items-center gap-3 p-3 rounded-xl bg-blue-600 text-white font-bold">
+            <i data-lucide="award" class="w-5 h-5"></i>
+            <span>MCQ Quiz Engine</span>
+          </a>
+          <a href="./teacher_revenue.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50">
+            <i data-lucide="wallet" class="w-5 h-5"></i>
+            <span>Revenue &amp; Split (80/20)</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN LAYOUT WRAPPER ================= -->
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+    
+    <!-- TOP HEADER -->
+    <header class="h-20 bg-white/95 backdrop-blur-md border-b border-slate-200/80 px-4 sm:px-8 flex items-center justify-between sticky top-0 z-20">
+      <div class="flex items-center gap-3 sm:gap-4">
+        <button onclick="openMobileSidebar()" class="lg:hidden p-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+        <div>
+          <div class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+            <span>Teacher Portal</span>
+            <span>/</span>
+            <span class="text-orange-600 font-bold">MCQ Quizzes &amp; Gamification</span>
+          </div>
+          <h1 class="text-lg sm:text-xl font-display font-black text-slate-900 tracking-tight">
+            MCQ Speed Sprint &amp; Automated Ranking Engine
+          </h1>
+        </div>
+      </div>
+
+      <!-- Right Action Items -->
+      <div class="flex items-center gap-3">
+        <button onclick="openCreateSprintModal()" class="px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition">
+          <i data-lucide="plus" class="w-4 h-4"></i>
+          <span>Publish 10-Min Sprint</span>
+        </button>
+
+        <a href="./student_quizzes.html" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-400 font-mono text-xs font-bold flex items-center gap-2 shadow-sm transition">
+          <i data-lucide="eye" class="w-4 h-4"></i>
+          <span>Student Leaderboard</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="p-4 sm:p-8 max-w-7xl mx-auto w-full space-y-8 flex-grow">
+
+      <!-- HERO BANNER -->
+      <section class="cinematic-hero p-6 sm:p-10 text-white relative">
+        <div class="relative z-10 max-w-3xl space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold text-orange-200">
+            <span class="w-2 h-2 rounded-full bg-orange-400 animate-ping"></span>
+            <span>MEMBER 4 • TIMED MCQ SPEED SPRINTS &amp; REAL-TIME CLASS LEADERBOARD</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-black tracking-tight leading-tight">
+            MCQ Speed Sprint Authoring &amp; Analytics
+          </h2>
+
+          <p class="text-orange-100 text-xs sm:text-sm leading-relaxed">
+            Engage your students with high-octane 10-minute MCQ speed sprints. Auto-grades instant optical and digital submissions, builds instant class rank percentiles, and gamifies learning with student XP badges.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="openCreateSprintModal()" class="px-4 py-2.5 rounded-xl bg-white text-orange-950 font-bold text-xs transition flex items-center gap-2 shadow-md hover:bg-orange-50">
+              <i data-lucide="plus-circle" class="w-4 h-4 text-orange-600"></i>
+              <span>Create New 10-Min MCQ Sprint</span>
+            </button>
+            <button onclick="alert('Batch 2026 Combined Maths has an active sprint ready to broadcast.')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs backdrop-blur-md border border-white/20 transition flex items-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4 text-amber-300"></i>
+              <span>Live Sprint: Sprint 08 Ready</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEADERBOARD & SPRINT AUTHORING -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Left: Current Class Leaderboard (2 Columns) -->
+        <div class="lg:col-span-2 behance-card p-6 sm:p-7 space-y-5">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div>
+              <h3 class="font-display font-extrabold text-base text-slate-900 flex items-center gap-2">
+                <i data-lucide="trophy" class="w-5 h-5 text-amber-500"></i>
+                Sprint 08 Top Rankers — 2026 Combined Maths
+              </h3>
+              <p class="text-xs text-slate-500">Real-time leaderboard calculated across 248 enrolled students.</p>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-50 text-amber-800 border border-amber-200">
+              Avg Score: 78.4%
+            </span>
+          </div>
+
+          <!-- Leaderboard Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-400 font-mono uppercase text-[10px] tracking-wider">
+                <tr>
+                  <th class="py-2.5 px-3">Rank</th>
+                  <th class="py-2.5 px-3">Student Name</th>
+                  <th class="py-2.5 px-3">Student ID</th>
+                  <th class="py-2.5 px-3">Score</th>
+                  <th class="py-2.5 px-3">Time Taken</th>
+                  <th class="py-2.5 px-3 text-right">XP Earned</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 font-medium">
+                
+                <!-- Rank 1 -->
+                <tr class="bg-amber-50/40 hover:bg-amber-50/80 transition font-bold">
+                  <td class="py-3 px-3">
+                    <span class="w-6 h-6 rounded-full bg-amber-400 text-slate-900 flex items-center justify-center font-display font-black text-xs">
+                      1
+                    </span>
+                  </td>
+                  <td class="py-3 px-3 text-slate-900">Pasindu Nethsara</td>
+                  <td class="py-3 px-3 font-mono text-slate-600">STU-9402</td>
+                  <td class="py-3 px-3 font-mono text-emerald-600 font-black text-sm">98 / 100</td>
+                  <td class="py-3 px-3 font-mono text-slate-500">06m 42s</td>
+                  <td class="py-3 px-3 text-right font-mono text-amber-700 font-bold">+500 XP</td>
+                </tr>
+
+                <!-- Rank 2 -->
+                <tr class="hover:bg-slate-50 transition">
+                  <td class="py-3 px-3">
+                    <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-display font-bold text-xs">
+                      2
+                    </span>
+                  </td>
+                  <td class="py-3 px-3 text-slate-900 font-semibold">Tharushi Nethsara</td>
+                  <td class="py-3 px-3 font-mono text-slate-600">STU-9403</td>
+                  <td class="py-3 px-3 font-mono text-emerald-600 font-black text-sm">94 / 100</td>
+                  <td class="py-3 px-3 font-mono text-slate-500">07m 18s</td>
+                  <td class="py-3 px-3 text-right font-mono text-amber-700 font-bold">+350 XP</td>
+                </tr>
+
+                <!-- Rank 3 -->
+                <tr class="hover:bg-slate-50 transition">
+                  <td class="py-3 px-3">
+                    <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-display font-bold text-xs">
+                      3
+                    </span>
+                  </td>
+                  <td class="py-3 px-3 text-slate-900 font-semibold">Kaveen Senanayake</td>
+                  <td class="py-3 px-3 font-mono text-slate-600">STU-8821</td>
+                  <td class="py-3 px-3 font-mono text-emerald-600 font-black text-sm">90 / 100</td>
+                  <td class="py-3 px-3 font-mono text-slate-500">08m 05s</td>
+                  <td class="py-3 px-3 text-right font-mono text-amber-700 font-bold">+250 XP</td>
+                </tr>
+
+                <!-- Rank 4 -->
+                <tr class="hover:bg-slate-50 transition">
+                  <td class="py-3 px-3 font-mono text-slate-400 font-bold">4</td>
+                  <td class="py-3 px-3 text-slate-800">Dulina Mendis</td>
+                  <td class="py-3 px-3 font-mono text-slate-600">STU-7719</td>
+                  <td class="py-3 px-3 font-mono text-blue-600 font-black">86 / 100</td>
+                  <td class="py-3 px-3 font-mono text-slate-500">08m 44s</td>
+                  <td class="py-3 px-3 text-right font-mono text-slate-500">+150 XP</td>
+                </tr>
+
+                <!-- Rank 5 -->
+                <tr class="hover:bg-slate-50 transition">
+                  <td class="py-3 px-3 font-mono text-slate-400 font-bold">5</td>
+                  <td class="py-3 px-3 text-slate-800">Sachini Wickramasinghe</td>
+                  <td class="py-3 px-3 font-mono text-slate-600">STU-6540</td>
+                  <td class="py-3 px-3 font-mono text-blue-600 font-black">84 / 100</td>
+                  <td class="py-3 px-3 font-mono text-slate-500">09m 10s</td>
+                  <td class="py-3 px-3 text-right font-mono text-slate-500">+100 XP</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right: Author New Sprint -->
+        <div class="behance-card p-6 space-y-4">
+          <h3 class="font-display font-extrabold text-base text-slate-900 pb-2 border-b border-slate-100 flex items-center gap-2">
+            <i data-lucide="zap" class="w-4 h-4 text-orange-600"></i>
+            Quick Author 10-Min Sprint
+          </h3>
+
+          <div class="space-y-3 text-xs">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Target Class Batch</label>
+              <select class="w-full p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+                <option>2026 Combined Maths Theory (248 Students)</option>
+                <option>2026 Pure Maths Paper Class (180 Students)</option>
+                <option>2027 Foundation Batch (290 Students)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Sprint Title</label>
+              <input type="text" value="Definite Integration Speed Sprint 09" class="w-full p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Duration (Mins)</label>
+                <input type="number" value="10" class="w-full p-2.5 rounded-xl border border-slate-200 font-mono font-bold text-slate-800">
+              </div>
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Questions</label>
+                <input type="number" value="10" class="w-full p-2.5 rounded-xl border border-slate-200 font-mono font-bold text-slate-800">
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-orange-50 border border-orange-200 text-orange-950 space-y-1">
+              <span class="font-bold block">Automated Features:</span>
+              <ul class="list-disc list-inside text-[11px] text-orange-800 space-y-0.5">
+                <li>Instant timer countdown on student portals</li>
+                <li>Instant leaderboard rank calculation</li>
+                <li>Marks automatically posted to Parent SMS</li>
+              </ul>
+            </div>
+
+            <button onclick="publishSprintNow()" class="w-full py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs transition shadow-sm flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Publish Sprint to 248 Students</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- UNIVERSAL FOOTER -->
+    <footer class="bg-slate-900 text-white mt-12 py-6 px-4 sm:px-8 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div class="flex items-center gap-2 text-slate-400">
+          <i data-lucide="award" class="w-4 h-4 text-orange-400"></i>
+          <span>EduSync Tuition Management &amp; NFC Ecosystem • SDGP CS76 (2026)</span>
+        </div>
+        <div class="flex items-center gap-4 text-slate-400 font-mono">
+          <span>Helpline: <strong class="text-white">077 129 6697</strong></span>
+          <span>•</span>
+          <a href="./teacher_dashboard.html" class="hover:text-white transition">Teacher Overview</a>
+          <span>•</span>
+          <a href="./teacher_timetable.html" class="hover:text-white transition">Timetable</a>
+          <span>•</span>
+          <a href="./student_quizzes.html" class="hover:text-white transition">Student Quizzes</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function openMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.remove('hidden');
+    }
+    function closeMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('hidden');
+    }
+
+    function openCreateSprintModal() {
+      alert("Opening Full MCQ Sprint Question Bank & Latex Equation Authoring Studio...");
+    }
+
+    function publishSprintNow() {
+      alert("🚀 10-Minute MCQ Sprint 09 published successfully!\n\nPush notification dispatched to 248 student portals. Countdown will begin upon student launch.");
+    }
+  </script>
+</body>
+</html>
